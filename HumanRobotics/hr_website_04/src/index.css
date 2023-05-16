@@ -208,6 +208,53 @@ button:focus-visible {
     color: #1a1a1a;
 }
 
+.Home_Title_Group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 800px;
+    gap: 2rem;
+}
+
+.Home_Title {
+    text-align: start;
+    flex-direction: row;
+    justify-content: start;
+    gap: 1rem;
+}
+
+.Home_Title strong {
+    color: #747bff;
+}
+
+.Robots_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.Robot_Card {
+    width: 400px;
+    height: 600px;
+    background-color: #1a1a1a;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    padding-top: 3rem;
+}
+
+.Robot_Main_Image {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+}
+
 .card {
     padding: 2em;
 }
