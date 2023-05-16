@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
-import { motion as m, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import MainNavbar from "./components/MainNavbar";
 

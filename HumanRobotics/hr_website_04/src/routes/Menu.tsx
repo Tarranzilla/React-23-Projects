@@ -5,9 +5,9 @@ import { useState } from "react";
 
 export default function Menu() {
     const [prefOpen, setPrefOpen] = useState(false);
-    const [lang, setLang] = useState("Português Brasileiro");
-    const [theme, setTheme] = useState("RobiOS Dark");
-    const [cookiesSettings, setCookiesSettings] = useState("Permitir Todos");
+    const [lang] = useState("Português Brasileiro");
+    const [theme] = useState("RobiOS Dark");
+    const [cookiesSettings] = useState("Permitir Todos");
 
     return (
         <>
