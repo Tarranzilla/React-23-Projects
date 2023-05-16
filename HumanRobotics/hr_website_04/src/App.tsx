@@ -1,30 +1,17 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
+import { motion as m, AnimatePresence } from "framer-motion";
+
 import MainNavbar from "./components/MainNavbar";
 
 function App() {
-    const [loading, setLoading] = useState(true);
-
-    if (loading) {
-        return (
-            <>
-                <h1>Loading...</h1>
-                <button
-                    onClick={() => {
-                        setLoading(false);
-                    }}
-                >
-                    Access Website
-                </button>
-            </>
-        );
-    }
-
     return (
         <>
-            <MainNavbar />
-            <Outlet />
+            <AnimatePresence mode="wait">
+                <MainNavbar />
+                <Outlet />
+            </AnimatePresence>
         </>
     );
 }
