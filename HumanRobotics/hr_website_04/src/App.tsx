@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 
 import MainNavbar from "./components/MainNavbar";
 
@@ -23,6 +24,7 @@ function App() {
     return (
         <>
             <MainNavbar />
+            <Outlet />
         </>
     );
 }
