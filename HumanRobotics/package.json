@@ -1,0 +1,11 @@
+{
+  "name": "humanrobotics",
+  "version": "1.0.0",
+  "description": "Human Robotics Website made in React, and Possibly some APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joao Tarran - Pragmata",
+  "license": "ISC"
+}
