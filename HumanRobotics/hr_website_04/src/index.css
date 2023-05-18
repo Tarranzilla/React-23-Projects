@@ -16,42 +16,68 @@
 }
 
 :root {
-    font-family: ResearcherRegular, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     line-height: 1.5;
     font-weight: 400;
-
-    color-scheme: light dark;
-    color: rgba(255, 255, 255);
-    background-color: #242424;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+
+    /* lightmode colors */
+    --bg_white: #ffffff;
+    --bg_white-faded: #ffffff4e;
+    --font_darkBlue: #000343;
+    --primary_mediumBlue: #4400ffe3;
+    --secondary_clearBlue: #00aaff;
+    --error_orange: #ff5520;
+    --warning_yellow: #ffae2d;
+    --info_purple: #ae00ff;
+    --success_turquoise: #00ffd5de;
+
+    /* darkmode colors */
+    --bg_darkBlue: #000343;
+    --font_white: #ffffff;
+    --primary_mediumBlue: #4400ffe3;
+    --secondary_clearBlue: #00aaff;
+    --error_orange: #ff5520;
+    --warning_yellow: #ffae2d;
+    --info_purple: #ae00ff;
+    --success_turquoise: #00ffd5de;
+
+    color-scheme: light dark;
+    color: var(--font_white);
+    background-color: var(--bg_white);
 }
 
 * {
     box-sizing: border-box;
-    margin: 0;
+
     padding: 0;
+    margin: 0;
 }
 
 html,
 body,
 #root {
-    height: 100%;
     width: 100%;
+    height: 100%;
+}
+
+body {
+    padding: 2.5vh;
 }
 
 h1 {
-    font-family: ResearcherBold, sans-serif;
-    font-size: 2.4rem;
-    line-height: 2.4rem;
-
     display: flex;
     flex-direction: column;
     place-items: center;
+
+    font-family: ResearcherBold, sans-serif;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
 }
 
 ul,
@@ -61,24 +87,42 @@ li {
 }
 
 .Loading {
+    width: 100vw;
+    height: 100vh;
+
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+
     display: flex;
     flex-direction: column;
     place-items: center;
 }
 
 .Main_Navbar {
+    width: 100%;
+    height: 10vh;
+
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    width: 100%;
-    padding-inline: 3rem;
-    height: 15vh;
+
+    padding: 1rem;
+    margin-bottom: 2.5vh;
+
+    border-radius: 1rem;
+    background-color: var(--bg_darkBlue);
+}
+
+.LogoType_Container:hover,
+.LogoType_Container:focus,
+.LogoType_Container.active {
+    scale: 1.02;
+}
+
+.LogoType_Container.active > * {
+    color: var(--secondary_clearBlue);
 }
 
 .LogoType_Container {
@@ -87,44 +131,96 @@ li {
     align-items: center;
     justify-content: flex-start;
     gap: 2rem;
+    margin-right: 5rem;
+
+    transition: all 0.2s ease-in-out;
 }
 
 .Logo {
-    width: clamp(5rem, 10vw, 6rem);
+    width: clamp(2rem, 10vw, 4rem);
     aspect-ratio: 1;
+}
+
+.Logo_Text {
+    letter-spacing: -0.05rem;
+    color: var(--font_white);
 }
 
 .NavLinks_Container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 2rem;
     width: 100%;
     height: 100%;
 }
 
-.NavLinks {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-gap: 2rem;
+.NavLink:hover,
+.NavLink:focus,
+.NavLink.active {
+    color: var(--font_white);
+    background-color: var(--secondary_clearBlue);
+}
+
+.NavLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5rem 2rem;
+
+    border-radius: 2rem;
+    font-family: ResearcherThin, sans-serif;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    letter-spacing: -0.3rem;
+
+    color: var(--secondary_clearBlue);
+    transition: all 0.2s ease-in-out;
+}
+
+.NavLink_Text {
+    padding-bottom: 0.3rem;
 }
 
 a {
-    font-family: ResearcherRegular, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 1.2rem;
-    color: #646cff;
-    text-decoration: none;
-    list-style: none;
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+
+    text-decoration: none;
+    list-style: none;
+
+    white-space: nowrap;
 }
 a:hover {
     color: #535bf2;
+}
+
+.Menu_Button.active .Menu_Button_Arrow {
+    rotate: 0deg;
+}
+
+.Menu_Button {
+    background-color: var(--bg_white-faded);
+    padding-inline: 1.5rem;
+}
+
+.Menu_Button_Icon {
+    font-size: 1.8rem;
+}
+
+.Menu_Button_Arrow {
+    rotate: -90deg;
+    scale: 1.5;
+    transition: all 0.2s ease-in-out;
+}
+
+.Menu_Button_Text {
+    padding-bottom: 0.1rem;
 }
 
 .menu {
@@ -198,10 +294,10 @@ button:focus-visible {
     justify-content: center;
     gap: 2rem;
     width: 100%;
-    height: 85vh;
+    height: 82.5vh;
     padding: 2rem;
     background-color: white;
-    border-radius: 1rem 1rem 0 0;
+    border-radius: 1rem;
 }
 
 .Route_Title {

@@ -87,6 +87,10 @@ const router = createBrowserRouter([
                 path: "/menu",
                 element: <Menu />,
             },
+            {
+                path: "*",
+                element: <div>404 Page Not Found</div>,
+            },
         ],
     },
 ]);

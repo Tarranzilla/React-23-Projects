@@ -1,7 +1,23 @@
 import { NavLink } from "react-router-dom";
-import { motion as m } from "framer-motion";
-
+import { motion as m, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+
+const MenuPrefAnimation = {
+    hidden: {
+        opacity: 0,
+        width: 0,
+        padding: 0,
+    },
+
+    visible: {
+        opacity: 1,
+        width: "100%",
+        padding: "16px",
+        transition: {
+            duration: 0.5,
+        },
+    },
+};
 
 export default function Menu() {
     const [prefOpen, setPrefOpen] = useState(false);

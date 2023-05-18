@@ -7,10 +7,12 @@ import MainNavbar from "./components/MainNavbar";
 function App() {
     return (
         <>
-            <AnimatePresence mode="wait">
-                <MainNavbar />
-                <Outlet />
-            </AnimatePresence>
+            <MainNavbar />
+            <div className="Content_Viewer">
+                <AnimatePresence mode="wait">
+                    <Outlet />
+                </AnimatePresence>
+            </div>
         </>
     );
 }
