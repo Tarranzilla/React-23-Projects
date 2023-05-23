@@ -196,7 +196,6 @@ body,
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    overflow: hidden;
 
     margin-bottom: var(--sectionviewer_margin_bottom);
 }
@@ -209,9 +208,6 @@ body,
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 1rem;
-
-    overflow: hidden;
 }
 
 .Footer {
@@ -328,8 +324,9 @@ li {
     scale: 1.02;
 }
 
-.LogoType_Container.active > * {
-    color: var(--secondary_clearBlue);
+.LogoType_Container.active > *,
+.LogoType_Container.active > .Logo_Text_Container > * {
+    fill: var(--bg_white);
 }
 
 .LogoType_Container {
@@ -347,7 +344,8 @@ li {
 .Logo {
     width: 2rem;
     aspect-ratio: 1;
-    fill: var(--bg_white);
+    fill: var(--secondary_clearBlue);
+    transition: all 0.2s ease-in-out;
 }
 
 .Logo_Text_Container {
@@ -362,7 +360,8 @@ li {
 .Logo_Text_Svg {
     height: 0.7rem;
     flex-shrink: 0;
-    fill: var(--bg_white);
+    fill: var(--secondary_clearBlue);
+    transition: all 0.2s ease-in-out;
 }
 
 .NavLinks_Container {
@@ -536,14 +535,16 @@ button:focus-visible {
     align-items: center;
     justify-content: flex-start;
     gap: var(--small-gap);
+}
 
-    overflow-x: auto;
+.Robot_Card:hover {
+    scale: 1.01;
 }
 
 .Robot_Card {
-    max-width: 25%;
+    width: 24.25vw;
     height: 100%;
-    background-color: #1a1a1a;
+    background-color: #1a1a1a8e;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -552,21 +553,40 @@ button:focus-visible {
 
     flex-shrink: 0;
     overflow: hidden;
-    padding-top: 3rem;
+    padding-top: 2.4rem;
+
+    position: relative;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.Robot_Card_Title_Container {
+    position: absolute;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Robot_Card_Title {
+    font-family: Researcher, sans-serif;
+    font-size: 2rem;
+}
+
+.Robot_Card_SubTitle {
+    font-size: 1rem;
 }
 
 .Robot_Main_Image {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: top;
 }
 
-.card {
-    padding: 2em;
-}
-
-.read-the-docs {
-    color: #888;
+.Robot_Background_Image {
+    position: absolute;
 }
 
 /* generate a media query based on width using the screen method */
