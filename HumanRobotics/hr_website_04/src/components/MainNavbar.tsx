@@ -6,8 +6,6 @@ import { useState } from "react";
 // import { createTheme } from "@mui/material/styles";
 // import { themeSettings } from "./theme.js";
 
-import Logo from "../assets/images/Logo_Branca_svg.svg";
-
 function MainNavbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const currentLocation = useLocation();

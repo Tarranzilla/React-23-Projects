@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
-import { motion as m, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { motion as m } from "framer-motion";
+/*
 
 const MenuPrefAnimation = {
     hidden: {
@@ -18,6 +19,8 @@ const MenuPrefAnimation = {
         },
     },
 };
+
+*/
 
 export default function Menu() {
     const [prefOpen, setPrefOpen] = useState(false);
