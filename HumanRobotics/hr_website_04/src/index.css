@@ -539,9 +539,15 @@ button:focus-visible {
     justify-content: flex-start;
     gap: var(--small-gap);
 }
-
+.Robot_Card:focus,
 .Robot_Card:hover {
     scale: 1.01;
+}
+
+.Robot_Card:focus .Robot_Background_Image,
+.Robot_Card:hover .Robot_Background_Image {
+    opacity: 1;
+    filter: brightness(2);
 }
 
 .Robot_Card {
@@ -603,6 +609,10 @@ button:focus-visible {
     grid-row: 1/2;
     height: 100%;
     width: 100%;
+
+    opacity: 0.5;
+
+    transition: all 0.2s ease-in-out;
 }
 
 /* generate a media query based on width using the screen method */
