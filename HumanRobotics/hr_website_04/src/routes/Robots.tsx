@@ -9,7 +9,6 @@ export default function Robots() {
     return (
         <>
             <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Route_Container">
-                <h1 className="Route_Title">Robots</h1>
                 <div className="Robots_Container">
                     <div className="Robot_Card">
                         <h2>Avatar</h2>

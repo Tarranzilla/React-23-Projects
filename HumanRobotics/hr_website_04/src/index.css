@@ -1,3 +1,15 @@
+/*
+
+Importação de Fontes:
+    Researcher: https://www.dafont.com/pt/researcher.font (checar uso)
+    Dongle: https://fonts.google.com/specimen/Dongle (uso livre)
+    Roboto: https://fonts.google.com/specimen/Roboto (uso livre)
+
+Algumas fotos obtidas através do unsplash, é recomendável revermos as licensas delas.
+Icones obtidos através do Google Material Icons, e Importados via React, de uso gratuito.
+
+*/
+
 @font-face {
     font-family: "ResearcherRegular"; /*Can be any text*/
     src: local("researcher-researcher-regular-400"), url("./assets/fonts/researcher-researcher-regular-400.woff2") format("woff2");
@@ -14,6 +26,8 @@
     font-family: "ResearcherSquid"; /*Can be any text*/
     src: local("researcher-researcher-squid-700"), url("./assets/fonts/researcher-researcher-squid-700.woff2") format("woff2");
 }
+
+/* Configurações e Variáveis */
 
 :root {
     font-family: "Roboto", sans-serif;
@@ -50,6 +64,41 @@
     color-scheme: light dark;
     color: var(--font_white);
     background-color: var(--bg_white);
+
+    /* Layout Fallback */
+    --full-height: 100vh;
+
+    --nav-height: 10vh;
+    --footer-height: 0vh;
+    --sectionviewer-height: calc(var(--full-height) - var(--nav-height) - var(--footer-height));
+
+    /* Layout */
+    --full-height: 100svh;
+    --full-width: 100vw;
+
+    --root-padding: var(--small-gap);
+
+    --nav-height: 10svh;
+    --nav_margin_bottom: var(--small-gap);
+
+    --footer-height: 0svh;
+    --footer_margin_top: 0svh;
+
+    --sectionviewer-height: calc(
+        var(--full-height) - var(--root-padding) - var(--nav-height) - var(--nav_margin_bottom) - var(--footer-height) - var(--footer_margin_top)
+    );
+
+    --scrollbar-size: 10px;
+
+    --small-border-radius: 0.25rem;
+    --medium-border-radius: 0.5rem;
+    --large-border-radius: 1rem;
+    --larger-border-radius: 1.5rem;
+
+    --small-gap: 1vh;
+    --medium-gap: 2.5vh;
+    --large-gap: 5vh;
+    --larger-gap: 10vh;
 }
 
 * {
@@ -59,32 +108,51 @@
     margin: 0;
 }
 
+/* Layout Mestre */
+
 html,
 body,
 #root {
     width: 100%;
     height: 100%;
+    margin: 0;
 }
 
-body {
-    padding: 2.5vh;
-}
+#root {
+    width: var(--full-width);
+    height: var(--full-height);
 
-h1 {
     display: flex;
     flex-direction: column;
-    place-items: center;
+    align-items: center;
+    justify-content: flex-start;
 
-    font-family: ResearcherBold, sans-serif;
-    font-size: 2.4rem;
-    line-height: 2.4rem;
+    padding: var(--root-padding);
 }
 
-ul,
-li {
-    text-decoration: none;
-    list-style: none;
+.Content_Viewer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
 }
+
+.Route_Container {
+    width: 100%;
+    height: var(--sectionviewer-height);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 1rem;
+
+    overflow: hidden;
+}
+
+/* Loading Screen */
 
 .Loading {
     width: 100vw;
@@ -99,17 +167,74 @@ li {
     place-items: center;
 }
 
+/* Lgpd Container */
+
+.lgpd_container {
+    display: none;
+    position: absolute;
+}
+
+.lgpd_container.active {
+    display: flex;
+    flex-direction: column;
+
+    place-items: center;
+}
+
+/* Tipografia */
+
+a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    text-decoration: none;
+    list-style: none;
+
+    white-space: nowrap;
+}
+a:hover {
+    color: #535bf2;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
+    font-family: ResearcherBold, sans-serif;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+}
+
+.Route_Title {
+    text-transform: capitalize;
+    color: var(--secondary_clearBlue);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+ul,
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Navbar */
+
 .Main_Navbar {
     width: 100%;
-    height: 10vh;
+    height: var(--nav-height);
 
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+    flex-shrink: 0;
 
-    padding: 1rem;
-    margin-bottom: 2.5vh;
+    padding: var(--medium-gap);
+    margin-bottom: var(--nav_margin_bottom);
 
     border-radius: 1rem;
     background-color: var(--bg_darkBlue);
@@ -129,15 +254,15 @@ li {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 2rem;
-    margin-right: 5rem;
+    margin-right: clamp(0, 5vw, 4rem);
 
     transition: all 0.2s ease-in-out;
 }
 
 .Logo {
-    width: clamp(2rem, 10vw, 4rem);
+    width: clamp(2.8rem, 10vw, 4rem);
     aspect-ratio: 1;
 }
 
@@ -150,7 +275,7 @@ li {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 2rem;
     width: 100%;
     height: 100%;
@@ -169,11 +294,11 @@ li {
     align-items: center;
     justify-content: center;
 
-    padding: 0.5rem 2rem;
+    padding: 0.125rem 2rem;
 
     border-radius: 2rem;
     font-family: ResearcherThin, sans-serif;
-    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
     letter-spacing: -0.3rem;
 
     color: var(--secondary_clearBlue);
@@ -181,23 +306,7 @@ li {
 }
 
 .NavLink_Text {
-    padding-bottom: 0.3rem;
-}
-
-a {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-
-    text-decoration: none;
-    list-style: none;
-
-    white-space: nowrap;
-}
-a:hover {
-    color: #535bf2;
+    padding-bottom: 0.2rem;
 }
 
 .Menu_Button.active .Menu_Button_Arrow {
@@ -205,12 +314,20 @@ a:hover {
 }
 
 .Menu_Button {
+    align-items: center;
     background-color: var(--bg_white-faded);
-    padding-inline: 1.5rem;
+    padding-inline: var(--small-gap);
+    padding-block: 0.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
 
 .Menu_Button_Icon {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+}
+
+.Menu_Button_Action {
+    padding-left: 8px;
 }
 
 .Menu_Button_Arrow {
@@ -221,6 +338,7 @@ a:hover {
 
 .Menu_Button_Text {
     padding-bottom: 0.1rem;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
 }
 
 .menu {
@@ -287,23 +405,6 @@ button:focus-visible {
     filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.Route_Container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-    height: 82.5vh;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 1rem;
-}
-
-.Route_Title {
-    color: #1a1a1a;
-}
-
 .Home_Title_Group {
     display: flex;
     flex-direction: column;
@@ -325,16 +426,19 @@ button:focus-visible {
 }
 
 .Robots_Container {
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: flex-start;
+    gap: var(--small-gap);
+
+    overflow-x: auto;
 }
 
 .Robot_Card {
-    width: 400px;
-    height: 600px;
+    max-width: 25%;
+    height: 100%;
     background-color: #1a1a1a;
     border-radius: 1rem;
     display: flex;
@@ -342,11 +446,13 @@ button:focus-visible {
     align-items: center;
     justify-content: start;
 
+    flex-shrink: 0;
+    overflow: hidden;
     padding-top: 3rem;
 }
 
 .Robot_Main_Image {
-    height: 600px;
+    height: 100%;
     width: 100%;
     object-fit: cover;
 }
@@ -357,6 +463,20 @@ button:focus-visible {
 
 .read-the-docs {
     color: #888;
+}
+
+/* generate a media query based on width using the screen method */
+
+@media screen and (max-width: 600px) {
+    .Desktop_Only {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .Mobile_Only {
+        display: none;
+    }
 }
 
 @media (prefers-color-scheme: light) {
