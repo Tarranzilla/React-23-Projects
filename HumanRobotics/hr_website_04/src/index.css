@@ -68,7 +68,7 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
     /* Layout Fallback */
     --full-height: 100vh;
 
-    --nav-height: 10vh;
+    --nav-height: 5vh;
     --footer-height: 0vh;
     --sectionviewer-height: calc(var(--full-height) - var(--nav-height) - var(--footer-height));
 
@@ -78,14 +78,21 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
 
     --root-padding: var(--small-gap);
 
-    --nav-height: 10svh;
+    --nav-height: 5svh;
     --nav_margin_bottom: var(--small-gap);
 
-    --footer-height: 0svh;
-    --footer_margin_top: 0svh;
+    --nav_sideblock_width: 20svw;
+
+    --statusbar_height: 5svh;
+    --statusbar_margin_bottom: var(--small-gap);
+
+    --sectionviewer_margin_bottom: var(--small-gap);
+
+    --footer-height: 5svh;
 
     --sectionviewer-height: calc(
-        var(--full-height) - var(--root-padding) - var(--nav-height) - var(--nav_margin_bottom) - var(--footer-height) - var(--footer_margin_top)
+        var(--full-height) - (2 * var(--root-padding)) - var(--nav-height) - var(--nav_margin_bottom) - var(--statusbar_height) -
+            var(--sectionviewer_margin_bottom) - var(--footer-height)
     );
 
     --scrollbar-size: 10px;
@@ -103,9 +110,13 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
 
 * {
     box-sizing: border-box;
-
     padding: 0;
     margin: 0;
+
+    background-color: transparent;
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
 }
 
 /* Layout Mestre */
@@ -128,6 +139,56 @@ body,
     justify-content: flex-start;
 
     padding: var(--root-padding);
+
+    background-image: linear-gradient(to bottom, var(--secondary_clearBlue), var(--bg_darkBlue));
+}
+
+.Nav_SideBlock {
+    width: 20vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--small-gap);
+}
+
+.Nav_SideBlock_2 {
+    justify-content: flex-end;
+}
+
+.Nav_MainBlock {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.StatusBar {
+    height: var(--statusbar_height);
+    width: 100%;
+
+    background: repeating-linear-gradient(
+        -30deg,
+        var(--bg_darkBlue),
+        var(--bg_darkBlue) 1px,
+        transparent 2px,
+        transparent 10px,
+        var(--bg_darkBlue) 11px
+    );
+
+    background-size: 200% 200%;
+    animation: barberpole 120s linear infinite;
+
+    margin-bottom: var(--statusbar_margin_bottom);
+
+    border-radius: var(--small-gap);
+}
+
+@keyframes barberpole {
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 .Content_Viewer {
@@ -136,6 +197,8 @@ body,
     align-items: flex-start;
     justify-content: flex-start;
     overflow: hidden;
+
+    margin-bottom: var(--sectionviewer_margin_bottom);
 }
 
 .Route_Container {
@@ -146,10 +209,28 @@ body,
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
     border-radius: 1rem;
 
     overflow: hidden;
+}
+
+.Footer {
+    height: var(--footer-height);
+    width: 100%;
+
+    background: repeating-linear-gradient(
+        -30deg,
+        var(--secondary_clearBlue),
+        var(--secondary_clearBlue) 1px,
+        transparent 2px,
+        transparent 10px,
+        var(--secondary_clearBlue) 11px
+    );
+
+    background-size: 200% 200%;
+    animation: barberpole 180s linear infinite reverse;
+
+    border-radius: var(--small-gap);
 }
 
 /* Loading Screen */
@@ -230,10 +311,11 @@ li {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     gap: 1rem;
     flex-shrink: 0;
 
-    padding: var(--medium-gap);
+    padding-inline: var(--small-gap);
     margin-bottom: var(--nav_margin_bottom);
 
     border-radius: 1rem;
@@ -254,21 +336,33 @@ li {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-right: clamp(0, 5vw, 4rem);
+    justify-content: flex-start;
+
+    width: 10vw;
+    gap: 0.5rem;
 
     transition: all 0.2s ease-in-out;
 }
 
 .Logo {
-    width: clamp(2.8rem, 10vw, 4rem);
+    width: 2rem;
     aspect-ratio: 1;
+    fill: var(--bg_white);
 }
 
-.Logo_Text {
-    letter-spacing: -0.05rem;
-    color: var(--font_white);
+.Logo_Text_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.3rem;
+    height: 100%;
+}
+
+.Logo_Text_Svg {
+    height: 0.7rem;
+    flex-shrink: 0;
+    fill: var(--bg_white);
 }
 
 .NavLinks_Container {
@@ -286,6 +380,7 @@ li {
 .NavLink.active {
     color: var(--font_white);
     background-color: var(--secondary_clearBlue);
+    scale: 1.02;
 }
 
 .NavLink {
@@ -294,32 +389,54 @@ li {
     align-items: center;
     justify-content: center;
 
-    padding: 0.125rem 2rem;
+    padding: 0rem 1.5rem;
 
-    border-radius: 2rem;
-    font-family: ResearcherThin, sans-serif;
-    font-size: clamp(1.2rem, 2vw, 1.4rem);
-    letter-spacing: -0.3rem;
+    border-radius: 0.5rem;
+    font-family: Dongle, sans-serif;
+    font-weight: 300;
+    font-size: clamp(1rem, 2vw, 1.6rem);
+
+    text-transform: uppercase;
 
     color: var(--secondary_clearBlue);
     transition: all 0.2s ease-in-out;
 }
 
 .NavLink_Text {
-    padding-bottom: 0.2rem;
+    padding-top: 0.3rem;
+    margin-block: -0.3rem;
 }
 
 .Menu_Button.active .Menu_Button_Arrow {
     rotate: 0deg;
 }
 
+.Menu_Button_Container {
+    transition: all 0.2s ease-in-out;
+}
+
 .Menu_Button {
     align-items: center;
     background-color: var(--bg_white-faded);
     padding-inline: var(--small-gap);
-    padding-block: 0.5rem;
+    padding-block: 0.2rem;
     border-radius: 0.5rem;
     overflow: hidden;
+    color: var(--secondary_clearBlue);
+    cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.Menu_Button_Container:hover,
+.Menu_Button_Container:focus {
+    scale: 1.1;
+}
+
+.Menu_Button_Container:hover .Menu_Button,
+.Menu_Button_Container:focus .Menu_Button {
+    color: var(--font_white);
+    background-color: var(--secondary_clearBlue);
 }
 
 .Menu_Button_Icon {
@@ -390,19 +507,6 @@ button:hover {
 button:focus,
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
-}
-
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-}
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
 .Home_Title_Group {

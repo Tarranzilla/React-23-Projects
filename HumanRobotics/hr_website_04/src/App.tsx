@@ -8,11 +8,13 @@ function App() {
     return (
         <>
             <MainNavbar />
+            <div className="StatusBar"></div>
             <div className="Content_Viewer">
                 <AnimatePresence mode="wait">
                     <Outlet />
                 </AnimatePresence>
             </div>
+            <div className="Footer"></div>
         </>
     );
 }
