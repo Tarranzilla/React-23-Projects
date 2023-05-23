@@ -48,7 +48,7 @@ export default function Robots() {
                             <h2 className="Robot_Card_Title">CARGO</h2>
                         </div>
                         <img src={Cargo} className="Robot_Main_Image"></img>
-                        <img src={AvatarBg} className="Robot_Background_Image"></img>
+                        <img src={CargoBg} className="Robot_Background_Image"></img>
                     </div>
                 </div>
             </m.div>
