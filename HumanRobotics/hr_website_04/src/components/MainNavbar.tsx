@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { motion as m, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
@@ -12,9 +12,18 @@ function MainNavbar() {
     const currentLocationParsed = currentLocation.pathname.replace(/[^a-zA-Z ]/g, "");
     console.log(currentLocationParsed);
 
+    const navigate = useNavigate();
+
     const menuOpenHandler = () => {
         setMenuOpen(!menuOpen);
-        console.log("Menu Open: " + menuOpen);
+        if (menuOpen) {
+            navigate(-1);
+            console.log("Menu Fechado, retornando para página anterior.");
+        }
+
+        if (!menuOpen) {
+            console.log("Menu Aberto");
+        }
     };
 
     return (
@@ -29,7 +38,7 @@ function MainNavbar() {
                             />
                         </g>
                     </svg>
-                    <div className="Logo_Text_Container">
+                    <div className="Logo_Text_Container Desktop_Only">
                         <svg id="Svg1" className="Logo_Text_Svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.11 12">
                             <g id="Layer_2-2">
                                 <path
@@ -108,19 +117,19 @@ function MainNavbar() {
 
                     <div className="NavLinks_Container">
                         <NavLink to="/robos" className="NavLink Desktop_Only">
-                            <span className="material-icons NavLink_Icon">smart_toy</span>
+                            <span className="material-icons NavLink_Icon Desktop_Only_Extended">smart_toy</span>
                             <div className="NavLink_Text">robôs</div>
                         </NavLink>
                         <NavLink to="/servicos" className="NavLink Desktop_Only">
-                            <span className="material-icons NavLink_Icon">hub</span>
+                            <span className="material-icons NavLink_Icon Desktop_Only_Extended">hub</span>
                             <div className="NavLink_Text">serviços</div>
                         </NavLink>
                         <NavLink to="/sobre" className="NavLink Desktop_Only">
-                            <span className="material-icons NavLink_Icon">foundation</span>
+                            <span className="material-icons NavLink_Icon Desktop_Only_Extended">foundation</span>
                             <div className="NavLink_Text">sobre</div>
                         </NavLink>
                         <NavLink to="/contato" className="NavLink Desktop_Only">
-                            <span className="material-icons NavLink_Icon">campaign</span>
+                            <span className="material-icons NavLink_Icon Desktop_Only_Extended">campaign</span>
                             <div className="NavLink_Text">contato</div>
                         </NavLink>
                     </div>
@@ -130,15 +139,15 @@ function MainNavbar() {
                     <a href="#" className="Menu_Button_Container">
                         <span className="material-icons Menu_Button">search</span>
                     </a>
-                    <a href="#" className="Menu_Button_Container">
+                    <a href="#" className="Menu_Button_Container Desktop_Only_Extended">
                         <span className="material-icons Menu_Button">brightness_4</span>
                     </a>
-                    <a href="#" className="Menu_Button_Container">
+                    <a href="#" className="Menu_Button_Container Desktop_Only_Extended">
                         <span className="material-icons Menu_Button">language</span>
                     </a>
                     <NavLink to="/menu" className="NavLink Menu_Button" onClick={menuOpenHandler}>
                         <span className="material-icons NavLink_Icon Menu_Button_Icon Menu_Button_Action">grid_view</span>
-                        <div className="NavLink_Text Menu_Button_Text Desktop_Only">MENU</div>
+                        <div className="NavLink_Text Menu_Button_Text Desktop_Only Desktop_Only_Extended">MENU</div>
                         <span className="material-icons Menu_Button_Icon Menu_Button_Arrow">arrow_drop_down</span>
                     </NavLink>
                 </div>
