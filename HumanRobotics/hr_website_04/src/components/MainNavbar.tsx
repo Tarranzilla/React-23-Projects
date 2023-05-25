@@ -6,13 +6,35 @@ import { useState } from "react";
 // import { createTheme } from "@mui/material/styles";
 // import { themeSettings } from "./theme.js";
 
+import { useDispatch, useSelector } from "react-redux";
+import { setMode, setLogout } from "../context/main_context";
+import { dark } from "@mui/material/styles/createPalette";
+
+import { useTheme, useMediaQuery } from "@mui/material";
+
 function MainNavbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+
     const currentLocation = useLocation();
     const currentLocationParsed = currentLocation.pathname.replace(/[^a-zA-Z ]/g, "");
     console.log(currentLocationParsed);
 
     const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+    const username = useSelector((state: any) => state.username);
+
+    const isDesktop = useMediaQuery("(min-width: 1240px)");
+    const isMobile = useMediaQuery("(max-width: 1000px)");
+
+    const theme = useTheme();
+
+    const neutralLight = theme.palette.primary.light;
+    const neutralDark = theme.palette.primary.dark;
+    const lightBackground = theme.palette.background.default;
+    const darkBackground = theme.palette.background.default;
+    const primaryLight = theme.palette.primary.light;
+    const primaryDark = theme.palette.primary.dark;
 
     const LinkHandler = () => {
         if (menuOpen) {
