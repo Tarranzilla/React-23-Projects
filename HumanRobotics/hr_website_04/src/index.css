@@ -40,6 +40,11 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 
+    /* Nº de Experience Scroll-Items */
+    --scroll-item-ammount: 10;
+
+    --color-debug: #f00; /* Legacy */
+
     /* lightmode colors */
     --bg_white: #ffffff;
     --bg_white-faded: #ffffff4e;
@@ -210,6 +215,8 @@ body,
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    position: relative;
 }
 
 .Footer {
@@ -397,7 +404,7 @@ li {
     border-radius: 0.5rem;
     font-family: Dongle, sans-serif;
     font-weight: 300;
-    font-size: clamp(1rem, 2vw, 1.6rem);
+    font-size: clamp(1.6rem, 2vw, 1.6rem);
 
     text-transform: uppercase;
 
@@ -461,21 +468,75 @@ li {
     font-size: clamp(0.8rem, 2vw, 1.2rem);
 }
 
-.menu {
-    width: 100%;
-    height: var(--sectionviewer-height);
+.menu_extra {
+    height: 100%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
+    padding: var(--small-gap);
+
+    width: 67%;
+
+    perspective: 1000px;
+}
+
+.Logo_Extra {
+    height: 50%;
+    aspect-ratio: 1/1;
+    fill: var(--secondary_clearBlue);
+}
+
+@keyframes Rotate360 {
+    0% {
+        transform: translateY(-10px) rotateY(0deg);
+    }
+
+    50% {
+        transform: translateY(10px) rotateY(180deg);
+    }
+
+    100% {
+        transform: translateY(-10px) rotateY(360deg);
+    }
+}
+
+.menu {
+    width: 100%;
+    height: var(--sectionviewer-height);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--small-gap);
+
     border-radius: var(--small-gap);
     background-color: #1a1a1aa4;
 }
 
+.menu_container {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding: var(--small-gap);
+}
+
 .menu a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
     height: 30px;
+
     margin-bottom: var(--small-gap);
 }
 
@@ -531,17 +592,41 @@ button:focus-visible {
     color: #747bff;
 }
 
+.Robots_Container::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.Robots_Container::-webkit-scrollbar-track {
+    background-color: #ffffff30;
+    border-radius: 0.5rem;
+}
+
+.Robots_Container::-webkit-scrollbar-thumb {
+    background-color: var(--secondary_clearBlue);
+    border-radius: 0.5rem;
+}
+
 .Robots_Container {
     height: 100%;
+    width: 100%;
+
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+
     gap: var(--small-gap);
+
+    overflow-x: auto;
+    overflow-y: visible;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
 }
 .Robot_Card:focus,
 .Robot_Card:hover {
-    scale: 1.01;
 }
 
 .Robot_Card:focus .Robot_Background_Image,
@@ -550,9 +635,15 @@ button:focus-visible {
     filter: brightness(2);
 }
 
+.Robot_Card:focus .Robot_Card_Title_Container > *,
+.Robot_Card:hover .Robot_Card_Title_Container > * {
+    color: var(--bg_white);
+}
+
 .Robot_Card {
-    width: 24.25vw;
+    aspect-ratio: 9/15;
     height: 100%;
+    max-width: 85vw;
     background-color: #1a1a1a8e;
     border-radius: 1rem;
     display: flex;
@@ -561,11 +652,16 @@ button:focus-visible {
     justify-content: start;
 
     flex-shrink: 0;
+
     overflow: hidden;
+
+    margin-inline: auto;
 
     position: relative;
 
     transition: all 0.2s ease-in-out;
+
+    scroll-snap-align: center;
 }
 
 .Robot_Card_Title_Container {
@@ -582,6 +678,7 @@ button:focus-visible {
     font-family: ResearcherBold, sans-serif;
     font-size: 3.8rem;
     margin-top: -1rem;
+    color: var(--secondary_clearBlue);
 }
 
 .Robot_Card_SubTitle {
@@ -602,6 +699,8 @@ button:focus-visible {
     width: 100%;
     grid-column: 1/2;
     grid-row: 1/2;
+
+    object-fit: cover;
 }
 
 .Robot_Background_Image {
@@ -611,6 +710,8 @@ button:focus-visible {
     width: 100%;
 
     opacity: 0.5;
+
+    object-fit: cover;
 
     transition: all 0.2s ease-in-out;
 }

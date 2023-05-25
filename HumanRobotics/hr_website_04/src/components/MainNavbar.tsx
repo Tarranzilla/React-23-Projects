@@ -14,8 +14,14 @@ function MainNavbar() {
 
     const navigate = useNavigate();
 
+    const LinkHandler = () => {
+        if (menuOpen) {
+            setMenuOpen(false);
+            console.log("NavLink clicado, Menu fechado.");
+        }
+    };
+
     const menuOpenHandler = () => {
-        setMenuOpen(!menuOpen);
         if (menuOpen) {
             navigate(-1);
             console.log("Menu Fechado, retornando para página anterior.");
@@ -24,12 +30,13 @@ function MainNavbar() {
         if (!menuOpen) {
             console.log("Menu Aberto");
         }
+        setMenuOpen(!menuOpen);
     };
 
     return (
         <>
             <m.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Main_Navbar">
-                <NavLink to="/" className="LogoType_Container Nav_SideBlock Nav_Sideblock_1">
+                <NavLink to="/" className="LogoType_Container Nav_SideBlock Nav_Sideblock_1" onClick={LinkHandler}>
                     <svg id="Svg0" className="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114.15 126.3">
                         <g id="Layer_2-2">
                             <path
@@ -116,19 +123,19 @@ function MainNavbar() {
                     </AnimatePresence>
 
                     <div className="NavLinks_Container">
-                        <NavLink to="/robos" className="NavLink Desktop_Only">
+                        <NavLink to="/robos" className="NavLink Desktop_Only" onClick={LinkHandler}>
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">smart_toy</span>
                             <div className="NavLink_Text">robôs</div>
                         </NavLink>
-                        <NavLink to="/servicos" className="NavLink Desktop_Only">
+                        <NavLink to="/servicos" className="NavLink Desktop_Only" onClick={LinkHandler}>
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">hub</span>
                             <div className="NavLink_Text">serviços</div>
                         </NavLink>
-                        <NavLink to="/sobre" className="NavLink Desktop_Only">
+                        <NavLink to="/sobre" className="NavLink Desktop_Only" onClick={LinkHandler}>
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">foundation</span>
                             <div className="NavLink_Text">sobre</div>
                         </NavLink>
-                        <NavLink to="/contato" className="NavLink Desktop_Only">
+                        <NavLink to="/contato" className="NavLink Desktop_Only" onClick={LinkHandler}>
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">campaign</span>
                             <div className="NavLink_Text">contato</div>
                         </NavLink>
