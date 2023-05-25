@@ -42,6 +42,10 @@ export default function Menu() {
                     </svg>
                 </div>
                 <div className="menu_container">
+                    <NavLink to="/inicio" className="NavLink Mobile_Only">
+                        <span className="material-icons NavLink_Icon">flag</span>
+                        <div className="NavLink_Text Menu_Text">início</div>
+                    </NavLink>
                     <NavLink to="/robos" className="NavLink">
                         <span className="material-icons NavLink_Icon">smart_toy</span>
                         <div className="NavLink_Text Menu_Text">robôs</div>
@@ -84,27 +88,27 @@ export default function Menu() {
 
                     {prefOpen ? (
                         <div className="preferences_container">
-                            <a href="#menu-preferences-language">
-                                <span className="material-icons">translate</span>
-                                Idioma
-                                <p className="lang_state">
-                                    <span className="material-icons menu_arrow">arrow_right_alt</span>
+                            <a href="#menu-preferences-language" className="PrefLink">
+                                <span className="material-icons preferences_icon">translate</span>
+                                <div className="NavLink_Text Menu_Text preferences_text">Idioma</div>
+                                <p className="lang_state preferences_text">
+                                    <span className="material-icons menu_arrow preferences_icon">arrow_right_alt</span>
                                     {lang}
                                 </p>
                             </a>
-                            <a href="#menu-preferences-theme">
-                                <span className="material-icons">settings_brightness</span>
-                                Tema
-                                <p className="lang_state theme_state">
-                                    <span className="material-icons menu_arrow">arrow_right_alt</span>
+                            <a href="#menu-preferences-theme" className="PrefLink">
+                                <span className="material-icons preferences_icon">settings_brightness</span>
+                                <div className="NavLink_Text Menu_Text preferences_text">Tema</div>
+                                <p className="lang_state theme_state preferences_text">
+                                    <span className="material-icons menu_arrow preferences_icon">arrow_right_alt</span>
                                     {theme}
                                 </p>
                             </a>
-                            <a href="#menu-preferences-cookies">
-                                <span className="material-icons">cookie</span>
-                                Cookies
-                                <p className="lang_state theme_cookies">
-                                    <span className="material-icons menu_arrow">arrow_right_alt</span>
+                            <a href="#menu-preferences-cookies" className="PrefLink">
+                                <span className="material-icons preferences_icon">cookie</span>
+                                <div className="NavLink_Text Menu_Text preferences_text">Cookies</div>
+                                <p className="lang_state theme_cookies preferences_text">
+                                    <span className="material-icons menu_arrow preferences_icon">arrow_right_alt</span>
                                     {cookiesSettings}
                                 </p>
                             </a>

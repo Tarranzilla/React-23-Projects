@@ -15,12 +15,17 @@
     "@fontsource/dongle": "^4.5.8",
     "@fontsource/roboto": "^4.5.8",
     "@mui/material": "^5.13.0",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@tanstack/react-query": "^4.29.7",
+    "@tanstack/react-query-devtools": "^4.29.7",
     "framer-motion": "^10.12.12",
     "material-icons": "^1.13.6",
     "material-symbols": "^0.5.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.1"
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.11.1",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

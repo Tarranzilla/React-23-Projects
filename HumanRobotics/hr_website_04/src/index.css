@@ -47,10 +47,12 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
 
     /* lightmode colors */
     --bg_white: #ffffff;
+    --bg_white_fade_little: #ffffffc0;
     --bg_white-faded: #ffffff4e;
     --font_darkBlue: #000343;
     --primary_mediumBlue: #4400ffe3;
     --secondary_clearBlue: #00aaff;
+    --secondary_clearBlue_Faded: #00aaffc0;
     --error_orange: #ff5520;
     --warning_yellow: #ffae2d;
     --info_purple: #ae00ff;
@@ -541,16 +543,42 @@ li {
 }
 
 .lang_state {
-    font-family: Dongle;
-    font-size: 1.4rem;
+    font-family: Roboto;
     display: flex;
     flex-direction: row;
     place-items: center;
-    padding-top: 0.32rem;
+    gap: 0.5rem;
 }
 
 .Menu_Button_Arrow {
     margin-left: -0.25rem;
+}
+.preferences_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: clamp(0.01rem, 2vw, 0.05rem) clamp(0.5rem, 2vw, 2rem);
+}
+
+.preferences_icon,
+.preferences_text {
+    color: inherit;
+}
+
+.PrefLink {
+    color: var(--bg_white_fade_little);
+}
+
+.PrefLink:hover,
+.PrefLink:focus {
+    transform: scale(1.05);
+    color: var(--bg_white);
+}
+
+.PrefLink:hover > *,
+.PrefLink:focus > * {
+    color: var(--bg_white);
 }
 
 .Home_Title_Group {
@@ -607,9 +635,6 @@ li {
 
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-}
-.Robot_Card:focus,
-.Robot_Card:hover {
 }
 
 .Robot_Card:focus-within .Robot_Background_Image,
@@ -691,7 +716,7 @@ li {
 
 .Robot_Button:hover,
 .Robot_Button:focus {
-    background: var(--bg_white);
+    background: #ffffffcd;
     color: var(--bg_darkBlue);
 }
 
@@ -714,8 +739,8 @@ li {
     cursor: pointer;
 
     box-shadow: 0px -20px 20px 0px var(--bg_darkBlue);
-    background: var(--secondary_clearBlue);
-    backdrop-filter: blur(10px);
+    background: var(--secondary_clearBlue_Faded);
+    backdrop-filter: blur(5px);
     color: var(--bg_darkBlue);
 
     transition: all 0.2s ease-in-out;

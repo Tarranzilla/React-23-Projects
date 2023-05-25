@@ -3,6 +3,17 @@ import App from "./App.tsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import authReducer from "./context/main_context.tsx";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
+
+import storage from "redux-persist/lib/storage";
+import { PersistGate } from "redux-persist/integration/react";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -27,12 +38,31 @@ import Experience from "./routes/Experience.tsx";
 import Contact from "./routes/Contact.tsx";
 import Menu from "./routes/Menu.tsx";
 
+const persistConfig = {
+    key: "root",
+    storage,
+    version: 1,
+};
+
+const persistedReducer = persistReducer(persistConfig, authReducer);
+const store = configureStore({
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+            },
+        }),
+});
+
+const queryClient = new QueryClient();
+
 const router = createBrowserRouter([
     {
         element: <App />,
         children: [
             {
-                path: "/",
+                path: "/inicio",
                 element: <Home />,
             },
             {
@@ -95,4 +125,13 @@ const router = createBrowserRouter([
     },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(<RouterProvider router={router} />);
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+    <Provider store={store}>
+        <PersistGate loading={null} persistor={persistStore(store)}>
+            <QueryClientProvider client={queryClient}>
+                <RouterProvider router={router} />
+                <ReactQueryDevtools />
+            </QueryClientProvider>
+        </PersistGate>
+    </Provider>
+);
