@@ -7,7 +7,7 @@ import { useState } from "react";
 // import { themeSettings } from "./theme.js";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setMode, setLogout } from "../context/main_context";
+import { setMode, setLogout, toggleMenu } from "../context/main_context";
 import { dark } from "@mui/material/styles/createPalette";
 
 import { useTheme, useMediaQuery } from "@mui/material";
@@ -22,7 +22,10 @@ function MainNavbar() {
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
+
     const username = useSelector((state: any) => state.username);
+    const mode = useSelector((state: any) => state.mode);
+    const menuIsOpen = useSelector((state: any) => state.menuIsOpen);
 
     const isDesktop = useMediaQuery("(min-width: 1240px)");
     const isMobile = useMediaQuery("(max-width: 1000px)");
@@ -37,22 +40,30 @@ function MainNavbar() {
     const primaryDark = theme.palette.primary.dark;
 
     const LinkHandler = () => {
-        if (menuOpen) {
-            setMenuOpen(false);
+        if (menuIsOpen) {
+            dispatch(
+                toggleMenu({
+                    menuState: false,
+                })
+            );
             console.log("NavLink clicado, Menu fechado.");
         }
     };
 
     const menuOpenHandler = () => {
-        if (menuOpen) {
+        if (menuIsOpen) {
             navigate(-1);
             console.log("Menu Fechado, retornando para página anterior.");
         }
 
-        if (!menuOpen) {
+        if (!menuIsOpen) {
             console.log("Menu Aberto");
         }
-        setMenuOpen(!menuOpen);
+        dispatch(
+            toggleMenu({
+                menuState: !menuIsOpen,
+            })
+        );
     };
 
     return (

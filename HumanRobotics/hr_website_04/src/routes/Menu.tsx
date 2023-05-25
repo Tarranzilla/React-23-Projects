@@ -22,11 +22,32 @@ const MenuPrefAnimation = {
 
 */
 
+import { useDispatch, useSelector } from "react-redux";
+import { setMode, setLogout, toggleMenu } from "../context/main_context";
+import { dark } from "@mui/material/styles/createPalette";
+
 export default function Menu() {
     const [prefOpen, setPrefOpen] = useState(false);
     const [lang] = useState("Português Brasileiro");
     const [theme] = useState("RobiOS Dark");
     const [cookiesSettings] = useState("Permitir Todos");
+
+    const username = useSelector((state: any) => state.username);
+    const mode = useSelector((state: any) => state.mode);
+    const menuIsOpen = useSelector((state: any) => state.menuIsOpen);
+
+    const dispatch = useDispatch();
+
+    const LinkHandler = () => {
+        if (menuIsOpen) {
+            dispatch(
+                toggleMenu({
+                    menuState: false,
+                })
+            );
+            console.log("NavLink clicado, Menu fechado.");
+        }
+    };
 
     return (
         <>
@@ -42,35 +63,35 @@ export default function Menu() {
                     </svg>
                 </div>
                 <div className="menu_container">
-                    <NavLink to="/inicio" className="NavLink Mobile_Only">
+                    <NavLink to="/inicio" className="NavLink Mobile_Only" onClick={LinkHandler}>
                         <span className="material-icons NavLink_Icon">flag</span>
                         <div className="NavLink_Text Menu_Text">início</div>
                     </NavLink>
-                    <NavLink to="/robos" className="NavLink">
+                    <NavLink to="/robos" className="NavLink" onClick={LinkHandler}>
                         <span className="material-icons NavLink_Icon">smart_toy</span>
                         <div className="NavLink_Text Menu_Text">robôs</div>
                     </NavLink>
-                    <NavLink to="/servicos" className="NavLink">
+                    <NavLink to="/servicos" className="NavLink" onClick={LinkHandler}>
                         <span className="material-icons NavLink_Icon">hub</span>
                         <div className="NavLink_Text Menu_Text">serviços</div>
                     </NavLink>
-                    <NavLink to="/sobre" className="NavLink">
+                    <NavLink to="/sobre" className="NavLink" onClick={LinkHandler}>
                         <span className="material-icons NavLink_Icon">foundation</span>
                         <div className="NavLink_Text Menu_Text">sobre</div>
                     </NavLink>
-                    <NavLink to="/contato" className="NavLink">
+                    <NavLink to="/contato" className="NavLink" onClick={LinkHandler}>
                         <span className="material-icons NavLink_Icon">campaign</span>
                         <div className="NavLink_Text Menu_Text">contato</div>
                     </NavLink>
-                    <NavLink to="/login" className="NavLink">
+                    <NavLink to="/login" className="NavLink" onClick={LinkHandler}>
                         <span className="material-icons NavLink_Icon">login</span>
                         <div className="NavLink_Text Menu_Text">Login</div>
                     </NavLink>
-                    <NavLink to="/blog" className="NavLink">
+                    <NavLink to="/blog" className="NavLink" onClick={LinkHandler}>
                         <span className="material-icons NavLink_Icon">pages</span>
                         <div className="NavLink_Text Menu_Text">Blog</div>
                     </NavLink>
-                    <NavLink to="/duvidas" className="NavLink">
+                    <NavLink to="/duvidas" className="NavLink" onClick={LinkHandler}>
                         <span className="material-icons NavLink_Icon">live_help</span>
                         <div className="NavLink_Text Menu_Text">Dúvidas</div>
                     </NavLink>
@@ -116,7 +137,7 @@ export default function Menu() {
                     ) : (
                         <></>
                     )}
-                    <NavLink to="/studio" className="NavLink">
+                    <NavLink to="/studio" className="NavLink" onClick={LinkHandler}>
                         <span className="material-icons NavLink_Icon">science</span>
                         <div className="NavLink_Text Menu_Text">RobiOSStudio</div>
                     </NavLink>

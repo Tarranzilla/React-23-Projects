@@ -14,7 +14,7 @@ export default function Robots() {
         <>
             <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Route_Container">
                 <div className="Robots_Container">
-                    <a href="#avatar" className="Robot_Card First_Robot_Card" id="avatar">
+                    <div className="Robot_Card First_Robot_Card" id="avatar">
                         <div className="Robot_Card_Title_Container">
                             <h3 className="Robot_Card_Title Robot_Card_SubTitle">RobiOS</h3>
                             <h2 className="Robot_Card_Title">AVATAR</h2>
@@ -28,9 +28,9 @@ export default function Robots() {
                             <img src={Avatar} className="Robot_Main_Image"></img>
                             <img src={AvatarBg} className="Robot_Background_Image"></img>
                         </div>
-                    </a>
+                    </div>
 
-                    <a href="#go" className="Robot_Card" id="go">
+                    <div className="Robot_Card" id="go">
                         <div className="Robot_Card_Title_Container">
                             <h3 className="Robot_Card_Title Robot_Card_SubTitle">RobiOS</h3>
                             <h2 className="Robot_Card_Title">GO</h2>
@@ -44,9 +44,9 @@ export default function Robots() {
                             <img src={Go} className="Robot_Main_Image"></img>
                             <img src={GoBg} className="Robot_Background_Image"></img>
                         </div>
-                    </a>
+                    </div>
 
-                    <a href="#inspector" className="Robot_Card" id="inspector">
+                    <div className="Robot_Card" id="inspector">
                         <div className="Robot_Card_Title_Container">
                             <h3 className="Robot_Card_Title Robot_Card_SubTitle">RobiOS</h3>
                             <h2 className="Robot_Card_Title">INSPECTOR</h2>
@@ -60,9 +60,9 @@ export default function Robots() {
                             <img src={Inspector} className="Robot_Main_Image"></img>
                             <img src={InspectorBg} className="Robot_Background_Image"></img>
                         </div>
-                    </a>
+                    </div>
 
-                    <a href="#cargo" className="Robot_Card Last_Robot_Card" id="cargo">
+                    <div className="Robot_Card Last_Robot_Card" id="cargo">
                         <div className="Robot_Card_Title_Container">
                             <h3 className="Robot_Card_Title Robot_Card_SubTitle">RobiOS</h3>
                             <h2 className="Robot_Card_Title">CARGO</h2>
@@ -76,7 +76,7 @@ export default function Robots() {
                             <img src={Cargo} className="Robot_Main_Image"></img>
                             <img src={CargoBg} className="Robot_Background_Image"></img>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </m.div>
         </>
