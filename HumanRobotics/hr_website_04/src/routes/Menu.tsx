@@ -23,8 +23,8 @@ const MenuPrefAnimation = {
 */
 
 import { useDispatch, useSelector } from "react-redux";
-import { setMode, setLogout, toggleMenu } from "../context/main_context";
-import { dark } from "@mui/material/styles/createPalette";
+import { toggleMenu } from "../context/main_context";
+//import { dark } from "@mui/material/styles/createPalette";
 
 export default function Menu() {
     const [prefOpen, setPrefOpen] = useState(false);
@@ -32,8 +32,8 @@ export default function Menu() {
     const [theme] = useState("RobiOS Dark");
     const [cookiesSettings] = useState("Permitir Todos");
 
-    const username = useSelector((state: any) => state.username);
-    const mode = useSelector((state: any) => state.mode);
+    //    const username = useSelector((state: any) => state.username);
+    //    const mode = useSelector((state: any) => state.mode);
     const menuIsOpen = useSelector((state: any) => state.menuIsOpen);
 
     const dispatch = useDispatch();

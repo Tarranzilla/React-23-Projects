@@ -1,20 +1,18 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { motion as m, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+// import { useState } from "react";
 
 // import { CssBaseline, ThemeProvider } from "@mui/material";
 // import { createTheme } from "@mui/material/styles";
 // import { themeSettings } from "./theme.js";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setMode, setLogout, toggleMenu } from "../context/main_context";
-import { dark } from "@mui/material/styles/createPalette";
+import { toggleMenu } from "../context/main_context";
+// import { dark } from "@mui/material/styles/createPalette";
 
-import { useTheme, useMediaQuery } from "@mui/material";
+// import { useTheme, useMediaQuery } from "@mui/material";
 
 function MainNavbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
-
     const currentLocation = useLocation();
     const currentLocationParsed = currentLocation.pathname.replace(/[^a-zA-Z ]/g, "");
     console.log(currentLocationParsed);
@@ -23,21 +21,21 @@ function MainNavbar() {
 
     const dispatch = useDispatch();
 
-    const username = useSelector((state: any) => state.username);
-    const mode = useSelector((state: any) => state.mode);
+    //    const username = useSelector((state: any) => state.username);
+    //    const mode = useSelector((state: any) => state.mode);
     const menuIsOpen = useSelector((state: any) => state.menuIsOpen);
 
-    const isDesktop = useMediaQuery("(min-width: 1240px)");
-    const isMobile = useMediaQuery("(max-width: 1000px)");
+    //    const isDesktop = useMediaQuery("(min-width: 1240px)");
+    //    const isMobile = useMediaQuery("(max-width: 1000px)");
 
-    const theme = useTheme();
+    //    const theme = useTheme();
 
-    const neutralLight = theme.palette.primary.light;
-    const neutralDark = theme.palette.primary.dark;
-    const lightBackground = theme.palette.background.default;
-    const darkBackground = theme.palette.background.default;
-    const primaryLight = theme.palette.primary.light;
-    const primaryDark = theme.palette.primary.dark;
+    //    const neutralLight = theme.palette.primary.light;
+    //    const neutralDark = theme.palette.primary.dark;
+    //    const lightBackground = theme.palette.background.default;
+    //    const darkBackground = theme.palette.background.default;
+    //    const primaryLight = theme.palette.primary.light;
+    //    const primaryDark = theme.palette.primary.dark;
 
     const LinkHandler = () => {
         if (menuIsOpen) {

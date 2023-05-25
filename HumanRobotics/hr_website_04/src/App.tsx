@@ -1,10 +1,10 @@
-import { useState, useReducer, useMemo, useCallback, useEffect } from "react";
+import { useMemo } from "react";
 
 import { Outlet } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 import { useSelector } from "react-redux";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme.tsx";
 
@@ -15,7 +15,7 @@ import MainNavbar from "./components/MainNavbar";
 function App() {
     const mode = useSelector((state: any) => state.mode);
     const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
-    const isAuth = Boolean(useSelector((state: any) => state.token));
+    // const isAuth = Boolean(useSelector((state: any) => state.token));
 
     return (
         <>
