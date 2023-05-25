@@ -553,25 +553,6 @@ li {
     margin-left: -0.25rem;
 }
 
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-}
-button:hover {
-    border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-}
-
 .Home_Title_Group {
     display: flex;
     flex-direction: column;
@@ -622,6 +603,8 @@ button:focus-visible {
     overflow-x: auto;
     overflow-y: visible;
 
+    padding-block: var(--small-gap);
+
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
 }
@@ -629,12 +612,14 @@ button:focus-visible {
 .Robot_Card:hover {
 }
 
+.Robot_Card:focus-within .Robot_Background_Image,
 .Robot_Card:focus .Robot_Background_Image,
 .Robot_Card:hover .Robot_Background_Image {
     opacity: 1;
     filter: brightness(2);
 }
 
+.Robot_Card:focus-within .Robot_Card_Title_Container > *,
 .Robot_Card:focus .Robot_Card_Title_Container > *,
 .Robot_Card:hover .Robot_Card_Title_Container > * {
     color: var(--bg_white);
@@ -645,7 +630,7 @@ button:focus-visible {
     height: 100%;
     max-width: 85vw;
     background-color: #1a1a1a8e;
-    border-radius: 1rem;
+    border-radius: var(--small-gap);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -659,9 +644,20 @@ button:focus-visible {
 
     position: relative;
 
+    border: 1px solid var(--secondary_clearBlue);
+
     transition: all 0.2s ease-in-out;
 
     scroll-snap-align: center;
+    cursor: default;
+}
+
+.First_Robot_Card {
+    margin-left: 0;
+}
+
+.Last_Robot_Card {
+    margin-right: 0;
 }
 
 .Robot_Card_Title_Container {
@@ -691,6 +687,38 @@ button:focus-visible {
     grid-template-columns: 1fr;
     height: 100%;
     width: 100%;
+}
+
+.Robot_Button:hover,
+.Robot_Button:focus {
+    background: var(--bg_white);
+    color: var(--bg_darkBlue);
+}
+
+.Robot_Button {
+    z-index: 2;
+    position: absolute;
+    height: 5vh;
+    width: 100%;
+    border-top: 1px solid var(--secondary_clearBlue);
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2rem;
+    font-family: Dongle;
+    font-weight: 300;
+    padding: 0 var(--medium-gap);
+    cursor: pointer;
+
+    box-shadow: 0px -20px 20px 0px var(--bg_darkBlue);
+    background: var(--secondary_clearBlue);
+    backdrop-filter: blur(10px);
+    color: var(--bg_darkBlue);
+
+    transition: all 0.2s ease-in-out;
 }
 
 .Robot_Main_Image {
