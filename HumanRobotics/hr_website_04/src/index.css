@@ -51,6 +51,7 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
     --bg_white-faded: #ffffff4e;
     --font_darkBlue: #000343;
     --primary_mediumBlue: #4400ffe3;
+    --primary_mediumBlue_Faded: #4400ff64;
     --secondary_clearBlue: #00aaff;
     --secondary_clearBlue_Faded: #00aaffc0;
     --error_orange: #ff5520;
@@ -60,6 +61,7 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
 
     /* darkmode colors */
     --bg_darkBlue: #000343;
+    --bg_darkBlue_Faded: #00034365;
     --font_white: #ffffff;
     --primary_mediumBlue: #4400ffe3;
     --secondary_clearBlue: #00aaff;
@@ -114,7 +116,7 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
     --large-gap: 5vh;
     --larger-gap: 10vh;
 
-    --carroussel-card-width: 20vw;
+    --carroussel-card-width: 300px;
     --carroussel-card-height: 100%; /* ou 300px */
     --card-padding: var(--small-gap);
 
@@ -620,9 +622,14 @@ li {
     animation: scrollRight_Parceiros 90s linear infinite reverse;
 }
 
+.track-experiencias > .card > img {
+    width: 96%;
+    height: 95%;
+}
+
 .track-parceiros > .card > img {
     object-fit: contain;
-    width: 75%;
+    width: 40%;
 }
 
 @keyframes scrollLeft_Experiencias {
@@ -645,12 +652,12 @@ li {
 
 .card {
     display: grid;
+    align-items: center;
     justify-items: center;
-    grid-template-columns: var(--carroussel-card-width);
+    grid-template-columns: 300px;
     grid-template-rows: repeat(2, 50%);
     height: var(--carroussel-card-height);
     border-radius: var(--small-gap);
-    padding-inline: var(--small-gap);
     flex-shrink: 0;
     flex-grow: 0;
 }
@@ -661,7 +668,7 @@ li {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: var(--small-gap);
+    border-radius: 0.35rem;
 }
 
 .card > .card-content {
@@ -670,7 +677,7 @@ li {
     grid-row: 1/3;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--bg_darkBlue_Faded);
     color: white;
     display: flex;
     flex-direction: column;
