@@ -113,6 +113,13 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
     --medium-gap: 2.5vh;
     --large-gap: 5vh;
     --larger-gap: 10vh;
+
+    --carroussel-card-width: 20vw;
+    --carroussel-card-height: 100%; /* ou 300px */
+    --card-padding: var(--small-gap);
+
+    --experience-cards-ammount: 17;
+    --partners-card-ammount: 12;
 }
 
 * {
@@ -581,24 +588,136 @@ li {
     color: var(--bg_white);
 }
 
-.Home_Title_Group {
+/* Home */
+
+.Home_Route {
+}
+
+.card-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+
+    overflow-x: hidden; /* ou overflow-x: auto */
+
+    border-radius: var(--small-gap);
+}
+
+.card-container-track {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.track-experiencias {
+    animation: scrollLeft_Experiencias 90s linear infinite;
+}
+
+.track-parceiros {
+    transform: translateX();
+    animation: scrollRight_Parceiros 90s linear infinite reverse;
+}
+
+.track-parceiros > .card > img {
+    object-fit: contain;
+    width: 75%;
+}
+
+@keyframes scrollLeft_Experiencias {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(var(--carroussel-card-width) * var(--experience-cards-ammount) * -1));
+    }
+}
+
+@keyframes scrollRight_Parceiros {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(var(--carroussel-card-width) * var(--partners-card-ammount) * -1));
+    }
+}
+
+.card {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: var(--carroussel-card-width);
+    grid-template-rows: repeat(2, 50%);
+    height: var(--carroussel-card-height);
+    border-radius: var(--small-gap);
+    padding-inline: var(--small-gap);
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.card > img {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--small-gap);
+}
+
+.card > .card-content {
+    z-index: 1;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
-    max-width: 800px;
-    gap: 2rem;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    border-radius: var(--small-gap);
+
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.card-content:hover {
+    opacity: 1;
+}
+
+.Home_Title_Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 59%;
+    margin-block: var(--large-gap);
+}
+
+.Home_Title_Group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
 }
 
 .Home_Title {
     text-align: start;
     flex-direction: row;
     justify-content: start;
-    gap: 1rem;
+    font-size: 3rem;
+    text-transform: none;
 }
 
-.Home_Title strong {
-    color: #747bff;
+.Home_Title_Changer {
+    margin-left: var(--small-gap);
+    margin-right: auto;
+    font-size: 3rem;
 }
 
 .Robots_Container::-webkit-scrollbar {
@@ -768,6 +887,8 @@ li {
 
     transition: all 0.2s ease-in-out;
 }
+
+/* Add any additional styling as per your requirements */
 
 /* generate a media query based on width using the screen method */
 

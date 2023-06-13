@@ -28,7 +28,7 @@ import About from "./routes/About.tsx";
 import Login from "./routes/Login.tsx";
 import Register from "./routes/Register.tsx";
 import ProfilePage from "./routes/ProfilePage.tsx";
-import Product from "./routes/Product.tsx";
+// import Product from "./routes/Product.tsx";
 import RobiosStudio from "./routes/RobiosStudio.tsx";
 import Blog from "./routes/Blog.tsx";
 import FAQ from "./routes/FAQ.tsx";
@@ -37,6 +37,7 @@ import Services from "./routes/Services.tsx";
 import Experience from "./routes/Experience.tsx";
 import Contact from "./routes/Contact.tsx";
 import Menu from "./routes/Menu.tsx";
+import NotFound from "./routes/NotFound.tsx";
 
 const persistConfig = {
     key: "root",
@@ -98,10 +99,6 @@ const router = createBrowserRouter([
                 element: <ProfilePage />,
             },
             {
-                path: "/robos/:id",
-                element: <Product />,
-            },
-            {
                 path: "/studio",
                 element: <RobiosStudio />,
             },
@@ -119,7 +116,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "*",
-                element: <div>404 Page Not Found</div>,
+                element: <NotFound />,
             },
         ],
     },
