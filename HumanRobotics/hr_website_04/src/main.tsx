@@ -33,6 +33,12 @@ import RobiosStudio from "./routes/RobiosStudio.tsx";
 import Blog from "./routes/Blog.tsx";
 import FAQ from "./routes/FAQ.tsx";
 import Robots from "./routes/Robots.tsx";
+
+import AvatarInfo from "./routes/AvatarInfo.tsx";
+import GoInfo from "./routes/GoInfo.tsx";
+import InspectorInfo from "./routes/InspectorInfo.tsx";
+import CargoInfo from "./routes/CargoInfo.tsx";
+
 import Services from "./routes/Services.tsx";
 import Experience from "./routes/Experience.tsx";
 import Contact from "./routes/Contact.tsx";
@@ -73,6 +79,22 @@ const router = createBrowserRouter([
             {
                 path: "/robos",
                 element: <Robots />,
+            },
+            {
+                path: "/avatar-info",
+                element: <AvatarInfo />,
+            },
+            {
+                path: "/go-info",
+                element: <GoInfo />,
+            },
+            {
+                path: "/inspector-info",
+                element: <InspectorInfo />,
+            },
+            {
+                path: "/cargo-info",
+                element: <CargoInfo />,
             },
             {
                 path: "/servicos",

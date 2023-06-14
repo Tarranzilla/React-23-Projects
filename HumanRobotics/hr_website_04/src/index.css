@@ -639,7 +639,7 @@ li {
 
 .track-parceiros > .card > img {
     object-fit: contain;
-    width: 45%;
+    width: 60%;
 }
 
 @keyframes scrollLeft_Experiencias {
@@ -750,6 +750,8 @@ li {
         margin-left: auto;
     }
 }
+
+/* Robôs */
 
 .Robots_Container::-webkit-scrollbar {
     height: 0.5rem;
@@ -919,9 +921,227 @@ li {
     transition: all 0.2s ease-in-out;
 }
 
+/* Robot Info */
+
+.Robot_Info_Route_Container {
+    flex-direction: row;
+}
+
+.Robot_Info_Close {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin: var(--small-gap);
+    padding: var(--small-gap);
+    border-radius: var(--small-gap);
+    gap: var(--small-gap);
+
+    transition: background-color 0.2s ease-in-out;
+}
+
+.Robot_Info_Close:hover {
+    background-color: var(--bg_darkBlue_Faded);
+}
+
+.Robot_Info_Media_Container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--small-gap);
+    overflow: hidden;
+}
+
+.Robot_Info_Image_Container {
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+}
+
+.Robot_Info_Main_Image {
+    position: absolute;
+    aspect-ratio: 1/1;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    scale: 1.5;
+
+    object-fit: contain;
+}
+
+.Robot_Info_Background_Image {
+    z-index: 1;
+    position: absolute;
+    aspect-ratio: 1/1;
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    opacity: 0.5;
+
+    object-fit: cover;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.Robot_Info_Specs_Container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-inline: var(--medium-gap);
+    padding-block: var(--medium-gap);
+}
+
+.Specs_Title {
+    color: var(--bg_darkBlue);
+}
+
+.Specs_SubTitle {
+    text-align: center;
+    font-weight: 200;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.Specs_Description {
+    font-weight: 200;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.Specs_List {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.Specs_List li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: var(--small-gap);
+
+    font-size: 1.4rem;
+    font-weight: 200;
+}
+
+.Specs_List svg {
+    fill: var(--bg_darkBlue);
+}
+
+.Action_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-gap);
+    width: 100%;
+}
+
+.Action_Container > * {
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    background-color: var(--secondary_clearBlue);
+    color: var(--bg_white);
+    padding: var(--small-gap);
+
+    width: 24%;
+    border-radius: var(--small-gap);
+}
+
+/* Serviços / Soluções */
+
+.Service_Text_Container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding-left: var(--medium-gap);
+    width: 50%;
+    z-index: 1;
+    left: 0;
+}
+
+.Service_Text_Container a {
+    justify-content: start;
+}
+
+.Solution_Video-Container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    border-radius: var(--small-gap);
+}
+
+.Solution_Video-Container::-webkit-scrollbar {
+    display: none;
+}
+
+.Solution_Video-Container video {
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: var(--small-gap);
+    filter: opacity(0.4);
+}
+
 /* Sobre */
 
 .Sobre_Route {
+}
+
+.Sobre_Title {
+    flex-shrink: 0;
+}
+
+.About_Title_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--medium-gap);
+
+    margin-block: var(--medium-gap);
+    padding-right: var(--medium-gap);
+}
+
+.About_Title_Container p {
+    text-align: start;
 }
 
 .Sobre_Text {
@@ -929,6 +1149,7 @@ li {
 
 .Sobre_Foto {
     height: 60%;
+    flex-grow: 100;
     width: 100%;
     object-fit: cover;
     border-radius: var(--small-gap);
@@ -942,6 +1163,18 @@ li {
     flex-direction: row;
 }
 
+.Contato_Title_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--medium-gap);
+}
+
+.Contato_Title_Container p {
+    text-align: start;
+}
+
 .Contato_Container_1 {
     display: flex;
     flex-direction: column;
@@ -950,10 +1183,11 @@ li {
     gap: var(--small-gap);
     height: 100%;
     width: 50%;
+    padding: var(--medium-gap);
 }
 
 .Contato_Mapa_Container {
-    height: 100%;
+    height: 53%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -975,10 +1209,12 @@ li {
     justify-content: center;
     gap: var(--small-gap);
     width: 50%;
+    height: 100%;
+    padding: var(--medium-gap);
 }
 
 .Form_Container a {
-    width: 45%;
+    width: 60%;
     background-color: var(--secondary_clearBlue);
     font-family: Dongle;
     font-weight: 300;
@@ -990,7 +1226,7 @@ li {
 }
 
 .Form {
-    width: 45%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: start;

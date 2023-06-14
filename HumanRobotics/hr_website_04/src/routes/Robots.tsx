@@ -1,4 +1,5 @@
 import { motion as m } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import Avatar from "../assets/images/Robios_AVATAR_New.png";
 import AvatarBg from "../assets/images/Robios_AVATAR_New_Background.png";
@@ -20,9 +21,9 @@ export default function Robots() {
                             <h2 className="Robot_Card_Title">AVATAR</h2>
                         </div>
 
-                        <a href="avatar-info" className="Robot_Button">
+                        <Link to="/avatar-info" className="Robot_Button">
                             + Informações
-                        </a>
+                        </Link>
 
                         <div className="Robot_Image_Container">
                             <img src={Avatar} className="Robot_Main_Image"></img>
@@ -36,9 +37,9 @@ export default function Robots() {
                             <h2 className="Robot_Card_Title">GO</h2>
                         </div>
 
-                        <a href="go-info" className="Robot_Button">
+                        <Link to="/go-info" className="Robot_Button">
                             + Informações
-                        </a>
+                        </Link>
 
                         <div className="Robot_Image_Container">
                             <img src={Go} className="Robot_Main_Image"></img>
@@ -52,9 +53,9 @@ export default function Robots() {
                             <h2 className="Robot_Card_Title">INSPECTOR</h2>
                         </div>
 
-                        <a href="inspector-info" className="Robot_Button">
+                        <Link to="/inspector-info" className="Robot_Button">
                             + Informações
-                        </a>
+                        </Link>
 
                         <div className="Robot_Image_Container">
                             <img src={Inspector} className="Robot_Main_Image"></img>
@@ -68,9 +69,9 @@ export default function Robots() {
                             <h2 className="Robot_Card_Title">CARGO</h2>
                         </div>
 
-                        <a href="cargo-info" className="Robot_Button">
+                        <Link to="/cargo-info" className="Robot_Button">
                             + Informações
-                        </a>
+                        </Link>
 
                         <div className="Robot_Image_Container">
                             <img src={Cargo} className="Robot_Main_Image"></img>

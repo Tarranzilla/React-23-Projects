@@ -5,8 +5,10 @@ export default function Contact() {
         <>
             <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Route_Container Contato_Route">
                 <div className="Contato_Container_1">
-                    <h1 className="Route_Title">Contato</h1>
-                    <p className="Main_Text Contato_Text">Juntos descobriremos como a Robótica pode somar com seu negócio!</p>
+                    <div className="Contato_Title_Container">
+                        <h1 className="Route_Title">Contato</h1>
+                        <p className="Main_Text Contato_Text">Juntos descobriremos como a Robótica pode somar com seu negócio!</p>
+                    </div>
                     <div className="Contato_Mapa_Container">
                         <iframe
                             className="Contato_Mapa"
