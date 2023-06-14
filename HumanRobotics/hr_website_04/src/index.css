@@ -230,6 +230,15 @@ body,
     position: relative;
 }
 
+.Main_Text {
+    font-size: 1.6rem;
+    padding-inline: 0;
+    font-family: "Roboto";
+    font-weight: 200;
+    text-align: center;
+    margin-block: var(--small-gap);
+}
+
 .Footer {
     height: var(--footer-height);
     width: 100%;
@@ -309,7 +318,8 @@ h1 {
 .Route_Title {
     text-transform: capitalize;
     color: var(--secondary_clearBlue);
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: clamp(1.5rem, 5vw, 8rem);
+    line-height: normal;
 }
 
 ul,
@@ -629,7 +639,7 @@ li {
 
 .track-parceiros > .card > img {
     object-fit: contain;
-    width: 40%;
+    width: 45%;
 }
 
 @keyframes scrollLeft_Experiencias {
@@ -907,6 +917,97 @@ li {
     object-fit: cover;
 
     transition: all 0.2s ease-in-out;
+}
+
+/* Sobre */
+
+.Sobre_Route {
+}
+
+.Sobre_Text {
+}
+
+.Sobre_Foto {
+    height: 60%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--small-gap);
+    border: 1px solid var(--secondary_clearBlue);
+    filter: opacity(0.7);
+}
+
+/* Contato */
+
+.Contato_Route {
+    flex-direction: row;
+}
+
+.Contato_Container_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-gap);
+    height: 100%;
+    width: 50%;
+}
+
+.Contato_Mapa_Container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--small-gap);
+    border: 1px solid var(--secondary_clearBlue);
+    overflow: hidden;
+}
+
+.Contato_Mapa {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.Form_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-gap);
+    width: 50%;
+}
+
+.Form_Container a {
+    width: 45%;
+    background-color: var(--secondary_clearBlue);
+    font-family: Dongle;
+    font-weight: 300;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    padding: var(--small-gap);
+    border-radius: var(--small-gap);
+}
+
+.Form {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+}
+
+.Form > * {
+    width: 100%;
+    padding: var(--small-gap);
+    border-radius: var(--small-gap);
+    border: 1px solid var(--secondary_clearBlue);
+    margin-bottom: var(--small-gap);
+}
+
+.Icone_Vetor {
+    width: 40px;
+    height: 40px;
 }
 
 /* Add any additional styling as per your requirements */
