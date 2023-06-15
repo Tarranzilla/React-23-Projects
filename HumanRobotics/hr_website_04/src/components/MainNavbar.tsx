@@ -160,7 +160,7 @@ function MainNavbar() {
                         </NavLink>
                         <NavLink to="/servicos" className="NavLink Desktop_Only" onClick={LinkHandler}>
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">hub</span>
-                            <div className="NavLink_Text">serviços</div>
+                            <div className="NavLink_Text">soluções</div>
                         </NavLink>
                         <NavLink to="/sobre" className="NavLink Desktop_Only" onClick={LinkHandler}>
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">foundation</span>

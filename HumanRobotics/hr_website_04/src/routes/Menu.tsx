@@ -73,7 +73,7 @@ export default function Menu() {
                     </NavLink>
                     <NavLink to="/servicos" className="NavLink" onClick={LinkHandler}>
                         <span className="material-icons NavLink_Icon">hub</span>
-                        <div className="NavLink_Text Menu_Text">serviços</div>
+                        <div className="NavLink_Text Menu_Text">soluções</div>
                     </NavLink>
                     <NavLink to="/sobre" className="NavLink" onClick={LinkHandler}>
                         <span className="material-icons NavLink_Icon">foundation</span>
