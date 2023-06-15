@@ -31,7 +31,6 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
 
 :root {
     font-family: "Roboto", sans-serif;
-    line-height: 1.5;
     font-weight: 400;
 
     font-synthesis: none;
@@ -39,9 +38,6 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
-
-    /* Nº de Experience Scroll-Items */
-    --scroll-item-ammount: 10;
 
     --color-debug: #f00; /* Legacy */
 
@@ -70,6 +66,7 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
     --info_purple: #ae00ff;
     --success_turquoise: #00ffd5de;
 
+    /* Basic Colors */
     color-scheme: light dark;
     color: var(--font_white);
     background-color: var(--bg_white);
@@ -318,7 +315,7 @@ h1 {
 .Route_Title {
     text-transform: capitalize;
     color: var(--secondary_clearBlue);
-    font-size: clamp(1.5rem, 5vw, 8rem);
+    font-size: clamp(1.5rem, 10vw, 10rem);
     line-height: normal;
 }
 
@@ -710,7 +707,7 @@ li {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 60%;
+    width: 100%;
     margin-block: var(--large-gap);
 }
 
@@ -721,20 +718,21 @@ li {
     justify-content: space-between;
     width: 100%;
     gap: 20px;
+    padding-inline: var(--large-gap);
 }
 
 .Home_Title {
     text-align: start;
     flex-direction: row;
     justify-content: start;
-    font-size: clamp(2rem, 3vw, 3rem);
+    font-size: clamp(3rem, 10vw, 6rem);
     text-transform: none;
 }
 
 .Home_Title_Changer {
     margin-left: var(--small-gap);
     margin-right: auto;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(3rem, 10vw, 6rem);
 }
 
 @media screen and (max-width: 768px) {
@@ -1135,16 +1133,16 @@ li {
     align-items: center;
     justify-content: center;
     gap: var(--medium-gap);
-
-    margin-block: var(--medium-gap);
+    margin-bottom: var(--medium-gap);
     padding-right: var(--medium-gap);
 }
 
-.About_Title_Container p {
-    text-align: start;
-}
-
 .Sobre_Text {
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: start;
+    color: var(--bg_darkBlue);
 }
 
 .Sobre_Foto {
@@ -1165,21 +1163,33 @@ li {
 
 .Contato_Title_Container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
     justify-content: center;
-    gap: var(--medium-gap);
+    gap: var(--small-gap);
+}
+
+.Contato_Title {
+    color: var(--secondary_clearBlue);
 }
 
 .Contato_Title_Container p {
     text-align: start;
 }
 
+.Contato_Text {
+    font-size: 3rem;
+    font-weight: 200;
+    margin-block: 0;
+    margin-top: -1rem;
+    margin-bottom: var(--small-gap);
+}
+
 .Contato_Container_1 {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: space-between;
     gap: var(--small-gap);
     height: 100%;
     width: 50%;
@@ -1187,7 +1197,8 @@ li {
 }
 
 .Contato_Mapa_Container {
-    height: 53%;
+    height: 60%;
+    flex-grow: 1000;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1206,7 +1217,7 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     gap: var(--small-gap);
     width: 50%;
     height: 100%;
@@ -1214,7 +1225,7 @@ li {
 }
 
 .Form_Container a {
-    width: 60%;
+    width: 80%;
     background-color: var(--secondary_clearBlue);
     font-family: Dongle;
     font-weight: 300;
@@ -1226,24 +1237,137 @@ li {
 }
 
 .Form {
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .Form > * {
     width: 100%;
     padding: var(--small-gap);
-    border-radius: var(--small-gap);
-    border: 1px solid var(--secondary_clearBlue);
-    margin-bottom: var(--small-gap);
+    border-top: 1px solid var(--bg_darkBlue);
+    border-left: 1px solid var(--bg_darkBlue);
+    border-right: 1px solid var(--bg_darkBlue);
+}
+
+.first-input {
+    border-radius: var(--small-gap) var(--small-gap) 0 0;
+}
+
+input {
+    height: 3.5rem;
+}
+textarea:hover,
+input:hover,
+textarea:focus,
+input:focus {
+    background-color: var(--bg_darkBlue_Faded);
+}
+
+textarea,
+input {
+    font-size: 1rem;
+    color: var(--bg_white);
+}
+
+textarea::placeholder,
+input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: "Roboto";
+    color: var(--bg_white);
+    opacity: 1; /* Firefox */
+}
+
+.Form_Submit {
+    width: 100%;
+    background-color: var(--bg_darkBlue);
+    font-family: Dongle;
+    font-weight: 300;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    padding: var(--small-gap);
+    border-radius: 0 0 var(--small-gap) var(--small-gap);
+    margin-bottom: 0;
+    cursor: pointer;
+    color: var(--bg_white);
+    border-bottom: 1ps solid var(--bg_darkBlue);
+}
+
+.Action_Buttons_Container {
+    width: 100%;
+    gap: var(--small-gap);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Form_Submit,
+.NewsLetter_Button,
+.WhatsApp_Button {
+    height: 4rem;
+}
+
+.Form_Submit:focus,
+.NewsLetter_Button:focus,
+.WhatsApp_Button:focus,
+.Form_Submit:hover,
+.NewsLetter_Button:hover,
+.WhatsApp_Button:hover {
+    background-color: var(--bg_white);
+    color: var(--bg_darkBlue);
+}
+
+.Action_Buttons_Container p {
+    font-weight: 300;
+    color: var(--bg_darkBlue);
 }
 
 .Icone_Vetor {
     width: 40px;
     height: 40px;
+}
+
+.Social_Media_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-gap);
+}
+
+.Social_Media_Icon {
+    width: 50px !important;
+    height: 50px !important;
+    padding: 0.75rem !important;
+
+    padding: 0;
+    margin: 0;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50% !important;
+
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.Social_Media_Icon svg {
+    fill: var(--bg_darkBlue);
+}
+
+.Social_Media_Icon:focus,
+.Social_Media_Icon:hover {
+    background-color: var(--bg_white);
+    color: var(--bg_white);
 }
 
 /* Add any additional styling as per your requirements */
