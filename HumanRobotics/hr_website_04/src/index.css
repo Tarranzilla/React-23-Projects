@@ -1014,6 +1014,7 @@ li {
 
 .Specs_Title {
     color: var(--bg_darkBlue);
+    font-size: clamp(2.5rem, 5vw, 5rem);
 }
 
 .Specs_SubTitle {
