@@ -45,11 +45,13 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
     --bg_white: #ffffff;
     --bg_white_fade_little: #ffffffc0;
     --bg_white-faded: #ffffff4e;
+
     --font_darkBlue: #000343;
     --primary_mediumBlue: #4400ffe3;
     --primary_mediumBlue_Faded: #4400ff64;
     --secondary_clearBlue: #00aaff;
     --secondary_clearBlue_Faded: #00aaffc0;
+
     --error_orange: #ff5520;
     --warning_yellow: #ffae2d;
     --info_purple: #ae00ff;
@@ -58,9 +60,12 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
     /* darkmode colors */
     --bg_darkBlue: #000343;
     --bg_darkBlue_Faded: #00034365;
+
     --font_white: #ffffff;
+
     --primary_mediumBlue: #4400ffe3;
     --secondary_clearBlue: #00aaff;
+
     --error_orange: #ff5520;
     --warning_yellow: #ffae2d;
     --info_purple: #ae00ff;
@@ -1405,6 +1410,77 @@ input::placeholder {
 .Social_Media_Icon:hover {
     background-color: var(--bg_white);
     color: var(--bg_white);
+}
+
+/* FAQ */
+
+.faq-content {
+    position: static;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    overflow: hidden;
+
+    margin-top: 2vh;
+}
+
+.accordion-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    align-content: center;
+    justify-content: flex-start;
+
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+
+    overflow-y: scroll;
+}
+
+.accordion-wrapper .container {
+    position: static;
+    max-width: 800px;
+}
+
+.accordion-wrapper .label,
+.accordion-wrapper .content {
+    color: var(--bg_white);
+}
+
+.accordion-wrapper hr {
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--bg_white);
+    opacity: 0.5;
+}
+
+.accordion-wrapper .container {
+    margin: 30px 10px;
+}
+
+.accordion-wrapper .label {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 1vh;
+}
+
+.accordion-wrapper::-webkit-scrollbar {
+    background-color: var(--bg_white-faded);
+    border-radius: 5px;
+}
+
+.accordion-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--bg_darkBlue);
 }
 
 /* Add any additional styling as per your requirements */

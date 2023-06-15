@@ -5,6 +5,7 @@ const initialState = {
     username: "Guest User",
     menuIsOpen: false,
     token: null,
+    lgpdConsent: false,
 };
 
 export const authSlice = createSlice({
@@ -25,8 +26,11 @@ export const authSlice = createSlice({
         toggleMenu: (state, action) => {
             state.menuIsOpen = action.payload.menuState;
         },
+        setLgpdConsent: (state, action) => {
+            state.lgpdConsent = action.payload.lgpdConsent;
+        },
     },
 });
 
-export const { setMode, setLogin, setLogout, toggleMenu } = authSlice.actions;
+export const { setMode, setLogin, setLogout, toggleMenu, setLgpdConsent } = authSlice.actions;
 export default authSlice.reducer;
