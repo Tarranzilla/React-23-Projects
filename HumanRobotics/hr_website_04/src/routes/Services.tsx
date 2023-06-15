@@ -53,10 +53,93 @@ export default function Services() {
                 </div>
                 <div className="video-overlay"></div>
                 <div id="video-container-01" className="Solution_Video-Container">
-                    <video id="video-industria" autoPlay muted loop playsInline src={videoAtendimento}></video>
-                    <video id="video-varejo" autoPlay muted loop playsInline src={videoPublicidade}></video>
-                    <video id="video-saude" autoPlay muted loop playsInline src={videoInspecao}></video>
-                    <video id="video-eventos" autoPlay muted loop playsInline src={videoTransporte}></video>
+                    <div className="Solution_Container">
+                        <video id="video-industria" autoPlay muted loop playsInline src={videoAtendimento}></video>
+                        <div className="Solution_Info">
+                            + Informações
+                            <svg
+                                className="Solution_Container_Icon"
+                                width="112"
+                                height="112"
+                                viewBox="0 0 112 112"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g clip-path="url(#clip0_537_2454)">
+                                    <path d="M55.9997 9.33334C30.2397 9.33334 9.33301 30.24 9.33301 56C9.33301 81.76 30.2397 102.667 55.9997 102.667C81.7597 102.667 102.666 81.76 102.666 56C102.666 30.24 81.7597 9.33334 55.9997 9.33334ZM60.6663 79.3334H51.333V51.3333H60.6663V79.3334ZM60.6663 42H51.333V32.6667H60.6663V42Z" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div className="Solution_Description">
+                            O robô pode interagir com os clientes, fornecendo informações sobre produtos e ajudando a localizar itens específicos na
+                            loja. Ele pode até mesmo ajudar os clientes a fazer compras, oferecendo sugestões com base em suas preferências.
+                        </div>
+                    </div>
+
+                    <div className="Solution_Container">
+                        <video id="video-varejo" autoPlay muted loop playsInline src={videoPublicidade}></video>
+                        <div className="Solution_Info">
+                            + Informações
+                            <svg
+                                className="Solution_Container_Icon"
+                                width="112"
+                                height="112"
+                                viewBox="0 0 112 112"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g clip-path="url(#clip0_537_2454)">
+                                    <path d="M55.9997 9.33334C30.2397 9.33334 9.33301 30.24 9.33301 56C9.33301 81.76 30.2397 102.667 55.9997 102.667C81.7597 102.667 102.666 81.76 102.666 56C102.666 30.24 81.7597 9.33334 55.9997 9.33334ZM60.6663 79.3334H51.333V51.3333H60.6663V79.3334ZM60.6663 42H51.333V32.6667H60.6663V42Z" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div className="Solution_Description">
+                            O robô pode interagir com os clientes, fornecendo informações sobre produtos e ajudando a localizar itens específicos na
+                            loja. Ele pode até mesmo ajudar os clientes a fazer compras, oferecendo sugestões com base em suas preferências.
+                        </div>
+                    </div>
+
+                    <div className="Solution_Container">
+                        <video id="video-saude" autoPlay muted loop playsInline src={videoInspecao}></video>
+                        <div className="Solution_Info">
+                            + Informações
+                            <svg
+                                className="Solution_Container_Icon"
+                                width="112"
+                                height="112"
+                                viewBox="0 0 112 112"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g clip-path="url(#clip0_537_2454)">
+                                    <path d="M55.9997 9.33334C30.2397 9.33334 9.33301 30.24 9.33301 56C9.33301 81.76 30.2397 102.667 55.9997 102.667C81.7597 102.667 102.666 81.76 102.666 56C102.666 30.24 81.7597 9.33334 55.9997 9.33334ZM60.6663 79.3334H51.333V51.3333H60.6663V79.3334ZM60.6663 42H51.333V32.6667H60.6663V42Z" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div className="Solution_Description">
+                            O robô pode interagir com os clientes, fornecendo informações sobre produtos e ajudando a localizar itens específicos na
+                            loja. Ele pode até mesmo ajudar os clientes a fazer compras, oferecendo sugestões com base em suas preferências.
+                        </div>
+                    </div>
+
+                    <div className="Solution_Container">
+                        <video id="video-eventos" autoPlay muted loop playsInline src={videoTransporte}></video>
+                        <div className="Solution_Info">
+                            + Informações{" "}
+                            <svg
+                                className="Solution_Container_Icon"
+                                width="112"
+                                height="112"
+                                viewBox="0 0 112 112"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g clip-path="url(#clip0_537_2454)">
+                                    <path d="M55.9997 9.33334C30.2397 9.33334 9.33301 30.24 9.33301 56C9.33301 81.76 30.2397 102.667 55.9997 102.667C81.7597 102.667 102.666 81.76 102.666 56C102.666 30.24 81.7597 9.33334 55.9997 9.33334ZM60.6663 79.3334H51.333V51.3333H60.6663V79.3334ZM60.6663 42H51.333V32.6667H60.6663V42Z" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div className="Solution_Description">
+                            O robô pode interagir com os clientes, fornecendo informações sobre produtos e ajudando a localizar itens específicos na
+                            loja. Ele pode até mesmo ajudar os clientes a fazer compras, oferecendo sugestões com base em suas preferências.
+                        </div>
+                    </div>
                 </div>
             </m.div>
         </>

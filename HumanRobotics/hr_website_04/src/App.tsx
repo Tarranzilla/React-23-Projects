@@ -24,6 +24,16 @@ function App() {
                 <div className="StatusBar"></div>
                 <div className="Content_Viewer">
                     <AnimatePresence mode="wait">
+                        <div id="lgpd-cont" className="lgpd">
+                            <p>Este site utiliza cookies para melhorar sua experiência de navegação.</p>
+                            <p>
+                                Ao continuar navegando, você concorda com a nossa
+                                <a href="#">Política de Privacidade</a>.
+                            </p>
+                            <button id="lgpd-but" className="button-lgpd">
+                                OK
+                            </button>
+                        </div>
                         <Outlet />
                     </AnimatePresence>
                 </div>

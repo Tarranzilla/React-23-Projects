@@ -209,6 +209,10 @@ body,
     }
 }
 
+.lgpd {
+    display: none;
+}
+
 .Content_Viewer {
     width: 100%;
 
@@ -319,7 +323,7 @@ h1 {
 
 .Route_Title {
     text-transform: capitalize;
-    color: var(--secondary_clearBlue);
+    color: var(--bg_white);
     font-size: clamp(1.5rem, 10vw, 10rem);
     line-height: normal;
 }
@@ -1040,8 +1044,10 @@ li {
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: center;
+    justify-content: start;
     gap: 1rem;
+    overflow-y: auto;
+    margin-block: var(--medium-gap);
 }
 
 .Specs_List li {
@@ -1149,6 +1155,81 @@ li {
 
 .Solution_Video-Container::-webkit-scrollbar {
     display: none;
+}
+
+.Solution_Container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Solution_Info {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+    margin: var(--medium-gap);
+    font-size: 3rem;
+
+    background-color: var(--secondary_clearBlue_Faded);
+    padding: var(--small-gap);
+    padding-inline: var(--medium-gap);
+    border-radius: var(--small-gap);
+    color: var(--bg_white);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-gap);
+
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.Solution_Info:hover {
+    transform-origin: right;
+    transform: scale(1.08);
+    color: var(--bg_white);
+}
+
+.Solution_Container_Icon {
+    width: 60px;
+    height: 60px;
+    fill: var(--bg_white);
+}
+
+.Solution_Description {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    top: 0;
+    margin: var(--medium-gap);
+    font-size: 1.4rem;
+
+    background-color: var(--secondary_clearBlue_Faded);
+    padding: var(--small-gap);
+    padding-inline: var(--medium-gap);
+    border-radius: var(--small-gap);
+    color: var(--bg_white);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    width: 30%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-gap);
+
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
 .Solution_Video-Container video {
