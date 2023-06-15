@@ -73,20 +73,20 @@ export default function AvatarInfo() {
                 </ul>
                 <div className="Action_Container">
                     <a
-                        className="btn-buy"
+                        className="Robot_Info_Action btn-buy"
                         href="https://play.google.com/store/apps/details?id=ai.humanrobotics.robot.head.robiosface"
                         target="_blank"
                     >
                         <span className="material-icons">download</span>
                         Baixar Aplicativo
                     </a>
-                    <a href="#">
+                    <a className="Robot_Info_Action" href="#">
                         <span className="material-icons">assistant</span>Agendar Avaliação
                     </a>
-                    <a href="#">
+                    <a className="Robot_Info_Action" href="#">
                         <span className="material-icons">auto_mode</span>Alugar
                     </a>
-                    <a href="#">
+                    <a className="Robot_Info_Action" href="#">
                         <span className="material-icons">shopping_cart</span>Comprar
                     </a>
                 </div>

@@ -4,8 +4,10 @@ export default function FAQ() {
     return (
         <>
             <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Route_Container">
-                <h1 className="Route_Title">FAQ</h1>
-                <h2>Algumas informações relevantes sobre nossos Produtos, Serviços e Empresa.</h2>
+                <div className="FAQ_Title_Container">
+                    <h1 className="Route_Title">FAQ</h1>
+                    <h2 className="FAQ_SubTitle">Algumas informações relevantes sobre nossos Produtos, Serviços e Empresa.</h2>
+                </div>
 
                 <div className="faq-content">
                     <div className="accordion-wrapper">

@@ -114,13 +114,13 @@ export default function GoInfo() {
                     </li>
                 </ul>
                 <div className="Action_Container">
-                    <a href="#">
+                    <a className="Robot_Info_Action" href="#">
                         <span className="material-icons">assistant</span>Agendar Avaliação
                     </a>
-                    <a href="#">
+                    <a className="Robot_Info_Action" href="#">
                         <span className="material-icons">auto_mode</span>Alugar
                     </a>
-                    <a href="#">
+                    <a className="Robot_Info_Action" href="#">
                         <span className="material-icons">shopping_cart</span>Comprar
                     </a>
                 </div>
