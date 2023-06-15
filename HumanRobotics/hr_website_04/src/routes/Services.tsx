@@ -70,8 +70,8 @@ export default function Services() {
                             </svg>
                         </div>
                         <div className="Solution_Description">
-                            O robô pode interagir com os clientes, fornecendo informações sobre produtos e ajudando a localizar itens específicos na
-                            loja. Ele pode até mesmo ajudar os clientes a fazer compras, oferecendo sugestões com base em suas preferências.
+                            Os robôs podem interagir com os clientes, fornecendo informações sobre produtos e ajudando a localizar itens específicos
+                            na loja. Ele pode até mesmo ajudar os clientes a fazer compras, oferecendo sugestões com base em suas preferências.
                         </div>
                     </div>
 
@@ -92,8 +92,8 @@ export default function Services() {
                             </svg>
                         </div>
                         <div className="Solution_Description">
-                            O robô pode interagir com os clientes, fornecendo informações sobre produtos e ajudando a localizar itens específicos na
-                            loja. Ele pode até mesmo ajudar os clientes a fazer compras, oferecendo sugestões com base em suas preferências.
+                            Os robôs podem realizar atividades promocionais, como distribuir brindes e amostras de produtos, fornecer informações
+                            sobre os produtos e serviços e até mesmo realizar vendas diretas.
                         </div>
                     </div>
 
@@ -114,8 +114,9 @@ export default function Services() {
                             </svg>
                         </div>
                         <div className="Solution_Description">
-                            O robô pode interagir com os clientes, fornecendo informações sobre produtos e ajudando a localizar itens específicos na
-                            loja. Ele pode até mesmo ajudar os clientes a fazer compras, oferecendo sugestões com base em suas preferências.
+                            Os robôs podem ser programados para inspecionar produtos e materiais em busca de defeitos ou irregularidades, usando o
+                            leitor de RFID e código de barras para identificar o produto e armazenar informações sobre a inspeção para análise
+                            posterior.
                         </div>
                     </div>
 
@@ -136,8 +137,8 @@ export default function Services() {
                             </svg>
                         </div>
                         <div className="Solution_Description">
-                            O robô pode interagir com os clientes, fornecendo informações sobre produtos e ajudando a localizar itens específicos na
-                            loja. Ele pode até mesmo ajudar os clientes a fazer compras, oferecendo sugestões com base em suas preferências.
+                            Os robôs podem ser programados para entregar materiais e suprimentos em toda a fábrica, usando o leitor de RFID e código
+                            de barras para identificar a localização e a quantidade dos materiais a serem entregues.
                         </div>
                     </div>
                 </div>

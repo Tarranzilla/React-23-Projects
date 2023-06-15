@@ -9,9 +9,8 @@ export default function About() {
                 <div className="About_Title_Container">
                     <h1 className="Route_Title Sobre_Title">Sobre Nós</h1>
                     <p className="Main_Text Sobre_Text">
-                        A Human Robotics é uma empresa de robótica e automação , localizada na cidade de Curitiba. Somos a primeira startup brasileira
-                        a criar um robô autônomo de atendimento e telepresença, pois acreditamos que é possível melhorar a vida das pessoas
-                        automatizando e facilitando os trabalhos humanos!
+                        Somos a primeira startup brasileira a criar um robô autônomo de atendimento e telepresença, pois acreditamos que é possível
+                        melhorar a vida das pessoas automatizando e facilitando os trabalhos humanos!
                     </p>
                 </div>
                 <img className="Sobre_Foto" src={FotoEquipe} alt="Foto da Human Robotics, da esquerda para direita: ..., ..., Olivier Smadja, "></img>

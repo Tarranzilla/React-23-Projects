@@ -1292,10 +1292,6 @@ li {
     gap: var(--small-gap);
 }
 
-.Contato_Title {
-    color: var(--secondary_clearBlue);
-}
-
 .Contato_Title_Container p {
     text-align: start;
 }
@@ -1334,6 +1330,8 @@ li {
     height: 100%;
     width: 100%;
     border: none;
+    filter: opacity(1) contrast(1.1) brightness(0.8);
+    mix-blend-mode: hue;
 }
 
 .Form_Container {
@@ -1348,7 +1346,7 @@ li {
 }
 
 .Form_Container a {
-    width: 80%;
+    width: 100%;
     background-color: var(--secondary_clearBlue);
     font-family: Dongle;
     font-weight: 300;
@@ -1360,7 +1358,7 @@ li {
 }
 
 .Form {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -1423,9 +1421,20 @@ input::placeholder {
     width: 100%;
     gap: var(--small-gap);
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Big_Buttons {
+    width: 100%;
+    flex-grow: 1000;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: var(--small-gap);
+    margin-right: var(--small-gap);
 }
 
 .Form_Submit,
@@ -1460,6 +1469,9 @@ input::placeholder {
     align-items: center;
     justify-content: center;
     gap: var(--small-gap);
+    width: 110px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
 }
 
 .Social_Media_Icon {
