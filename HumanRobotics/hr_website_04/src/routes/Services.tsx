@@ -68,6 +68,11 @@ export default function Services() {
     const video03ref = useRef<HTMLVideoElement>(null);
     const video04ref = useRef<HTMLVideoElement>(null);
 
+    const container1ref = useRef<HTMLDivElement>(null);
+    const container2ref = useRef<HTMLDivElement>(null);
+    const container3ref = useRef<HTMLDivElement>(null);
+    const container4ref = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
         setSolutions(baseSolutions);
     }, []);
@@ -78,61 +83,133 @@ export default function Services() {
     function handleActiveTitle(id: number) {
         console.log("Handling Active Title Nº " + id + " ...");
         if (id === 1) {
-            titulo1ref.current?.classList.add("solution-active");
+            //Title Cleanups
+            titulo1ref.current?.classList.remove("solution-active");
             titulo2ref.current?.classList.remove("solution-active");
             titulo3ref.current?.classList.remove("solution-active");
             titulo4ref.current?.classList.remove("solution-active");
 
+            //Title 1 is Active
+            titulo1ref.current?.classList.add("solution-active");
+
+            //Video Cleanups
+            video01ref.current?.pause();
+            video01ref.current?.classList.remove("video-active");
+            video02ref.current?.pause();
+            video02ref.current?.classList.remove("video-active");
+            video03ref.current?.pause();
+            video03ref.current?.classList.remove("video-active");
+            video04ref.current?.pause();
+            video04ref.current?.classList.remove("video-active");
+
+            //Video 1 is Active
             video01ref.current?.play();
             video01ref.current?.classList.add("video-active");
+
+            //Container Cleanups
+            container1ref.current?.classList.remove("container-active");
+            container2ref.current?.classList.remove("container-active");
+            container3ref.current?.classList.remove("container-active");
+            container4ref.current?.classList.remove("container-active");
+
+            //Container 1 is Active
+            container1ref.current?.classList.add("container-active");
+        } else if (id === 2) {
+            //Title Cleanups
+            titulo1ref.current?.classList.remove("solution-active");
+            titulo2ref.current?.classList.remove("solution-active");
+            titulo3ref.current?.classList.remove("solution-active");
+            titulo4ref.current?.classList.remove("solution-active");
+
+            //Title 2 is Active
+            titulo2ref.current?.classList.add("solution-active");
+
+            //Video Cleanups
+            video01ref.current?.pause();
+            video01ref.current?.classList.remove("video-active");
             video02ref.current?.pause();
             video02ref.current?.classList.remove("video-active");
             video03ref.current?.pause();
             video03ref.current?.classList.remove("video-active");
             video04ref.current?.pause();
             video04ref.current?.classList.remove("video-active");
-        } else if (id === 2) {
-            titulo1ref.current?.classList.remove("solution-active");
-            titulo2ref.current?.classList.add("solution-active");
-            titulo3ref.current?.classList.remove("solution-active");
-            titulo4ref.current?.classList.remove("solution-active");
 
-            video01ref.current?.pause();
-            video01ref.current?.classList.remove("video-active");
+            //Video 2 is Active
             video02ref.current?.play();
             video02ref.current?.classList.add("video-active");
-            video03ref.current?.pause();
-            video03ref.current?.classList.remove("video-active");
-            video04ref.current?.pause();
-            video04ref.current?.classList.remove("video-active");
-        } else if (id === 3) {
-            titulo1ref.current?.classList.remove("solution-active");
-            titulo2ref.current?.classList.remove("solution-active");
-            titulo3ref.current?.classList.add("solution-active");
-            titulo4ref.current?.classList.remove("solution-active");
 
-            video01ref.current?.pause();
-            video01ref.current?.classList.remove("video-active");
-            video02ref.current?.pause();
-            video02ref.current?.classList.remove("video-active");
-            video03ref.current?.play();
-            video03ref.current?.classList.add("video-active");
-            video04ref.current?.pause();
-            video04ref.current?.classList.remove("video-active");
-        } else if (id === 4) {
+            //Container Cleanups
+            container1ref.current?.classList.remove("container-active");
+            container2ref.current?.classList.remove("container-active");
+            container3ref.current?.classList.remove("container-active");
+            container4ref.current?.classList.remove("container-active");
+
+            //Container 2 is Active
+            container2ref.current?.classList.add("container-active");
+        } else if (id === 3) {
+            //Title Cleanups
             titulo1ref.current?.classList.remove("solution-active");
             titulo2ref.current?.classList.remove("solution-active");
             titulo3ref.current?.classList.remove("solution-active");
-            titulo4ref.current?.classList.add("solution-active");
+            titulo4ref.current?.classList.remove("solution-active");
 
+            //Title 3 is Active
+            titulo3ref.current?.classList.add("solution-active");
+
+            //Video Cleanups
             video01ref.current?.pause();
             video01ref.current?.classList.remove("video-active");
             video02ref.current?.pause();
             video02ref.current?.classList.remove("video-active");
             video03ref.current?.pause();
             video03ref.current?.classList.remove("video-active");
+            video04ref.current?.pause();
+            video04ref.current?.classList.remove("video-active");
+
+            //Video 3 is Active
+            video03ref.current?.play();
+            video03ref.current?.classList.add("video-active");
+
+            //Container Cleanups
+            container1ref.current?.classList.remove("container-active");
+            container2ref.current?.classList.remove("container-active");
+            container3ref.current?.classList.remove("container-active");
+            container4ref.current?.classList.remove("container-active");
+
+            //Container 3 is Active
+            container3ref.current?.classList.add("container-active");
+        } else if (id === 4) {
+            //Title Cleanups
+            titulo1ref.current?.classList.remove("solution-active");
+            titulo2ref.current?.classList.remove("solution-active");
+            titulo3ref.current?.classList.remove("solution-active");
+            titulo4ref.current?.classList.remove("solution-active");
+
+            //Title 4 is Active
+            titulo4ref.current?.classList.add("solution-active");
+
+            //Video Cleanups
+            video01ref.current?.pause();
+            video01ref.current?.classList.remove("video-active");
+            video02ref.current?.pause();
+            video02ref.current?.classList.remove("video-active");
+            video03ref.current?.pause();
+            video03ref.current?.classList.remove("video-active");
+            video04ref.current?.pause();
+            video04ref.current?.classList.remove("video-active");
+
+            //Video 4 is Active
             video04ref.current?.play();
             video04ref.current?.classList.add("video-active");
+
+            //Container Cleanups
+            container1ref.current?.classList.remove("container-active");
+            container2ref.current?.classList.remove("container-active");
+            container3ref.current?.classList.remove("container-active");
+            container4ref.current?.classList.remove("container-active");
+
+            //Container 4 is Active
+            container4ref.current?.classList.add("container-active");
         }
     }
 
@@ -235,8 +312,17 @@ export default function Services() {
                 </div>
                 <div className="video-overlay"></div>
                 <div id="video-container-01" className="Solution_Video-Container">
-                    <div className="Solution_Container">
-                        <video id="video-industria" autoPlay muted loop playsInline src={videoAtendimento} ref={video01ref}></video>
+                    <div className="Solution_Container container-active" ref={container1ref}>
+                        <video
+                            id="video-industria"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            src={videoAtendimento}
+                            ref={video01ref}
+                            className="video-active"
+                        ></video>
                         <div className="Solution_Info">
                             + Informações
                             <svg
@@ -257,7 +343,7 @@ export default function Services() {
                         </div>
                     </div>
 
-                    <div className="Solution_Container">
+                    <div className="Solution_Container" ref={container2ref}>
                         <video id="video-varejo" autoPlay muted loop playsInline src={videoPublicidade} ref={video02ref}></video>
                         <div className="Solution_Info">
                             + Informações
@@ -279,7 +365,7 @@ export default function Services() {
                         </div>
                     </div>
 
-                    <div className="Solution_Container">
+                    <div className="Solution_Container" ref={container3ref}>
                         <video id="video-saude" autoPlay muted loop playsInline src={videoInspecao} ref={video03ref}></video>
                         <div className="Solution_Info">
                             + Informações
@@ -302,7 +388,7 @@ export default function Services() {
                         </div>
                     </div>
 
-                    <div className="Solution_Container">
+                    <div className="Solution_Container" ref={container4ref}>
                         <video id="video-eventos" autoPlay muted loop playsInline src={videoTransporte} ref={video04ref}></video>
                         <div className="Solution_Info">
                             + Informações{" "}

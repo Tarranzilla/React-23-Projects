@@ -1163,7 +1163,7 @@ li {
     justify-content: center;
     padding-left: var(--medium-gap);
     width: 50%;
-    z-index: 2;
+    z-index: 4;
     left: 0;
 }
 
@@ -1251,6 +1251,12 @@ li {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    filter: blur(50px);
+    transition: all 0.5s ease-in-out;
+}
+
+.Solution_Container.container-active {
+    filter: none;
 }
 
 .Solution_Info {
@@ -1327,6 +1333,7 @@ li {
     object-fit: cover;
     border-radius: var(--small-gap);
     filter: opacity(0.8);
+    transition: all 0.5s ease-in-out;
 }
 
 /* Sobre */
