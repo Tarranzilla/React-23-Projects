@@ -331,6 +331,13 @@ h1 {
     line-height: 2.4rem;
 }
 
+.Nav_Route_Title {
+    text-transform: capitalize;
+    color: var(--bg_white);
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    line-height: normal;
+}
+
 .Route_Title {
     text-transform: capitalize;
     color: var(--bg_white);
@@ -361,8 +368,15 @@ li {
     padding-inline: var(--small-gap);
     margin-bottom: var(--nav_margin_bottom);
 
-    border-radius: 1rem;
+    border-radius: var(--small-gap);
     background-color: var(--bg_darkBlue);
+}
+
+@media (max-width: 768px) {
+    :root {
+        --nav-height: 6vh;
+        --nav-height: 6svh;
+    }
 }
 
 .LogoType_Container:hover,
@@ -566,6 +580,14 @@ li {
     padding: var(--small-gap);
 }
 
+@media (max-width: 768px) {
+    .menu_container {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+}
+
 .menu a {
     display: flex;
     flex-direction: row;
@@ -733,8 +755,15 @@ li {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    height: 100%;
     width: 100%;
-    margin-block: var(--large-gap);
+    margin-block: var(--medium-gap);
+}
+
+@media (max-width: 768px) {
+    .Home_Title_Wrapper {
+        height: 65%;
+    }
 }
 
 .Home_Title_Group {
@@ -742,6 +771,7 @@ li {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    height: 100%;
     width: 100%;
     gap: 20px;
     padding-inline: var(--large-gap);
@@ -751,19 +781,21 @@ li {
     text-align: start;
     flex-direction: row;
     justify-content: start;
-    font-size: clamp(3rem, 10vw, 6rem);
+    font-size: clamp(2rem, 10vw, 6rem);
     text-transform: none;
 }
 
 .Home_Title_Changer {
     margin-left: var(--small-gap);
     margin-right: auto;
-    font-size: clamp(3rem, 10vw, 6rem);
+    font-size: clamp(3.5rem, 10vw, 6rem);
+    color: var(--secondary_clearBlue);
 }
 
 @media screen and (max-width: 768px) {
     .Home_Title_Group {
         flex-direction: column;
+        justify-content: start;
     }
 
     .Home_Title {
@@ -1163,12 +1195,14 @@ li {
     transition: all 0.2s ease-in-out;
 }
 
+.Solution_Anchor.solution-active,
 .Solution_Anchor:focus,
 .Solution_Anchor:hover {
     background-color: var(--success_turquoise);
     color: var(--bg_white);
 }
 
+.Solution_Anchor.solution-active svg,
 .Solution_Anchor:focus svg,
 .Solution_Anchor:hover svg {
     fill: var(--bg_white);
@@ -1351,7 +1385,7 @@ li {
 }
 
 .Contato_Text {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 5vw, 2rem);
     font-weight: 200;
     margin-block: 0;
     margin-top: -1rem;
@@ -1523,7 +1557,7 @@ input::placeholder {
     align-items: center;
     justify-content: center;
     gap: var(--small-gap);
-    width: 110px;
+    width: calc(100px + var(--small-gap));
     flex-wrap: wrap;
     flex-shrink: 0;
     flex-grow: 1000;

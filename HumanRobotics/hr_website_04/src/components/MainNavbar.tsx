@@ -143,7 +143,7 @@ function MainNavbar() {
                 <div className="Nav_MainBlock">
                     <AnimatePresence>
                         <m.h1
-                            className="Route_Title Mobile_Only Secondary_Page_Only"
+                            className="Nav_Route_Title Mobile_Only Secondary_Page_Only"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 20 }}

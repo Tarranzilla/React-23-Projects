@@ -1,11 +1,157 @@
 import { motion as m } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 
 import videoAtendimento from "../assets/videos/Robios_Evento.mp4";
 import videoPublicidade from "../assets/videos/02_Robios_Varejo_Desktop_QuickCuts_720p.mp4";
 import videoInspecao from "../assets/videos/03_Robios_Saúde_Desktop_720p.mp4";
 import videoTransporte from "../assets/videos/01_Robios_Eventos_Desktop_720p.mp4";
 
+const baseSolutions = [
+    {
+        id: 1,
+        title: "Atendimento",
+        video: videoAtendimento,
+        description:
+            "A solução de atendimento da Robios é capaz de atender clientes em diversos segmentos, como: varejo, saúde, eventos, entre outros. Através de um robô com inteligência artificial, o cliente pode ser atendido de forma rápida e eficiente, sem a necessidade de um atendente humano.",
+        features: [],
+        solutionState: true,
+    },
+    {
+        id: 2,
+        title: "Publicidade",
+        video: videoPublicidade,
+        description:
+            "A solução de publicidade da Robios é capaz de atender clientes em diversos segmentos, como: varejo, saúde, eventos, entre outros. Através de um robô com inteligência artificial, o cliente pode ser atendido de forma rápida e eficiente, sem a necessidade de um atendente humano.",
+        features: [],
+        solutionState: false,
+    },
+    {
+        id: 3,
+        title: "Inspeção",
+        video: videoInspecao,
+        description:
+            "A solução de inspeção da Robios é capaz de atender clientes em diversos segmentos, como: varejo, saúde, eventos, entre outros. Através de um robô com inteligência artificial, o cliente pode ser atendido de forma rápida e eficiente, sem a necessidade de um atendente humano.",
+        features: [],
+        solutionState: false,
+    },
+    {
+        id: 4,
+        title: "Transporte",
+        video: videoTransporte,
+        description:
+            "A solução de transporte da Robios é capaz de atender clientes em diversos segmentos, como: varejo, saúde, eventos, entre outros. Através de um robô com inteligência artificial, o cliente pode ser atendido de forma rápida e eficiente, sem a necessidade de um atendente humano.",
+        features: [],
+        solutionState: false,
+    },
+];
+
+interface Solution {
+    id: number;
+    title: string;
+    video: string;
+    description: string;
+    features: string[];
+    solutionState: boolean;
+}
+
 export default function Services() {
+    const [solutions, setSolutions] = useState<Solution[]>([]);
+    const [activeSolution, setActiveSolution] = useState<Solution>(baseSolutions[0]);
+
+    const titulo1ref = useRef<HTMLAnchorElement>(null);
+    const titulo2ref = useRef<HTMLAnchorElement>(null);
+    const titulo3ref = useRef<HTMLAnchorElement>(null);
+    const titulo4ref = useRef<HTMLAnchorElement>(null);
+
+    const video01ref = useRef<HTMLVideoElement>(null);
+    const video02ref = useRef<HTMLVideoElement>(null);
+    const video03ref = useRef<HTMLVideoElement>(null);
+    const video04ref = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        setSolutions(baseSolutions);
+    }, []);
+
+    console.log(solutions);
+    console.log(activeSolution);
+
+    function handleActiveTitle(id: number) {
+        console.log("Handling Active Title Nº " + id + " ...");
+        if (id === 1) {
+            titulo1ref.current?.classList.add("solution-active");
+            titulo2ref.current?.classList.remove("solution-active");
+            titulo3ref.current?.classList.remove("solution-active");
+            titulo4ref.current?.classList.remove("solution-active");
+
+            video01ref.current?.play();
+            video01ref.current?.classList.add("video-active");
+            video02ref.current?.pause();
+            video02ref.current?.classList.remove("video-active");
+            video03ref.current?.pause();
+            video03ref.current?.classList.remove("video-active");
+            video04ref.current?.pause();
+            video04ref.current?.classList.remove("video-active");
+        } else if (id === 2) {
+            titulo1ref.current?.classList.remove("solution-active");
+            titulo2ref.current?.classList.add("solution-active");
+            titulo3ref.current?.classList.remove("solution-active");
+            titulo4ref.current?.classList.remove("solution-active");
+
+            video01ref.current?.pause();
+            video01ref.current?.classList.remove("video-active");
+            video02ref.current?.play();
+            video02ref.current?.classList.add("video-active");
+            video03ref.current?.pause();
+            video03ref.current?.classList.remove("video-active");
+            video04ref.current?.pause();
+            video04ref.current?.classList.remove("video-active");
+        } else if (id === 3) {
+            titulo1ref.current?.classList.remove("solution-active");
+            titulo2ref.current?.classList.remove("solution-active");
+            titulo3ref.current?.classList.add("solution-active");
+            titulo4ref.current?.classList.remove("solution-active");
+
+            video01ref.current?.pause();
+            video01ref.current?.classList.remove("video-active");
+            video02ref.current?.pause();
+            video02ref.current?.classList.remove("video-active");
+            video03ref.current?.play();
+            video03ref.current?.classList.add("video-active");
+            video04ref.current?.pause();
+            video04ref.current?.classList.remove("video-active");
+        } else if (id === 4) {
+            titulo1ref.current?.classList.remove("solution-active");
+            titulo2ref.current?.classList.remove("solution-active");
+            titulo3ref.current?.classList.remove("solution-active");
+            titulo4ref.current?.classList.add("solution-active");
+
+            video01ref.current?.pause();
+            video01ref.current?.classList.remove("video-active");
+            video02ref.current?.pause();
+            video02ref.current?.classList.remove("video-active");
+            video03ref.current?.pause();
+            video03ref.current?.classList.remove("video-active");
+            video04ref.current?.play();
+            video04ref.current?.classList.add("video-active");
+        }
+    }
+
+    function changeActiveSolutionState(id: number) {
+        const newSolutions = solutions.map((solution) => {
+            if (solution.id === id) {
+                solution.solutionState = true;
+                console.log(solution.id);
+                setActiveSolution(solution);
+            } else {
+                solution.solutionState = false;
+            }
+
+            return solution;
+        });
+
+        setSolutions(newSolutions);
+    }
+
     return (
         <>
             <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Route_Container">
@@ -13,7 +159,16 @@ export default function Services() {
                     <h1 className="Route_Title Solution_Title">Soluções</h1>
 
                     <div className="Solution_List">
-                        <a id="anchor-1" className="Solution_Anchor solution-active" href="#video-industria">
+                        <a
+                            id="anchor-1"
+                            className="Solution_Anchor solution-active"
+                            href="#video-industria"
+                            ref={titulo1ref}
+                            onClick={() => {
+                                changeActiveSolutionState(1);
+                                handleActiveTitle(1);
+                            }}
+                        >
                             <svg className="Solution_Icon" width="123" height="124" viewBox="0 0 123 124" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M67.314 111.01V123.467C79.6252 122.233 90.834 117.3 99.899 109.838L91.2015 101.02C84.4027 106.323 76.2565 109.9 67.314 111.01Z" />
                                 <path d="M12.25 62.1083C12.25 37.1333 30.8087 16.4133 54.8187 13.2067V0.75C24.01 4.01833 0 30.2883 0 62.1083C0 93.9283 24.01 120.198 54.8187 123.467V111.01C30.8087 107.803 12.25 87.0833 12.25 62.1083Z" />
@@ -26,7 +181,16 @@ export default function Services() {
                             <h2>Atendimento</h2>
                         </a>
 
-                        <a id="anchor-2" className="Solution_Anchor" href="#video-varejo">
+                        <a
+                            id="anchor-2"
+                            className="Solution_Anchor"
+                            href="#video-varejo"
+                            ref={titulo2ref}
+                            onClick={() => {
+                                changeActiveSolutionState(2);
+                                handleActiveTitle(2);
+                            }}
+                        >
                             <svg className="Solution_Icon" width="138" height="130" viewBox="0 0 138 130" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M137.5 64.9392L122.25 47.68L124.375 24.8333L101.813 19.7425L90 0L68.75 9.06417L47.5 0L35.6875 19.7425L13.125 24.7713L15.25 47.6179L0 64.9392L15.25 82.1983L13.125 105.107L35.6875 110.198L47.5 129.94L68.75 120.814L90 129.878L101.813 110.136L124.375 105.045L122.25 82.1983L137.5 64.9392ZM75 95.9808H62.5V83.5642H75V95.9808ZM75 71.1475H62.5V33.8975H75V71.1475Z" />
                             </svg>
@@ -34,7 +198,16 @@ export default function Services() {
                             <h2>Publicidade</h2>
                         </a>
 
-                        <a id="anchor-3" className="Solution_Anchor" href="#video-saude">
+                        <a
+                            id="anchor-3"
+                            className="Solution_Anchor"
+                            href="#video-saude"
+                            ref={titulo3ref}
+                            onClick={() => {
+                                changeActiveSolutionState(3);
+                                handleActiveTitle(3);
+                            }}
+                        >
                             <svg className="Solution_Icon" width="125" height="124" viewBox="0 0 125 124" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M110.875 100.702C119.688 90.0333 125 76.4667 125 61.6667C125 27.6267 97 0 62.5 0C28 0 0 27.6267 0 61.6667C0 95.7067 28 123.333 62.5 123.333C77.5 123.333 91.25 118.092 102.062 109.397C103.75 108.04 105.375 106.56 106.938 105.018C107.125 104.833 107.25 104.648 107.375 104.525C108.625 103.292 109.812 101.997 110.875 100.702ZM62.5 111C34.9375 111 12.5 88.8617 12.5 61.6667C12.5 34.4717 34.9375 12.3333 62.5 12.3333C90.0625 12.3333 112.5 34.4717 112.5 61.6667C112.5 73.075 108.562 83.4967 101.938 91.8833L93 83.065C97.3125 77.0217 99.875 69.6833 99.875 61.7283C99.875 41.3167 83.0625 24.7283 62.375 24.7283C41.6875 24.7283 24.875 41.3167 24.875 61.7283C24.875 82.14 41.6875 98.7283 62.375 98.7283C70.5 98.7283 78.0625 96.1383 84.1875 91.76L93.0625 100.517C84.625 107.115 74.0625 111 62.5 111ZM74.5 64.8117C75.5625 60.7417 74.625 56.3017 71.4375 53.095L71.3125 52.9717C66.5 48.2233 58.8125 48.1617 53.9375 52.725C53.875 52.7867 53.75 52.8483 53.625 52.9717C48.75 57.7817 48.75 65.6133 53.625 70.4233L53.75 70.5467C57 73.6917 61.5625 74.6783 65.6875 73.5683L75.125 82.88C71.375 85.1 67.0625 86.4567 62.375 86.4567C48.5625 86.4567 37.375 75.4183 37.375 61.79C37.375 48.1617 48.5625 37.1233 62.375 37.1233C76.1875 37.1233 87.375 48.1617 87.375 61.79C87.375 66.2917 86.0625 70.485 83.875 74.1233L74.5 64.8117Z" />
                             </svg>
@@ -42,7 +215,16 @@ export default function Services() {
                             <h2>Inspeção</h2>
                         </a>
 
-                        <a id="anchor-4" className="Solution_Anchor" href="#video-eventos">
+                        <a
+                            id="anchor-4"
+                            className="Solution_Anchor"
+                            href="#video-eventos"
+                            ref={titulo4ref}
+                            onClick={() => {
+                                changeActiveSolutionState(4);
+                                handleActiveTitle(4);
+                            }}
+                        >
                             <svg className="Solution_Icon" width="123" height="113" viewBox="0 0 123 113" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M104.125 75.5H18.375C8.2075 75.5 0 83.875 0 94.25C0 104.625 8.2075 113 18.375 113H104.125C114.293 113 122.5 104.625 122.5 94.25C122.5 83.875 114.293 75.5 104.125 75.5ZM104.125 100.5H18.375C15.0063 100.5 12.25 97.6875 12.25 94.25C12.25 90.8125 15.0063 88 18.375 88H104.125C107.494 88 110.25 90.8125 110.25 94.25C110.25 97.6875 107.494 100.5 104.125 100.5ZM42.875 6.75V56.75C42.875 60.1875 45.6312 63 49 63H98C101.369 63 104.125 60.1875 104.125 56.75V6.75C104.125 3.3125 101.369 0.5 98 0.5H49C45.6312 0.5 42.875 3.3125 42.875 6.75ZM85.75 31.75H61.25V19.375H85.75V31.75ZM0 38.125H30.2575V50.0625H0V38.125ZM12.3113 19.375H30.2575V31.625H12.3113V19.375Z" />
                             </svg>
@@ -54,7 +236,7 @@ export default function Services() {
                 <div className="video-overlay"></div>
                 <div id="video-container-01" className="Solution_Video-Container">
                     <div className="Solution_Container">
-                        <video id="video-industria" autoPlay muted loop playsInline src={videoAtendimento}></video>
+                        <video id="video-industria" autoPlay muted loop playsInline src={videoAtendimento} ref={video01ref}></video>
                         <div className="Solution_Info">
                             + Informações
                             <svg
@@ -64,7 +246,7 @@ export default function Services() {
                                 viewBox="0 0 112 112"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
-                                <g clip-path="url(#clip0_537_2454)">
+                                <g clipPath="url(#clip0_537_2454)">
                                     <path d="M55.9997 9.33334C30.2397 9.33334 9.33301 30.24 9.33301 56C9.33301 81.76 30.2397 102.667 55.9997 102.667C81.7597 102.667 102.666 81.76 102.666 56C102.666 30.24 81.7597 9.33334 55.9997 9.33334ZM60.6663 79.3334H51.333V51.3333H60.6663V79.3334ZM60.6663 42H51.333V32.6667H60.6663V42Z" />
                                 </g>
                             </svg>
@@ -76,7 +258,7 @@ export default function Services() {
                     </div>
 
                     <div className="Solution_Container">
-                        <video id="video-varejo" autoPlay muted loop playsInline src={videoPublicidade}></video>
+                        <video id="video-varejo" autoPlay muted loop playsInline src={videoPublicidade} ref={video02ref}></video>
                         <div className="Solution_Info">
                             + Informações
                             <svg
@@ -86,7 +268,7 @@ export default function Services() {
                                 viewBox="0 0 112 112"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
-                                <g clip-path="url(#clip0_537_2454)">
+                                <g clipPath="url(#clip0_537_2454)">
                                     <path d="M55.9997 9.33334C30.2397 9.33334 9.33301 30.24 9.33301 56C9.33301 81.76 30.2397 102.667 55.9997 102.667C81.7597 102.667 102.666 81.76 102.666 56C102.666 30.24 81.7597 9.33334 55.9997 9.33334ZM60.6663 79.3334H51.333V51.3333H60.6663V79.3334ZM60.6663 42H51.333V32.6667H60.6663V42Z" />
                                 </g>
                             </svg>
@@ -98,7 +280,7 @@ export default function Services() {
                     </div>
 
                     <div className="Solution_Container">
-                        <video id="video-saude" autoPlay muted loop playsInline src={videoInspecao}></video>
+                        <video id="video-saude" autoPlay muted loop playsInline src={videoInspecao} ref={video03ref}></video>
                         <div className="Solution_Info">
                             + Informações
                             <svg
@@ -108,7 +290,7 @@ export default function Services() {
                                 viewBox="0 0 112 112"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
-                                <g clip-path="url(#clip0_537_2454)">
+                                <g clipPath="url(#clip0_537_2454)">
                                     <path d="M55.9997 9.33334C30.2397 9.33334 9.33301 30.24 9.33301 56C9.33301 81.76 30.2397 102.667 55.9997 102.667C81.7597 102.667 102.666 81.76 102.666 56C102.666 30.24 81.7597 9.33334 55.9997 9.33334ZM60.6663 79.3334H51.333V51.3333H60.6663V79.3334ZM60.6663 42H51.333V32.6667H60.6663V42Z" />
                                 </g>
                             </svg>
@@ -121,7 +303,7 @@ export default function Services() {
                     </div>
 
                     <div className="Solution_Container">
-                        <video id="video-eventos" autoPlay muted loop playsInline src={videoTransporte}></video>
+                        <video id="video-eventos" autoPlay muted loop playsInline src={videoTransporte} ref={video04ref}></video>
                         <div className="Solution_Info">
                             + Informações{" "}
                             <svg
@@ -131,7 +313,7 @@ export default function Services() {
                                 viewBox="0 0 112 112"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
-                                <g clip-path="url(#clip0_537_2454)">
+                                <g clipPath="url(#clip0_537_2454)">
                                     <path d="M55.9997 9.33334C30.2397 9.33334 9.33301 30.24 9.33301 56C9.33301 81.76 30.2397 102.667 55.9997 102.667C81.7597 102.667 102.666 81.76 102.666 56C102.666 30.24 81.7597 9.33334 55.9997 9.33334ZM60.6663 79.3334H51.333V51.3333H60.6663V79.3334ZM60.6663 42H51.333V32.6667H60.6663V42Z" />
                                 </g>
                             </svg>
