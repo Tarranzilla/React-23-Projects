@@ -231,7 +231,7 @@ export default function Services() {
 
     return (
         <>
-            <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Route_Container">
+            <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }} className="Route_Container">
                 <div className="Main_Text Service_Text_Container">
                     <h1 className="Route_Title Solution_Title">Soluções</h1>
 

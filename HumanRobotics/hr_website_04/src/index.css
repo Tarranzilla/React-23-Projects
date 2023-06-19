@@ -243,7 +243,37 @@ body,
     align-items: center;
     justify-content: center;
 
+    flex-shrink: 0;
+
     position: relative;
+
+    scroll-snap-align: start;
+}
+
+.Route_Container_Landing_Page {
+    width: 100%;
+    height: var(--sectionviewer-height);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    position: relative;
+
+    overflow-y: auto;
+    gap: var(--medium-gap);
+
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+.Divider {
+    width: 100%;
+    height: 200px;
+    background-color: red;
+    flex-shrink: 0;
+    scroll-snap-type: none;
 }
 
 .Main_Text {

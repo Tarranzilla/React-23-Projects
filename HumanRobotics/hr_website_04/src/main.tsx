@@ -23,6 +23,8 @@ import "material-icons/iconfont/material-icons.css";
 import "material-symbols";
 import "./index.css";
 
+import LandingPage from "./routes/LandingPage.tsx";
+
 import Home from "./routes/Home.tsx";
 import About from "./routes/About.tsx";
 import Login from "./routes/Login.tsx";
@@ -70,7 +72,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home />,
+                element: <LandingPage />,
             },
             {
                 path: "/inicio",

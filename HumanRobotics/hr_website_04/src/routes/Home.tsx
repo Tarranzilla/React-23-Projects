@@ -35,7 +35,13 @@ export default function Home() {
                 <Carrossel_Experiencias />
                 <div className="Home_Title_Wrapper">
                     <div className="Home_Title_Group">
-                        <m.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="Route_Title Home_Title">
+                        <m.h1
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 2 }}
+                            exit={{ opacity: 0 }}
+                            className="Route_Title Home_Title"
+                        >
                             O Futuro da Robótica é
                         </m.h1>
 

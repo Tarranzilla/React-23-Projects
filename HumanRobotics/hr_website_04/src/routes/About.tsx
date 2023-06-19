@@ -5,7 +5,13 @@ import FotoEquipe from "../assets/images/equipe/Equipe_Human_edit.png";
 export default function About() {
     return (
         <>
-            <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Route_Container Sobre_Route">
+            <m.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+                className="Route_Container Sobre_Route"
+            >
                 <div className="About_Title_Container">
                     <h1 className="Route_Title Sobre_Title">Sobre Nós</h1>
                     <p className="Main_Text Sobre_Text">
