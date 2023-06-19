@@ -1,6 +1,6 @@
 import { motion as m } from "framer-motion";
 
-import FotoEquipe from "../assets/images/equipe/Equipe_Human_edit.png";
+import FotoEquipe from "../../assets/images/equipe/Equipe_Human_edit.png";
 
 export default function About() {
     return (
@@ -11,6 +11,7 @@ export default function About() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1 }}
                 className="Route_Container Sobre_Route"
+                id="LP_Section_04"
             >
                 <div className="About_Title_Container">
                     <h1 className="Route_Title Sobre_Title">Sobre Nós</h1>

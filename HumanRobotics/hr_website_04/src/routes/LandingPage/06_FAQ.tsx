@@ -3,7 +3,13 @@ import { motion as m } from "framer-motion";
 export default function FAQ() {
     return (
         <>
-            <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Route_Container">
+            <m.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="Route_Container FAQ_Container"
+                id="LP_Section_06"
+            >
                 <div className="FAQ_Title_Container">
                     <h1 className="Route_Title">FAQ</h1>
                     <h2 className="FAQ_SubTitle">Algumas informações relevantes sobre nossos Produtos, Serviços e Empresa.</h2>

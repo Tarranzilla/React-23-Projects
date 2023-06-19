@@ -1,19 +1,26 @@
 import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import Avatar from "../assets/images/Robios_AVATAR_New.png";
-import AvatarBg from "../assets/images/Robios_AVATAR_New_Background.png";
-import Go from "../assets/images/Robios_GO_New.png";
-import GoBg from "../assets/images/Robios_GO_New_Background.png";
-import Inspector from "../assets/images/Robios_INSPECTOR_New.png";
-import InspectorBg from "../assets/images/Robios_INSPECTOR_New_Background.png";
-import Cargo from "../assets/images/Robios_CARGO_New.png";
-import CargoBg from "../assets/images/Robios_CARGO_New_Background.png";
+import Avatar from "../../assets/images/Robios_AVATAR_New.png";
+import AvatarBg from "../../assets/images/Robios_AVATAR_New_Background.png";
+import Go from "../../assets/images/Robios_GO_New.png";
+import GoBg from "../../assets/images/Robios_GO_New_Background.png";
+import Inspector from "../../assets/images/Robios_INSPECTOR_New.png";
+import InspectorBg from "../../assets/images/Robios_INSPECTOR_New_Background.png";
+import Cargo from "../../assets/images/Robios_CARGO_New.png";
+import CargoBg from "../../assets/images/Robios_CARGO_New_Background.png";
 
 export default function Robots() {
     return (
         <>
-            <m.div initial={{ opacity: 0 }} transition={{ duration: 2 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Route_Container">
+            <m.div
+                initial={{ opacity: 0 }}
+                transition={{ duration: 2 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="Route_Container"
+                id="LP_Section_02"
+            >
                 <div className="Robots_Container">
                     <div className="Robot_Card First_Robot_Card" id="avatar">
                         <div className="Robot_Card_Title_Container">

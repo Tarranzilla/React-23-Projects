@@ -1,8 +1,8 @@
 import { motion as m } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-import Inspector from "../assets/images/Robios_INSPECTOR_New.png";
-import InspectorBg from "../assets/images/Robios_INSPECTOR_New_Background.png";
+import Inspector from "../../assets/images/Robios_INSPECTOR_New.png";
+import InspectorBg from "../../assets/images/Robios_INSPECTOR_New_Background.png";
 
 export default function InspectorInfo() {
     const navigate = useNavigate();

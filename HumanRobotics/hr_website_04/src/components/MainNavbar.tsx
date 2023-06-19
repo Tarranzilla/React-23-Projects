@@ -1,4 +1,4 @@
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { motion as m, AnimatePresence } from "framer-motion";
 // import { useState } from "react";
 
@@ -67,7 +67,7 @@ function MainNavbar() {
     return (
         <>
             <m.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Main_Navbar">
-                <NavLink to="/inicio" className="LogoType_Container Nav_SideBlock Nav_Sideblock_1" onClick={LinkHandler}>
+                <Link to="/inicio#LP_Section_01" end className="LogoType_Container Nav_SideBlock Nav_Sideblock_1" onClick={LinkHandler}>
                     <svg id="Svg0" className="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114.15 126.3">
                         <g id="Layer_2-2">
                             <path
@@ -138,7 +138,7 @@ function MainNavbar() {
                             </g>
                         </svg>
                     </div>
-                </NavLink>
+                </Link>
 
                 <div className="Nav_MainBlock">
                     <AnimatePresence>
@@ -154,22 +154,22 @@ function MainNavbar() {
                     </AnimatePresence>
 
                     <div className="NavLinks_Container">
-                        <NavLink to="/robos" className="NavLink Desktop_Only" onClick={LinkHandler}>
+                        <Link to="/inicio#LP_Section_02" className="NavLink Desktop_Only" onClick={LinkHandler}>
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">smart_toy</span>
                             <div className="NavLink_Text">robôs</div>
-                        </NavLink>
-                        <NavLink to="/servicos" className="NavLink Desktop_Only" onClick={LinkHandler}>
+                        </Link>
+                        <Link to="/inicio#LP_Section_03" className="NavLink Desktop_Only" onClick={LinkHandler}>
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">hub</span>
                             <div className="NavLink_Text">soluções</div>
-                        </NavLink>
-                        <NavLink to="/sobre" className="NavLink Desktop_Only" onClick={LinkHandler}>
+                        </Link>
+                        <Link to="/inicio#LP_Section_04" className="NavLink Desktop_Only" onClick={LinkHandler}>
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">foundation</span>
                             <div className="NavLink_Text">sobre</div>
-                        </NavLink>
-                        <NavLink to="/contato" className="NavLink Desktop_Only" onClick={LinkHandler}>
+                        </Link>
+                        <Link to="/inicio#LP_Section_05" className="NavLink Desktop_Only" onClick={LinkHandler}>
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">campaign</span>
                             <div className="NavLink_Text">contato</div>
-                        </NavLink>
+                        </Link>
                     </div>
                 </div>
 

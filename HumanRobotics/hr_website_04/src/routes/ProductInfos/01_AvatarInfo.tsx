@@ -1,8 +1,8 @@
 import { motion as m } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-import Avatar from "../assets/images/Robios_AVATAR_New.png";
-import AvatarBg from "../assets/images/Robios_AVATAR_New_Background.png";
+import Avatar from "../../assets/images/Robios_AVATAR_New.png";
+import AvatarBg from "../../assets/images/Robios_AVATAR_New_Background.png";
 
 export default function AvatarInfo() {
     const navigate = useNavigate();

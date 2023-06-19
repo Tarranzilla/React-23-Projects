@@ -1,9 +1,9 @@
-import Home from "./Home.tsx";
-import Robots from "./Robots.tsx";
-import Services from "./Services.tsx";
-import About from "./About.tsx";
-import Contact from "./Contact.tsx";
-import FAQ from "./FAQ.tsx";
+import Home from "./LandingPage/01_Home.tsx";
+import Robots from "./LandingPage/02_Robots.tsx";
+import Services from "./LandingPage/03_Services.tsx";
+import About from "./LandingPage/04_About.tsx";
+import Contact from "./LandingPage/05_Contact.tsx";
+import FAQ from "./LandingPage/06_FAQ.tsx";
 import Divider from "../components/Divider.tsx";
 
 import { motion as m } from "framer-motion";
@@ -18,6 +18,7 @@ export default function LandingPage() {
                 transition={{ duration: 0.5 }}
                 className="Route_Container_Landing_Page"
             >
+                <Divider />
                 <Home />
                 <Divider />
                 <Robots />

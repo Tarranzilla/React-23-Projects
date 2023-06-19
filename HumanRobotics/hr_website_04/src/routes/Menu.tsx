@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 import { useState } from "react";
 import { motion as m } from "framer-motion";
 /*
@@ -63,89 +64,99 @@ export default function Menu() {
                     </svg>
                 </div>
                 <div className="menu_container">
-                    <NavLink to="/inicio" className="NavLink Mobile_Only" onClick={LinkHandler}>
-                        <span className="material-icons NavLink_Icon">flag</span>
-                        <div className="NavLink_Text Menu_Text">início</div>
-                    </NavLink>
-                    <NavLink to="/robos" className="NavLink" onClick={LinkHandler}>
-                        <span className="material-icons NavLink_Icon">smart_toy</span>
-                        <div className="NavLink_Text Menu_Text">robôs</div>
-                    </NavLink>
-                    <NavLink to="/servicos" className="NavLink" onClick={LinkHandler}>
-                        <span className="material-icons NavLink_Icon">hub</span>
-                        <div className="NavLink_Text Menu_Text">soluções</div>
-                    </NavLink>
-                    <NavLink to="/sobre" className="NavLink" onClick={LinkHandler}>
-                        <span className="material-icons NavLink_Icon">foundation</span>
-                        <div className="NavLink_Text Menu_Text">sobre</div>
-                    </NavLink>
-                    <NavLink to="/contato" className="NavLink" onClick={LinkHandler}>
-                        <span className="material-icons NavLink_Icon">campaign</span>
-                        <div className="NavLink_Text Menu_Text">contato</div>
-                    </NavLink>
-                    <NavLink to="/login" className="NavLink" onClick={LinkHandler}>
-                        <span className="material-icons NavLink_Icon">login</span>
-                        <div className="NavLink_Text Menu_Text">Login</div>
-                    </NavLink>
-                    <NavLink to="/blog" className="NavLink" onClick={LinkHandler}>
-                        <span className="material-icons NavLink_Icon">pages</span>
-                        <div className="NavLink_Text Menu_Text">Blog</div>
-                    </NavLink>
-                    <NavLink to="/duvidas" className="NavLink" onClick={LinkHandler}>
-                        <span className="material-icons NavLink_Icon">live_help</span>
-                        <div className="NavLink_Text Menu_Text">Dúvidas</div>
-                    </NavLink>
-                    <a
-                        href="#menu-preferences"
-                        className="NavLink"
-                        onClick={() => {
-                            setPrefOpen(!prefOpen);
-                        }}
-                    >
-                        <span className="material-icons NavLink_Icon">settings_suggest</span>
-                        <div className="NavLink_Text Menu_Text">Preferências</div>
-                        <span className="material-icons NavLink_Icon">arrow_drop_down</span>
-                    </a>
-
-                    {prefOpen ? (
-                        <div className="preferences_container">
-                            <a href="#menu-preferences-language" className="PrefLink">
-                                <span className="material-icons preferences_icon">translate</span>
-                                <div className="NavLink_Text Menu_Text preferences_text">Idioma</div>
-                                <p className="lang_state preferences_text">
-                                    <span className="material-icons menu_arrow preferences_icon">arrow_right_alt</span>
-                                    {lang}
-                                </p>
-                            </a>
-                            <a href="#menu-preferences-theme" className="PrefLink">
-                                <span className="material-icons preferences_icon">settings_brightness</span>
-                                <div className="NavLink_Text Menu_Text preferences_text">Tema</div>
-                                <p className="lang_state theme_state preferences_text">
-                                    <span className="material-icons menu_arrow preferences_icon">arrow_right_alt</span>
-                                    {theme}
-                                </p>
-                            </a>
-                            <a href="#menu-preferences-cookies" className="PrefLink">
-                                <span className="material-icons preferences_icon">cookie</span>
-                                <div className="NavLink_Text Menu_Text preferences_text">Cookies</div>
-                                <p className="lang_state theme_cookies preferences_text">
-                                    <span className="material-icons menu_arrow preferences_icon">arrow_right_alt</span>
-                                    {cookiesSettings}
-                                </p>
-                            </a>
+                    <div className="Menu_Links_1">
+                        <NavHashLink to="/inicio/#LP_Section_01" className="NavLink Mobile_Only" onClick={LinkHandler}>
+                            <span className="material-icons NavLink_Icon">flag</span>
+                            <div className="NavLink_Text Menu_Text">início</div>
+                        </NavHashLink>
+                        <div className="Menu_Links_1_Container">
+                            <div className="LP_Links_Line"></div>
+                            <div className="LP_Links_Container">
+                                <NavHashLink to="/inicio/#LP_Section_02" className="NavLink" onClick={LinkHandler}>
+                                    <span className="material-icons NavLink_Icon">smart_toy</span>
+                                    <div className="NavLink_Text Menu_Text">robôs</div>
+                                </NavHashLink>
+                                <NavHashLink to="/inicio/#LP_Section_03" className="NavLink" onClick={LinkHandler}>
+                                    <span className="material-icons NavLink_Icon">hub</span>
+                                    <div className="NavLink_Text Menu_Text">soluções</div>
+                                </NavHashLink>
+                                <NavHashLink to="/inicio/#LP_Section_04" className="NavLink" onClick={LinkHandler}>
+                                    <span className="material-icons NavLink_Icon">foundation</span>
+                                    <div className="NavLink_Text Menu_Text">sobre</div>
+                                </NavHashLink>
+                                <NavHashLink to="/inicio/#LP_Section_05" className="NavLink" onClick={LinkHandler}>
+                                    <span className="material-icons NavLink_Icon">campaign</span>
+                                    <div className="NavLink_Text Menu_Text">contato</div>
+                                </NavHashLink>
+                                <NavHashLink to="/inicio/#LP_Section_06" className="NavLink" onClick={LinkHandler}>
+                                    <span className="material-icons NavLink_Icon">live_help</span>
+                                    <div className="NavLink_Text Menu_Text">Dúvidas</div>
+                                </NavHashLink>
+                            </div>
                         </div>
-                    ) : (
-                        <></>
-                    )}
-                    <NavLink to="/studio" className="NavLink" onClick={LinkHandler}>
-                        <span className="material-icons NavLink_Icon">science</span>
-                        <div className="NavLink_Text Menu_Text">RobiOSStudio</div>
-                    </NavLink>
+                    </div>
 
-                    <a href="https://pragmata.ninja" target="_blank" rel="noopener noreferrer" className="NavLink">
-                        <span className="material-icons NavLink_Icon">new_releases</span>
-                        <div className="NavLink_Text Menu_Text">Pragmata</div>
-                    </a>
+                    <div className="Menu_Links_2">
+                        <NavLink to="/login" className="NavLink" onClick={LinkHandler}>
+                            <span className="material-icons NavLink_Icon">login</span>
+                            <div className="NavLink_Text Menu_Text">Login</div>
+                        </NavLink>
+                        <NavLink to="/blog" className="NavLink" onClick={LinkHandler}>
+                            <span className="material-icons NavLink_Icon">pages</span>
+                            <div className="NavLink_Text Menu_Text">Blog</div>
+                        </NavLink>
+                        <NavLink to="/studio" className="NavLink" onClick={LinkHandler}>
+                            <span className="material-icons NavLink_Icon">science</span>
+                            <div className="NavLink_Text Menu_Text">RobiOSStudio</div>
+                        </NavLink>
+
+                        <a href="https://pragmata.ninja" target="_blank" rel="noopener noreferrer" className="NavLink">
+                            <span className="material-icons NavLink_Icon">new_releases</span>
+                            <div className="NavLink_Text Menu_Text">Pragmata</div>
+                        </a>
+                        <a
+                            href="#menu-preferences"
+                            className="NavLink"
+                            onClick={() => {
+                                setPrefOpen(!prefOpen);
+                            }}
+                        >
+                            <span className="material-icons NavLink_Icon">settings_suggest</span>
+                            <div className="NavLink_Text Menu_Text">Preferências</div>
+                            <span className="material-icons NavLink_Icon">arrow_drop_down</span>
+                        </a>
+
+                        {prefOpen ? (
+                            <div className="preferences_container">
+                                <a href="#menu-preferences-language" className="PrefLink">
+                                    <span className="material-icons preferences_icon">translate</span>
+                                    <div className="NavLink_Text Menu_Text preferences_text">Idioma</div>
+                                    <p className="lang_state preferences_text">
+                                        <span className="material-icons menu_arrow preferences_icon">arrow_right_alt</span>
+                                        {lang}
+                                    </p>
+                                </a>
+                                <a href="#menu-preferences-theme" className="PrefLink">
+                                    <span className="material-icons preferences_icon">settings_brightness</span>
+                                    <div className="NavLink_Text Menu_Text preferences_text">Tema</div>
+                                    <p className="lang_state theme_state preferences_text">
+                                        <span className="material-icons menu_arrow preferences_icon">arrow_right_alt</span>
+                                        {theme}
+                                    </p>
+                                </a>
+                                <a href="#menu-preferences-cookies" className="PrefLink">
+                                    <span className="material-icons preferences_icon">cookie</span>
+                                    <div className="NavLink_Text Menu_Text preferences_text">Cookies</div>
+                                    <p className="lang_state theme_cookies preferences_text">
+                                        <span className="material-icons menu_arrow preferences_icon">arrow_right_alt</span>
+                                        {cookiesSettings}
+                                    </p>
+                                </a>
+                            </div>
+                        ) : (
+                            <></>
+                        )}
+                    </div>
                 </div>
             </m.div>
         </>

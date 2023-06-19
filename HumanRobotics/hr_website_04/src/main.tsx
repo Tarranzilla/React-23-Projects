@@ -25,25 +25,24 @@ import "./index.css";
 
 import LandingPage from "./routes/LandingPage.tsx";
 
-import Home from "./routes/Home.tsx";
-import About from "./routes/About.tsx";
-import Login from "./routes/Login.tsx";
-import Register from "./routes/Register.tsx";
-import ProfilePage from "./routes/ProfilePage.tsx";
-// import Product from "./routes/Product.tsx";
-import RobiosStudio from "./routes/RobiosStudio.tsx";
-import Blog from "./routes/Blog.tsx";
-import FAQ from "./routes/FAQ.tsx";
-import Robots from "./routes/Robots.tsx";
+import Home from "./routes/LandingPage/01_Home.tsx";
+import Robots from "./routes/LandingPage/02_Robots.tsx";
+import Services from "./routes/LandingPage/03_Services.tsx";
+import About from "./routes/LandingPage/04_About.tsx";
+import Contact from "./routes/LandingPage/05_Contact.tsx";
+import FAQ from "./routes/LandingPage/06_FAQ.tsx";
 
-import AvatarInfo from "./routes/AvatarInfo.tsx";
-import GoInfo from "./routes/GoInfo.tsx";
-import InspectorInfo from "./routes/InspectorInfo.tsx";
-import CargoInfo from "./routes/CargoInfo.tsx";
+import Login from "./routes/SecondaryPages/Login.tsx";
+import Register from "./routes/SecondaryPages/Register.tsx";
+import ProfilePage from "./routes/SecondaryPages/ProfilePage.tsx";
+import RobiosStudio from "./routes/SecondaryPages/RobiosStudio.tsx";
+import Blog from "./routes/SecondaryPages/Blog.tsx";
 
-import Services from "./routes/Services.tsx";
-import Experience from "./routes/Experience.tsx";
-import Contact from "./routes/Contact.tsx";
+import AvatarInfo from "./routes/ProductInfos/01_AvatarInfo.tsx";
+import GoInfo from "./routes/ProductInfos/02_GoInfo.tsx";
+import InspectorInfo from "./routes/ProductInfos/03_InspectorInfo.tsx";
+import CargoInfo from "./routes/ProductInfos/04_CargoInfo.tsx";
+
 import Menu from "./routes/Menu.tsx";
 import NotFound from "./routes/NotFound.tsx";
 
@@ -76,7 +75,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/inicio",
-                element: <Home />,
+                element: <LandingPage />,
             },
             {
                 path: "/robos",
@@ -101,10 +100,6 @@ const router = createBrowserRouter([
             {
                 path: "/servicos",
                 element: <Services />,
-            },
-            {
-                path: "/experiencia",
-                element: <Experience />,
             },
             {
                 path: "/contato",

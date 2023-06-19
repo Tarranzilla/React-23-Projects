@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion as m, AnimatePresence } from "framer-motion";
 
-import Carrossel_Experiencias from "../components/Carrossel_Experiencias";
-import Carrossel_Parceiros from "../components/Carrossel_Parceiros";
+import Carrossel_Experiencias from "../../components/Carrossel_Experiencias";
+import Carrossel_Parceiros from "../../components/Carrossel_Parceiros";
 
 export default function Home() {
     const words = ["Interativo", "Humano", "Agora"];
@@ -31,6 +31,7 @@ export default function Home() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
                 className="Route_Container Home_Route"
+                id="LP_Section_01"
             >
                 <Carrossel_Experiencias />
                 <div className="Home_Title_Wrapper">

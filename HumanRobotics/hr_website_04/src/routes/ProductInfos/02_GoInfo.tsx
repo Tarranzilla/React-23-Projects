@@ -1,8 +1,8 @@
 import { motion as m } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-import Go from "../assets/images/Robios_GO_New.png";
-import GoBg from "../assets/images/Robios_GO_New_Background.png";
+import Go from "../../assets/images/Robios_GO_New.png";
+import GoBg from "../../assets/images/Robios_GO_New_Background.png";
 
 export default function GoInfo() {
     const navigate = useNavigate();

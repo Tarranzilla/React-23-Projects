@@ -9,6 +9,7 @@ export default function Contact() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1 }}
                 className="Route_Container Contato_Route"
+                id="LP_Section_05"
             >
                 <div className="Contato_Container_1 Form_Container Contato_Form_Container">
                     <div className="Contato_Title_Container">

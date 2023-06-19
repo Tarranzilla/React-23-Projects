@@ -8,6 +8,8 @@ import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme.tsx";
 
+import ScrollToHashElement from "./utilities/ScrollToHashElement.js";
+
 console.log(themeSettings("dark"));
 
 import MainNavbar from "./components/MainNavbar";
@@ -19,6 +21,7 @@ function App() {
 
     return (
         <>
+            <ScrollToHashElement />
             <ThemeProvider theme={theme}>
                 <MainNavbar />
                 <div className="StatusBar"></div>

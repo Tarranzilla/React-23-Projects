@@ -1,8 +1,8 @@
 import { motion as m } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-import Cargo from "../assets/images/Robios_CARGO_New.png";
-import CargoBg from "../assets/images/Robios_CARGO_New_Background.png";
+import Cargo from "../../assets/images/Robios_CARGO_New.png";
+import CargoBg from "../../assets/images/Robios_CARGO_New_Background.png";
 
 export default function CargoInfo() {
     const navigate = useNavigate();

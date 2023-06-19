@@ -1,10 +1,10 @@
 import { motion as m } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
-import videoAtendimento from "../assets/videos/Robios_Evento.mp4";
-import videoPublicidade from "../assets/videos/02_Robios_Varejo_Desktop_QuickCuts_720p.mp4";
-import videoInspecao from "../assets/videos/03_Robios_Saúde_Desktop_720p.mp4";
-import videoTransporte from "../assets/videos/01_Robios_Eventos_Desktop_720p.mp4";
+import videoAtendimento from "../../assets/videos/Robios_Evento.mp4";
+import videoPublicidade from "../../assets/videos/02_Robios_Varejo_Desktop_QuickCuts_720p.mp4";
+import videoInspecao from "../../assets/videos/03_Robios_Saúde_Desktop_720p.mp4";
+import videoTransporte from "../../assets/videos/01_Robios_Eventos_Desktop_720p.mp4";
 
 const baseSolutions = [
     {
@@ -231,7 +231,14 @@ export default function Services() {
 
     return (
         <>
-            <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }} className="Route_Container">
+            <m.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+                className="Route_Container"
+                id="LP_Section_03"
+            >
                 <div className="Main_Text Service_Text_Container">
                     <h1 className="Route_Title Solution_Title">Soluções</h1>
 
