@@ -1,4 +1,4 @@
-import { motion as m } from "framer-motion";
+import { motion as m, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
 import videoAtendimento from "../../assets/videos/Robios_Evento.mp4";
@@ -55,6 +55,9 @@ interface Solution {
 }
 
 export default function Services() {
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { once: true });
+
     const [solutions, setSolutions] = useState<Solution[]>([]);
     const [activeSolution, setActiveSolution] = useState<Solution>(baseSolutions[0]);
 
@@ -238,6 +241,12 @@ export default function Services() {
                 transition={{ duration: 1 }}
                 className="Route_Container"
                 id="LP_Section_03"
+                ref={sectionRef}
+                style={{
+                    transform: isInView ? "none" : "translateX(-100%)",
+                    opacity: isInView ? 1 : 0,
+                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                }}
             >
                 <div className="Main_Text Service_Text_Container">
                     <h1 className="Route_Title Solution_Title">Soluções</h1>

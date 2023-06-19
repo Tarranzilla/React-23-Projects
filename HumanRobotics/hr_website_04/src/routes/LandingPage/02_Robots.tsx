@@ -1,5 +1,6 @@
-import { motion as m } from "framer-motion";
+import { motion as m, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 import Avatar from "../../assets/images/Robios_AVATAR_New.png";
 import AvatarBg from "../../assets/images/Robios_AVATAR_New_Background.png";
@@ -11,6 +12,8 @@ import Cargo from "../../assets/images/Robios_CARGO_New.png";
 import CargoBg from "../../assets/images/Robios_CARGO_New_Background.png";
 
 export default function Robots() {
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { once: true });
     return (
         <>
             <m.div
@@ -20,6 +23,12 @@ export default function Robots() {
                 exit={{ opacity: 0 }}
                 className="Route_Container"
                 id="LP_Section_02"
+                ref={sectionRef}
+                style={{
+                    transform: isInView ? "none" : "translateX(-100%)",
+                    opacity: isInView ? 1 : 0,
+                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                }}
             >
                 <div className="Robots_Container">
                     <div className="Robot_Card First_Robot_Card" id="avatar">

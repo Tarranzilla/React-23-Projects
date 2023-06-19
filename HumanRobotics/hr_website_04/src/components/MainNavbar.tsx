@@ -67,7 +67,7 @@ function MainNavbar() {
     return (
         <>
             <m.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Main_Navbar">
-                <Link to="/inicio#LP_Section_01" end className="LogoType_Container Nav_SideBlock Nav_Sideblock_1" onClick={LinkHandler}>
+                <Link to="/inicio#LP_Section_01" className="LogoType_Container Nav_SideBlock Nav_Sideblock_1" onClick={LinkHandler}>
                     <svg id="Svg0" className="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114.15 126.3">
                         <g id="Layer_2-2">
                             <path

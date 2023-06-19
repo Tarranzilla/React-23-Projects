@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion as m, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion as m, AnimatePresence, useInView } from "framer-motion";
 
 import Carrossel_Experiencias from "../../components/Carrossel_Experiencias";
 import Carrossel_Parceiros from "../../components/Carrossel_Parceiros";
@@ -8,6 +8,9 @@ export default function Home() {
     const words = ["Interativo", "Humano", "Agora"];
     const [currentIndex, setCurrentIndex] = useState(0);
     const [finalWord, setFinalWord] = useState(words[currentIndex]);
+
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { once: true });
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -32,6 +35,12 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="Route_Container Home_Route"
                 id="LP_Section_01"
+                ref={sectionRef}
+                style={{
+                    transform: isInView ? "none" : "translateX(-100%)",
+                    opacity: isInView ? 1 : 0,
+                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                }}
             >
                 <Carrossel_Experiencias />
                 <div className="Home_Title_Wrapper">
