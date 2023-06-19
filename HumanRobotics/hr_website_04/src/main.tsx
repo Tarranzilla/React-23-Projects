@@ -25,7 +25,7 @@ import "./index.css";
 
 import LandingPage from "./routes/LandingPage.tsx";
 
-import Home from "./routes/LandingPage/01_Home.tsx";
+//import Home from "./routes/LandingPage/01_Home.tsx";
 import Robots from "./routes/LandingPage/02_Robots.tsx";
 import Services from "./routes/LandingPage/03_Services.tsx";
 import About from "./routes/LandingPage/04_About.tsx";
