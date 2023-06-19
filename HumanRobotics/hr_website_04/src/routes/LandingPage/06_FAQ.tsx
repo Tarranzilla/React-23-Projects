@@ -14,7 +14,7 @@ export default function FAQ() {
                 id="LP_Section_06"
                 ref={sectionRef}
                 style={{
-                    transform: isInView ? "none" : "translateX(-100%)",
+                    transform: isInView ? "translateX(0)" : "translateX(-100%)",
                     opacity: isInView ? 1 : 0,
                     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
                 }}
