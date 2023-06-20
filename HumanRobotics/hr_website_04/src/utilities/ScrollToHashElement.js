@@ -8,6 +8,7 @@ const ScrollToHashElement = () => {
         let hash = location.hash;
         const removeHashCharacter = (str) => {
             const result = str.slice(1);
+            console.log(result);
             return result;
         };
 
@@ -21,6 +22,9 @@ const ScrollToHashElement = () => {
 
     useEffect(() => {
         if (hashElement) {
+            console.log("scrolling to hash element");
+            console.log(hashElement);
+
             hashElement.scrollIntoView({
                 behavior: "smooth",
                 // block: "end",

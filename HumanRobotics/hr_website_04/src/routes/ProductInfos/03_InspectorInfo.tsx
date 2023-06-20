@@ -1,16 +1,10 @@
 import { motion as m } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 
 import Inspector from "../../assets/images/Robios_INSPECTOR_New.png";
 import InspectorBg from "../../assets/images/Robios_INSPECTOR_New_Background.png";
 
 export default function InspectorInfo() {
-    const navigate = useNavigate();
-
-    function goBack() {
-        navigate("/robos");
-    }
-
     return (
         <m.div
             initial={{ opacity: 0 }}
@@ -19,10 +13,10 @@ export default function InspectorInfo() {
             transition={{ duration: 0.5 }}
             className="Route_Container Robot_Info_Route_Container"
         >
-            <button id="Robot_Info_Close_1" className="Robot_Info_Close" onClick={goBack}>
+            <NavHashLink id="Robot_Info_Close_1" className="Robot_Info_Close" to="/inicio/#LP_Section_02">
                 <span className="material-icons">arrow_back</span>
                 Retornar
-            </button>
+            </NavHashLink>
 
             <div className="Robot_Info_Media_Container">
                 <div className="Robot_Info_Image_Container">
