@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { NavHashLink } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 import { useState } from "react";
 import { motion as m } from "framer-motion";
 /*
@@ -65,33 +65,33 @@ export default function Menu() {
                 </div>
                 <div className="menu_container">
                     <div className="Menu_Links_1">
-                        <NavHashLink to="/inicio/#LP_Section_01" className="NavLink Mobile_Only" onClick={LinkHandler}>
+                        <HashLink to="/inicio/#LP_Section_01" className="NavLink Mobile_Only" onClick={LinkHandler}>
                             <span className="material-icons NavLink_Icon">flag</span>
                             <div className="NavLink_Text Menu_Text">início</div>
-                        </NavHashLink>
+                        </HashLink>
                         <div className="Menu_Links_1_Container">
                             <div className="LP_Links_Line"></div>
                             <div className="LP_Links_Container">
-                                <NavHashLink to="/inicio/#LP_Section_02" className="NavLink" onClick={LinkHandler}>
+                                <HashLink to="/inicio/#LP_Section_02" className="NavLink" onClick={LinkHandler}>
                                     <span className="material-icons NavLink_Icon">smart_toy</span>
                                     <div className="NavLink_Text Menu_Text">robôs</div>
-                                </NavHashLink>
-                                <NavHashLink to="/inicio/#LP_Section_03" className="NavLink" onClick={LinkHandler}>
+                                </HashLink>
+                                <HashLink to="/inicio/#LP_Section_03" className="NavLink" onClick={LinkHandler}>
                                     <span className="material-icons NavLink_Icon">hub</span>
                                     <div className="NavLink_Text Menu_Text">soluções</div>
-                                </NavHashLink>
-                                <NavHashLink to="/inicio/#LP_Section_04" className="NavLink" onClick={LinkHandler}>
+                                </HashLink>
+                                <HashLink to="/inicio/#LP_Section_04" className="NavLink" onClick={LinkHandler}>
                                     <span className="material-icons NavLink_Icon">foundation</span>
                                     <div className="NavLink_Text Menu_Text">sobre</div>
-                                </NavHashLink>
-                                <NavHashLink to="/inicio/#LP_Section_05" className="NavLink" onClick={LinkHandler}>
+                                </HashLink>
+                                <HashLink to="/inicio/#LP_Section_05" className="NavLink" onClick={LinkHandler}>
                                     <span className="material-icons NavLink_Icon">campaign</span>
                                     <div className="NavLink_Text Menu_Text">contato</div>
-                                </NavHashLink>
-                                <NavHashLink to="/inicio/#LP_Section_06" className="NavLink" onClick={LinkHandler}>
+                                </HashLink>
+                                <HashLink to="/inicio/#LP_Section_06" className="NavLink" onClick={LinkHandler}>
                                     <span className="material-icons NavLink_Icon">live_help</span>
                                     <div className="NavLink_Text Menu_Text">Dúvidas</div>
-                                </NavHashLink>
+                                </HashLink>
                             </div>
                         </div>
                     </div>

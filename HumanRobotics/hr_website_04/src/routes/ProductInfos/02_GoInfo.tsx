@@ -1,5 +1,5 @@
 import { motion as m } from "framer-motion";
-import { NavHashLink } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 
 import Go from "../../assets/images/Robios_GO_New.png";
 import GoBg from "../../assets/images/Robios_GO_New_Background.png";
@@ -13,10 +13,10 @@ export default function GoInfo() {
             transition={{ duration: 0.5 }}
             className="Route_Container Robot_Info_Route_Container"
         >
-            <NavHashLink id="Robot_Info_Close_1" className="Robot_Info_Close" to="/inicio/#LP_Section_02">
+            <HashLink id="Robot_Info_Close_1" className="Robot_Info_Close" to="/inicio/#LP_Section_02">
                 <span className="material-icons">arrow_back</span>
                 Retornar
-            </NavHashLink>
+            </HashLink>
 
             <div className="Robot_Info_Media_Container">
                 <div className="Robot_Info_Image_Container">
