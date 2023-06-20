@@ -22,12 +22,12 @@ import { useEffect, useRef, useState } from "react";
 export default function LandingPage() {
     const dispatch = useDispatch();
 
-    //const section_1_IsActive = useSelector((state: any) => state.setSection1Active);
-    //const section_2_IsActive = useSelector((state: any) => state.setSection2Active);
-    //const section_3_IsActive = useSelector((state: any) => state.setSection3Active);
-    //const section_4_IsActive = useSelector((state: any) => state.setSection4Active);
-    //const section_5_IsActive = useSelector((state: any) => state.setSection5Active);
-    //const section_6_IsActive = useSelector((state: any) => state.setSection6Active);
+    const section_1_IsActive = useSelector((state: any) => state.setSection1Active);
+    const section_2_IsActive = useSelector((state: any) => state.setSection2Active);
+    const section_3_IsActive = useSelector((state: any) => state.setSection3Active);
+    const section_4_IsActive = useSelector((state: any) => state.setSection4Active);
+    const section_5_IsActive = useSelector((state: any) => state.setSection5Active);
+    const section_6_IsActive = useSelector((state: any) => state.setSection6Active);
 
     const section1Ref = useRef(null);
     const section2Ref = useRef(null);
