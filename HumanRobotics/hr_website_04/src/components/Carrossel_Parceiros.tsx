@@ -36,7 +36,7 @@ const CardContainer_Parceiros = () => {
         <div className="card-container">
             <div className="card-container-track track-parceiros">
                 {cards.map((card) => (
-                    <div key={card.id} className="card">
+                    <div key={`${card.id}C`} className="card">
                         <div className="card-content">
                             <p>{card.text}</p>
                             <p>{card.description}</p>
@@ -45,7 +45,7 @@ const CardContainer_Parceiros = () => {
                     </div>
                 ))}
                 {cards.map((card) => (
-                    <div key={card.id} className="card">
+                    <div key={`${card.id}D`} className="card">
                         <div className="card-content">
                             <p>{card.text}</p>
                             <p>{card.description}</p>

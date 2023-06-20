@@ -14,6 +14,7 @@ export default function About() {
                 transition={{ duration: 1 }}
                 className="Route_Container Sobre_Route"
                 id="LP_Section_04"
+                key="LP_Section_04"
                 ref={sectionRef}
                 style={{
                     transform: isInView ? "none" : "translateX(-100%)",

@@ -55,7 +55,7 @@ const CardContainer_Experiencias = () => {
                     </div>
                 ))}
                 {cards.map((card) => (
-                    <div key={card.id} className="card">
+                    <div key={`${card.id}B`} className="card">
                         <div className="card-content">
                             <p>{card.text}</p>
                             <p>{card.description}</p>

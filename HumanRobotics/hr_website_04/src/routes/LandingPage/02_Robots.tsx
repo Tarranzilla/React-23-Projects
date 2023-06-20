@@ -23,6 +23,7 @@ export default function Robots() {
                 exit={{ opacity: 0 }}
                 className="Route_Container"
                 id="LP_Section_02"
+                key="LP_Section_02"
                 ref={sectionRef}
                 style={{
                     transform: isInView ? "none" : "translateX(-100%)",

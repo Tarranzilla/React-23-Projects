@@ -27,51 +27,50 @@ export default function Home() {
     }, [currentIndex, words]);
 
     return (
-        <>
-            <m.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="Route_Container Home_Route"
-                id="LP_Section_01"
-                ref={sectionRef}
-                style={{
-                    transform: isInView ? "none" : "translateX(-100%)",
-                    opacity: isInView ? 1 : 0,
-                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-                }}
-            >
-                <Carrossel_Experiencias />
-                <div className="Home_Title_Wrapper">
-                    <div className="Home_Title_Group">
+        <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="Route_Container Home_Route"
+            id="LP_Section_01"
+            key="LP_Section_01"
+            ref={sectionRef}
+            style={{
+                transform: isInView ? "none" : "translateX(-100%)",
+                opacity: isInView ? 1 : 0,
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+        >
+            <Carrossel_Experiencias />
+            <div className="Home_Title_Wrapper">
+                <div className="Home_Title_Group">
+                    <m.h1
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 2 }}
+                        exit={{ opacity: 0 }}
+                        className="Route_Title Home_Title"
+                    >
+                        O Futuro da Robótica é
+                    </m.h1>
+
+                    <AnimatePresence mode="wait">
                         <m.h1
+                            key={finalWord}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ duration: 2 }}
                             exit={{ opacity: 0 }}
-                            className="Route_Title Home_Title"
+                            transition={{ duration: 0.5 }}
+                            className="Home_Title_Changer"
                         >
-                            O Futuro da Robótica é
+                            {finalWord}
                         </m.h1>
-
-                        <AnimatePresence mode="wait">
-                            <m.h1
-                                key={finalWord}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.5 }}
-                                className="Home_Title_Changer"
-                            >
-                                {finalWord}
-                            </m.h1>
-                        </AnimatePresence>
-                    </div>
+                    </AnimatePresence>
                 </div>
+            </div>
 
-                <Carrossel_Parceiros />
-            </m.div>
-        </>
+            <Carrossel_Parceiros />
+        </m.div>
     );
 }

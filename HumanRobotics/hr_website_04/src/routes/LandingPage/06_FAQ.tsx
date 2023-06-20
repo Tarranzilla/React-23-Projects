@@ -12,6 +12,7 @@ export default function FAQ() {
                 exit={{ opacity: 0 }}
                 className="Route_Container FAQ_Container"
                 id="LP_Section_06"
+                key="LP_Section_06"
                 ref={sectionRef}
                 style={{
                     transform: isInView ? "translateX(0)" : "translateX(-100%)",

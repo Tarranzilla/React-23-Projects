@@ -14,6 +14,7 @@ export default function Contact() {
                 transition={{ duration: 1 }}
                 className="Route_Container Contato_Route"
                 id="LP_Section_05"
+                key="LP_Section_05"
                 ref={sectionRef}
                 style={{
                     transform: isInView ? "none" : "translateX(-100%)",
