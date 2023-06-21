@@ -4,11 +4,11 @@
         "skipLibCheck": true,
         "module": "ESNext",
         "moduleResolution": "bundler",
-        "allowSyntheticDefaultImports": true,
+        "allowSyntheticDefaultImports": true
 
         //teste
-        "noUnusedLocals": false,
-        "noUnusedParameters": false
+        //"noUnusedLocals": false,
+        //"noUnusedParameters": false
     },
     "include": ["vite.config.ts"]
 }
