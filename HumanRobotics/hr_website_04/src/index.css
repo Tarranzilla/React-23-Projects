@@ -415,7 +415,7 @@ li {
         --nav-height: 6svh;
     }
 }
-
+.LogoType_Container.Nav_Active,
 .LogoType_Container:hover,
 .LogoType_Container:focus,
 .LogoType_Container.active {
@@ -424,8 +424,8 @@ li {
 
 .LogoType_Container:hover .Logo_Text_Container > *,
 .LogoType_Container:focus .Logo_Text_Container > *,
-.LogoType_Container.active > *,
-.LogoType_Container.active > .Logo_Text_Container > * {
+.LogoType_Container.Nav_Active > *,
+.LogoType_Container.Nav_Active > .Logo_Text_Container > * {
     fill: var(--bg_white);
 }
 
@@ -473,6 +473,7 @@ li {
     height: 100%;
 }
 
+.NavLink.Nav_Active,
 .NavLink:hover,
 .NavLink:focus,
 .NavLink.active {

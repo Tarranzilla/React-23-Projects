@@ -8,6 +8,8 @@
         //Teste
         "allowJs": true,
         "noImplicitAny": false,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
 
         /* Bundler mode */
         "moduleResolution": "bundler",

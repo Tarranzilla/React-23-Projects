@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { motion as m, AnimatePresence } from "framer-motion";
 // import { useState } from "react";
@@ -14,17 +14,22 @@ import { toggleMenu } from "../context/main_context";
 // import { useTheme, useMediaQuery } from "@mui/material";
 
 function MainNavbar() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     const currentLocation = useLocation();
     const currentLocationParsed = currentLocation.pathname.replace(/[^a-zA-Z ]/g, "");
     console.log(currentLocationParsed);
 
-    const navigate = useNavigate();
-
-    const dispatch = useDispatch();
-
     //    const username = useSelector((state: any) => state.username);
     //    const mode = useSelector((state: any) => state.mode);
     const menuIsOpen = useSelector((state: any) => state.menuIsOpen);
+    const section1Active = useSelector((state: any) => state.section1Active);
+    const section2Active = useSelector((state: any) => state.section2Active);
+    const section3Active = useSelector((state: any) => state.section3Active);
+    const section4Active = useSelector((state: any) => state.section4Active);
+    const section5Active = useSelector((state: any) => state.section5Active);
+    //const section6Active = useSelector((state: any) => state.section6Active);
 
     //    const isDesktop = useMediaQuery("(min-width: 1240px)");
     //    const isMobile = useMediaQuery("(max-width: 1000px)");
@@ -68,7 +73,15 @@ function MainNavbar() {
     return (
         <>
             <m.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Main_Navbar">
-                <HashLink to="/inicio/#LP_Section_01" className="LogoType_Container Nav_SideBlock Nav_Sideblock_1" onClick={LinkHandler}>
+                <HashLink
+                    to="/inicio/#LP_Section_01"
+                    className={
+                        section1Active
+                            ? "LogoType_Container Nav_SideBlock Nav_Sideblock_1 Nav_Active"
+                            : "LogoType_Container Nav_SideBlock Nav_Sideblock_1"
+                    }
+                    onClick={LinkHandler}
+                >
                     <svg id="Svg0" className="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114.15 126.3">
                         <g id="Layer_2-2">
                             <path
@@ -155,19 +168,35 @@ function MainNavbar() {
                     </AnimatePresence>
 
                     <div className="NavLinks_Container">
-                        <HashLink to="/inicio/#LP_Section_02" className="NavLink Desktop_Only" onClick={LinkHandler}>
+                        <HashLink
+                            to="/inicio/#LP_Section_02"
+                            className={section2Active ? "NavLink Desktop_Only Nav_Active" : "NavLink Desktop_Only"}
+                            onClick={LinkHandler}
+                        >
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">smart_toy</span>
                             <div className="NavLink_Text">robôs</div>
                         </HashLink>
-                        <HashLink to="/inicio/#LP_Section_03" className="NavLink Desktop_Only" onClick={LinkHandler}>
+                        <HashLink
+                            to="/inicio/#LP_Section_03"
+                            className={section3Active ? "NavLink Desktop_Only Nav_Active" : "NavLink Desktop_Only"}
+                            onClick={LinkHandler}
+                        >
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">hub</span>
                             <div className="NavLink_Text">soluções</div>
                         </HashLink>
-                        <HashLink to="/inicio/#LP_Section_04" className="NavLink Desktop_Only" onClick={LinkHandler}>
+                        <HashLink
+                            to="/inicio/#LP_Section_04"
+                            className={section4Active ? "NavLink Desktop_Only Nav_Active" : "NavLink Desktop_Only"}
+                            onClick={LinkHandler}
+                        >
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">foundation</span>
                             <div className="NavLink_Text">sobre</div>
                         </HashLink>
-                        <HashLink to="/inicio/#LP_Section_05" className="NavLink Desktop_Only" onClick={LinkHandler}>
+                        <HashLink
+                            to="/inicio/#LP_Section_05"
+                            className={section5Active ? "NavLink Desktop_Only Nav_Active" : "NavLink Desktop_Only"}
+                            onClick={LinkHandler}
+                        >
                             <span className="material-icons NavLink_Icon Desktop_Only_Extended">campaign</span>
                             <div className="NavLink_Text">contato</div>
                         </HashLink>

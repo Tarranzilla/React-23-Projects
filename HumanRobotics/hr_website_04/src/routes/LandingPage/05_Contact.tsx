@@ -1,4 +1,4 @@
-import { useRef, forwardRef } from "react";
+import { forwardRef } from "react";
 import { motion as m, useInView } from "framer-motion";
 
 const Contact = forwardRef(function Contact(props, ref: any) {

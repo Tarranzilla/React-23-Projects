@@ -37,21 +37,27 @@ export const authSlice = createSlice({
         },
         setSection1Active: (state, action) => {
             state.section1Active = action.payload.section1Active;
+            console.log("Section 1 Active: " + state.section1Active);
         },
         setSection2Active: (state, action) => {
             state.section2Active = action.payload.section2Active;
+            console.log("Section 2 Active: " + state.section2Active);
         },
         setSection3Active: (state, action) => {
             state.section3Active = action.payload.section3Active;
+            console.log("Section 3 Active: " + state.section3Active);
         },
         setSection4Active: (state, action) => {
             state.section4Active = action.payload.section4Active;
+            console.log("Section 4 Active: " + state.section4Active);
         },
         setSection5Active: (state, action) => {
             state.section5Active = action.payload.section5Active;
+            console.log("Section 5 Active: " + state.section5Active);
         },
         setSection6Active: (state, action) => {
             state.section6Active = action.payload.section6Active;
+            console.log("Section 6 Active: " + state.section6Active);
         },
     },
 });
