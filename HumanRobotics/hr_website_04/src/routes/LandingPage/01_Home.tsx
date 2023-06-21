@@ -1,16 +1,15 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, forwardRef } from "react";
 import { motion as m, AnimatePresence, useInView } from "framer-motion";
 
 import Carrossel_Experiencias from "../../components/Carrossel_Experiencias";
 import Carrossel_Parceiros from "../../components/Carrossel_Parceiros";
 
-export default function Home() {
+const Home = forwardRef(function Home(props, ref: any) {
     const words = ["Interativo", "Humano", "Agora"];
     const [currentIndex, setCurrentIndex] = useState(0);
     const [finalWord, setFinalWord] = useState(words[currentIndex]);
 
-    const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { once: true });
+    const isInView = useInView(ref, { once: true });
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -35,7 +34,7 @@ export default function Home() {
             className="Route_Container Home_Route"
             id="LP_Section_01"
             key="LP_Section_01"
-            ref={sectionRef}
+            ref={ref}
             style={{
                 transform: isInView ? "none" : "translateX(-100%)",
                 opacity: isInView ? 1 : 0,
@@ -73,4 +72,6 @@ export default function Home() {
             <Carrossel_Parceiros />
         </m.div>
     );
-}
+});
+
+export default Home;

@@ -1,6 +1,6 @@
 import { motion as m, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { forwardRef } from "react";
 
 import Avatar from "../../assets/images/Robios_AVATAR_New.png";
 import AvatarBg from "../../assets/images/Robios_AVATAR_New_Background.png";
@@ -11,9 +11,8 @@ import InspectorBg from "../../assets/images/Robios_INSPECTOR_New_Background.png
 import Cargo from "../../assets/images/Robios_CARGO_New.png";
 import CargoBg from "../../assets/images/Robios_CARGO_New_Background.png";
 
-export default function Robots() {
-    const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { once: true });
+const Robots = forwardRef(function Robots(props, ref: any) {
+    const isInView = useInView(ref, { once: true });
     return (
         <>
             <m.div
@@ -24,7 +23,7 @@ export default function Robots() {
                 className="Route_Container"
                 id="LP_Section_02"
                 key="LP_Section_02"
-                ref={sectionRef}
+                ref={ref}
                 style={{
                     transform: isInView ? "none" : "translateX(-100%)",
                     opacity: isInView ? 1 : 0,
@@ -99,4 +98,6 @@ export default function Robots() {
             </m.div>
         </>
     );
-}
+});
+
+export default Robots;

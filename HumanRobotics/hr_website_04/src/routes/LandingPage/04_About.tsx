@@ -1,10 +1,9 @@
-import { useRef } from "react";
+import { useRef, forwardRef } from "react";
 import { motion as m, useInView } from "framer-motion";
 import FotoEquipe from "../../assets/images/equipe/Equipe_Human_edit.png";
 
-export default function About() {
-    const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { once: true });
+const About = forwardRef(function About(props, ref: any) {
+    const isInView = useInView(ref, { once: true });
     return (
         <>
             <m.div
@@ -15,7 +14,7 @@ export default function About() {
                 className="Route_Container Sobre_Route"
                 id="LP_Section_04"
                 key="LP_Section_04"
-                ref={sectionRef}
+                ref={ref}
                 style={{
                     transform: isInView ? "none" : "translateX(-100%)",
                     opacity: isInView ? 1 : 0,
@@ -33,4 +32,6 @@ export default function About() {
             </m.div>
         </>
     );
-}
+});
+
+export default About;

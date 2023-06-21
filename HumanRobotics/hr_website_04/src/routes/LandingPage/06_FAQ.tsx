@@ -1,9 +1,8 @@
-import { useRef } from "react";
+import { forwardRef } from "react";
 import { motion as m, useInView } from "framer-motion";
 
-export default function FAQ() {
-    const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { once: true });
+const FAQ = forwardRef(function FAQ(props, ref: any) {
+    const isInView = useInView(ref, { once: true });
     return (
         <>
             <m.div
@@ -13,7 +12,7 @@ export default function FAQ() {
                 className="Route_Container FAQ_Container"
                 id="LP_Section_06"
                 key="LP_Section_06"
-                ref={sectionRef}
+                ref={ref}
                 style={{
                     transform: isInView ? "translateX(0)" : "translateX(-100%)",
                     opacity: isInView ? 1 : 0,
@@ -190,4 +189,6 @@ export default function FAQ() {
             </m.div>
         </>
     );
-}
+});
+
+export default FAQ;

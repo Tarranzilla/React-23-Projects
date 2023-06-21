@@ -1,5 +1,5 @@
 import { motion as m, useInView } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, forwardRef } from "react";
 
 import videoAtendimento from "../../assets/videos/Robios_Evento.mp4";
 import videoPublicidade from "../../assets/videos/02_Robios_Varejo_Desktop_QuickCuts_720p.mp4";
@@ -54,9 +54,8 @@ interface Solution {
     solutionState: boolean;
 }
 
-export default function Services() {
-    const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { once: true });
+const Solutions = forwardRef(function Solutions(props, ref: any) {
+    const isInView = useInView(ref, { once: true });
 
     const [solutions, setSolutions] = useState<Solution[]>([]);
     const [activeSolution, setActiveSolution] = useState<Solution>(baseSolutions[0]);
@@ -242,7 +241,7 @@ export default function Services() {
                 className="Route_Container"
                 id="LP_Section_03"
                 key="LP_Section_03"
-                ref={sectionRef}
+                ref={ref}
                 style={{
                     transform: isInView ? "none" : "translateX(-100%)",
                     opacity: isInView ? 1 : 0,
@@ -430,4 +429,6 @@ export default function Services() {
             </m.div>
         </>
     );
-}
+});
+
+export default Solutions;

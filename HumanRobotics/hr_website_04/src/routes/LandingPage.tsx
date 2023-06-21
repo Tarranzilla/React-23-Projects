@@ -76,16 +76,66 @@ export default function LandingPage() {
                         break;
                     case "LP_Section_02":
                         dispatch(
+                            setSection1Active({
+                                section1Active: false,
+                            })
+                        );
+                        dispatch(
                             setSection2Active({
                                 section2Active: true,
+                            })
+                        );
+                        dispatch(
+                            setSection3Active({
+                                section3Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection4Active({
+                                section4Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection5Active({
+                                section5Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection6Active({
+                                section6Active: false,
                             })
                         );
                         console.log("Section 2 is active");
                         break;
                     case "LP_Section_03":
                         dispatch(
+                            setSection1Active({
+                                section1Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection2Active({
+                                section2Active: false,
+                            })
+                        );
+                        dispatch(
                             setSection3Active({
                                 section3Active: true,
+                            })
+                        );
+                        dispatch(
+                            setSection4Active({
+                                section4Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection5Active({
+                                section5Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection6Active({
+                                section6Active: false,
                             })
                         );
 
@@ -93,8 +143,33 @@ export default function LandingPage() {
                         break;
                     case "LP_Section_04":
                         dispatch(
+                            setSection1Active({
+                                section1Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection2Active({
+                                section2Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection3Active({
+                                section3Active: false,
+                            })
+                        );
+                        dispatch(
                             setSection4Active({
                                 section4Active: true,
+                            })
+                        );
+                        dispatch(
+                            setSection5Active({
+                                section5Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection6Active({
+                                section6Active: false,
                             })
                         );
 
@@ -102,14 +177,64 @@ export default function LandingPage() {
                         break;
                     case "LP_Section_05":
                         dispatch(
+                            setSection1Active({
+                                section1Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection2Active({
+                                section2Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection3Active({
+                                section3Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection4Active({
+                                section4Active: false,
+                            })
+                        );
+                        dispatch(
                             setSection5Active({
                                 section5Active: true,
+                            })
+                        );
+                        dispatch(
+                            setSection6Active({
+                                section6Active: false,
                             })
                         );
 
                         console.log("Section 5 is active");
                         break;
                     case "LP_Section_06":
+                        dispatch(
+                            setSection1Active({
+                                section1Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection2Active({
+                                section2Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection3Active({
+                                section3Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection4Active({
+                                section4Active: false,
+                            })
+                        );
+                        dispatch(
+                            setSection5Active({
+                                section5Active: false,
+                            })
+                        );
                         dispatch(
                             setSection6Active({
                                 section6Active: true,
@@ -184,17 +309,17 @@ export default function LandingPage() {
                 id="Route_Container_Landing_Page"
             >
                 <Divider />
-                <Home />
+                <Home ref={section1Ref} />
                 <Divider />
-                <Robots />
+                <Robots ref={section2Ref} />
                 <Divider />
-                <Services />
+                <Services ref={section3Ref} />
                 <Divider />
-                <About />
+                <About ref={section4Ref} />
                 <Divider />
-                <Contact />
+                <Contact ref={section5Ref} />
                 <Divider />
-                <FAQ />
+                <FAQ ref={section6Ref} />
                 <Divider />
             </m.div>
         </>
