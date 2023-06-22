@@ -76,14 +76,6 @@ const router = createBrowserRouter([
                 element: <LandingPage />,
             },
             {
-                path: "/inicio",
-                element: <LandingPage />,
-            },
-            {
-                path: "/robos",
-                element: <Robots />,
-            },
-            {
                 path: "/avatar-info",
                 element: <AvatarInfo />,
             },
@@ -98,18 +90,6 @@ const router = createBrowserRouter([
             {
                 path: "/cargo-info",
                 element: <CargoInfo />,
-            },
-            {
-                path: "/servicos",
-                element: <Solutions />,
-            },
-            {
-                path: "/contato",
-                element: <Contact />,
-            },
-            {
-                path: "/sobre",
-                element: <About />,
             },
             {
                 path: "/login",
@@ -130,10 +110,6 @@ const router = createBrowserRouter([
             {
                 path: "/blog",
                 element: <Blog />,
-            },
-            {
-                path: "/duvidas",
-                element: <FAQ />,
             },
             {
                 path: "/menu",
