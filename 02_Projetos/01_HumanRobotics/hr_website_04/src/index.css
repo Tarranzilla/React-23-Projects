@@ -795,6 +795,7 @@ li {
     border-radius: var(--small-gap);
     flex-shrink: 0;
     flex-grow: 0;
+    cursor: pointer;
 }
 
 .card > img {

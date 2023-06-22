@@ -8,7 +8,7 @@ import { motion as m, AnimatePresence } from "framer-motion";
 // import { themeSettings } from "./theme.js";
 
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu } from "../context/main_context";
+import { toggleMenu, setMode } from "../context/main_context";
 // import { dark } from "@mui/material/styles/createPalette";
 
 // import { useTheme, useMediaQuery } from "@mui/material";
@@ -22,7 +22,7 @@ function MainNavbar() {
     console.log(currentLocationParsed);
 
     //    const username = useSelector((state: any) => state.username);
-    //    const mode = useSelector((state: any) => state.mode);
+    const mode = useSelector((state: any) => state.mode);
     const menuIsOpen = useSelector((state: any) => state.menuIsOpen);
     const section1Active = useSelector((state: any) => state.section1Active);
     const section2Active = useSelector((state: any) => state.section2Active);
@@ -52,6 +52,11 @@ function MainNavbar() {
             );
             console.log("NavLink clicado, Menu fechado.");
         }
+    };
+
+    const toggleModeHandler = () => {
+        console.log("Modo alterado.");
+        dispatch(setMode());
     };
 
     const menuOpenHandler = () => {
@@ -207,7 +212,7 @@ function MainNavbar() {
                     <a href="#" className="Menu_Button_Container">
                         <span className="material-icons Menu_Button">search</span>
                     </a>
-                    <a href="#" className="Menu_Button_Container Desktop_Only_Extended">
+                    <a href="#" className="Menu_Button_Container Desktop_Only_Extended" onClick={toggleModeHandler}>
                         <span className="material-icons Menu_Button">brightness_4</span>
                     </a>
                     <a href="#" className="Menu_Button_Container Desktop_Only_Extended">
