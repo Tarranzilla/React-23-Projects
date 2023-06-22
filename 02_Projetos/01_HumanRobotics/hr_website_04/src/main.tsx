@@ -76,6 +76,10 @@ const router = createBrowserRouter([
                 element: <LandingPage />,
             },
             {
+                path: "/inicio",
+                element: <LandingPage />,
+            },
+            {
                 path: "/avatar-info",
                 element: <AvatarInfo />,
             },
