@@ -28,7 +28,11 @@ export default function InspectorInfo() {
             <div className="Robot_Info_Specs_Container">
                 <div className="Specs_Title_Container">
                     <h1 className="Route_Title Specs_Title">RobiOS INSPECTOR</h1>
-                    <h2 className="Specs_SubTitle">Especificações</h2>
+                    <div className="Specs_SubTitle_Container">
+                        <div className="Line"></div>
+                        <h2 className="Specs_SubTitle">Especificações</h2>
+                        <div className="Line"></div>
+                    </div>
                 </div>
 
                 <p className="Specs_Description">

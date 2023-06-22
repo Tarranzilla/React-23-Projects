@@ -58,7 +58,9 @@ const Solutions = forwardRef(function Solutions(props, ref: any) {
     const isInView = useInView(ref, { once: true });
 
     const [solutions, setSolutions] = useState<Solution[]>([]);
-    const [activeSolution, setActiveSolution] = useState<Solution>(baseSolutions[0]);
+    const [activeSolution, setActiveSolution] = useState({ ...baseSolutions[0] });
+    const [activeSolutionIndex, setActiveSolutionIndex] = useState(0);
+    const [isAutoScrolling, setIsAutoScrolling] = useState(true);
 
     const titulo1ref = useRef<HTMLAnchorElement>(null);
     const titulo2ref = useRef<HTMLAnchorElement>(null);
@@ -75,161 +77,73 @@ const Solutions = forwardRef(function Solutions(props, ref: any) {
     const container3ref = useRef<HTMLDivElement>(null);
     const container4ref = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        setSolutions(baseSolutions);
-    }, []);
+    const titleRefs = [titulo1ref, titulo2ref, titulo3ref, titulo4ref];
+    const videoRefs = [video01ref, video02ref, video03ref, video04ref];
+    const containerRefs = [container1ref, container2ref, container3ref, container4ref];
 
     console.log(solutions);
     console.log(activeSolution);
 
     function handleActiveTitle(id: number) {
         console.log("Handling Active Title Nº " + id + " ...");
-        if (id === 1) {
-            //Title Cleanups
-            titulo1ref.current?.classList.remove("solution-active");
-            titulo2ref.current?.classList.remove("solution-active");
-            titulo3ref.current?.classList.remove("solution-active");
-            titulo4ref.current?.classList.remove("solution-active");
 
-            //Title 1 is Active
-            titulo1ref.current?.classList.add("solution-active");
-
-            //Video Cleanups
-            video01ref.current?.pause();
-            video01ref.current?.classList.remove("video-active");
-            video02ref.current?.pause();
-            video02ref.current?.classList.remove("video-active");
-            video03ref.current?.pause();
-            video03ref.current?.classList.remove("video-active");
-            video04ref.current?.pause();
-            video04ref.current?.classList.remove("video-active");
-
-            //Video 1 is Active
-            video01ref.current?.play();
-            video01ref.current?.classList.add("video-active");
-
-            //Container Cleanups
-            container1ref.current?.classList.remove("container-active");
-            container2ref.current?.classList.remove("container-active");
-            container3ref.current?.classList.remove("container-active");
-            container4ref.current?.classList.remove("container-active");
-
-            //Container 1 is Active
-            container1ref.current?.classList.add("container-active");
-        } else if (id === 2) {
-            //Title Cleanups
-            titulo1ref.current?.classList.remove("solution-active");
-            titulo2ref.current?.classList.remove("solution-active");
-            titulo3ref.current?.classList.remove("solution-active");
-            titulo4ref.current?.classList.remove("solution-active");
-
-            //Title 2 is Active
-            titulo2ref.current?.classList.add("solution-active");
-
-            //Video Cleanups
-            video01ref.current?.pause();
-            video01ref.current?.classList.remove("video-active");
-            video02ref.current?.pause();
-            video02ref.current?.classList.remove("video-active");
-            video03ref.current?.pause();
-            video03ref.current?.classList.remove("video-active");
-            video04ref.current?.pause();
-            video04ref.current?.classList.remove("video-active");
-
-            //Video 2 is Active
-            video02ref.current?.play();
-            video02ref.current?.classList.add("video-active");
-
-            //Container Cleanups
-            container1ref.current?.classList.remove("container-active");
-            container2ref.current?.classList.remove("container-active");
-            container3ref.current?.classList.remove("container-active");
-            container4ref.current?.classList.remove("container-active");
-
-            //Container 2 is Active
-            container2ref.current?.classList.add("container-active");
-        } else if (id === 3) {
-            //Title Cleanups
-            titulo1ref.current?.classList.remove("solution-active");
-            titulo2ref.current?.classList.remove("solution-active");
-            titulo3ref.current?.classList.remove("solution-active");
-            titulo4ref.current?.classList.remove("solution-active");
-
-            //Title 3 is Active
-            titulo3ref.current?.classList.add("solution-active");
-
-            //Video Cleanups
-            video01ref.current?.pause();
-            video01ref.current?.classList.remove("video-active");
-            video02ref.current?.pause();
-            video02ref.current?.classList.remove("video-active");
-            video03ref.current?.pause();
-            video03ref.current?.classList.remove("video-active");
-            video04ref.current?.pause();
-            video04ref.current?.classList.remove("video-active");
-
-            //Video 3 is Active
-            video03ref.current?.play();
-            video03ref.current?.classList.add("video-active");
-
-            //Container Cleanups
-            container1ref.current?.classList.remove("container-active");
-            container2ref.current?.classList.remove("container-active");
-            container3ref.current?.classList.remove("container-active");
-            container4ref.current?.classList.remove("container-active");
-
-            //Container 3 is Active
-            container3ref.current?.classList.add("container-active");
-        } else if (id === 4) {
-            //Title Cleanups
-            titulo1ref.current?.classList.remove("solution-active");
-            titulo2ref.current?.classList.remove("solution-active");
-            titulo3ref.current?.classList.remove("solution-active");
-            titulo4ref.current?.classList.remove("solution-active");
-
-            //Title 4 is Active
-            titulo4ref.current?.classList.add("solution-active");
-
-            //Video Cleanups
-            video01ref.current?.pause();
-            video01ref.current?.classList.remove("video-active");
-            video02ref.current?.pause();
-            video02ref.current?.classList.remove("video-active");
-            video03ref.current?.pause();
-            video03ref.current?.classList.remove("video-active");
-            video04ref.current?.pause();
-            video04ref.current?.classList.remove("video-active");
-
-            //Video 4 is Active
-            video04ref.current?.play();
-            video04ref.current?.classList.add("video-active");
-
-            //Container Cleanups
-            container1ref.current?.classList.remove("container-active");
-            container2ref.current?.classList.remove("container-active");
-            container3ref.current?.classList.remove("container-active");
-            container4ref.current?.classList.remove("container-active");
-
-            //Container 4 is Active
-            container4ref.current?.classList.add("container-active");
-        }
+        titleRefs.forEach((ref, index) => {
+            if (id === index + 1) {
+                ref.current?.classList.add("solution-active");
+                videoRefs[index].current?.scrollIntoView({ behavior: "smooth" });
+                videoRefs[index].current?.play();
+                videoRefs[index].current?.classList.add("video-active");
+                containerRefs[index].current?.classList.add("container-active");
+            } else {
+                ref.current?.classList.remove("solution-active");
+                videoRefs[index].current?.pause();
+                videoRefs[index].current?.classList.remove("video-active");
+                containerRefs[index].current?.classList.remove("container-active");
+            }
+        });
     }
 
     function changeActiveSolutionState(id: number) {
         const newSolutions = solutions.map((solution) => {
             if (solution.id === id) {
-                solution.solutionState = true;
-                console.log(solution.id);
-                setActiveSolution(solution);
-            } else {
-                solution.solutionState = false;
+                return { ...solution, solutionState: true };
             }
-
-            return solution;
+            return { ...solution, solutionState: false };
         });
-
         setSolutions(newSolutions);
     }
+
+    const disableAutoScroll = () => {
+        if (isAutoScrolling) {
+            setIsAutoScrolling(false);
+        }
+    };
+
+    useEffect(() => {
+        setSolutions(baseSolutions);
+    }, []);
+
+    useEffect(() => {
+        console.log(isAutoScrolling);
+        if (isAutoScrolling) {
+            const interval = setInterval(() => {
+                setActiveSolutionIndex((prev) => {
+                    if (prev === solutions.length) {
+                        return 0;
+                    }
+                    const actualState = prev + 1;
+                    console.log(actualState);
+                    changeActiveSolutionState(actualState);
+                    handleActiveTitle(actualState);
+                    return actualState;
+                });
+            }, 2000);
+
+            return () => {
+                clearInterval(interval);
+            };
+        }
+    }, [isAutoScrolling]);
 
     return (
         <>
@@ -260,6 +174,7 @@ const Solutions = forwardRef(function Solutions(props, ref: any) {
                             onClick={() => {
                                 changeActiveSolutionState(1);
                                 handleActiveTitle(1);
+                                disableAutoScroll();
                             }}
                         >
                             <svg className="Solution_Icon" width="123" height="124" viewBox="0 0 123 124" xmlns="http://www.w3.org/2000/svg">
@@ -282,6 +197,7 @@ const Solutions = forwardRef(function Solutions(props, ref: any) {
                             onClick={() => {
                                 changeActiveSolutionState(2);
                                 handleActiveTitle(2);
+                                disableAutoScroll();
                             }}
                         >
                             <svg className="Solution_Icon" width="138" height="130" viewBox="0 0 138 130" xmlns="http://www.w3.org/2000/svg">
@@ -299,6 +215,7 @@ const Solutions = forwardRef(function Solutions(props, ref: any) {
                             onClick={() => {
                                 changeActiveSolutionState(3);
                                 handleActiveTitle(3);
+                                disableAutoScroll();
                             }}
                         >
                             <svg className="Solution_Icon" width="125" height="124" viewBox="0 0 125 124" xmlns="http://www.w3.org/2000/svg">
@@ -316,6 +233,7 @@ const Solutions = forwardRef(function Solutions(props, ref: any) {
                             onClick={() => {
                                 changeActiveSolutionState(4);
                                 handleActiveTitle(4);
+                                disableAutoScroll();
                             }}
                         >
                             <svg className="Solution_Icon" width="123" height="113" viewBox="0 0 123 113" xmlns="http://www.w3.org/2000/svg">

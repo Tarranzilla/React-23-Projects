@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion as m } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
 
@@ -5,6 +6,46 @@ import Go from "../../assets/images/Robios_GO_New.png";
 import GoBg from "../../assets/images/Robios_GO_New_Background.png";
 
 export default function GoInfo() {
+    const [currentMedia, setCurrentMedia] = useState(0);
+    const [currentImage, setCurrentImage] = useState(0);
+    const [scrollNext, setScrollNext] = useState(true);
+
+    const images = [Go, GoBg]; // add robot images and gifs and videos here
+
+    // Framer Motion Variants
+    const variants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+    };
+
+    const nextImage = () => {
+        setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const previousImage = () => {
+        setCurrentImage((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
+
+    const handleClickNextImage = () => {
+        nextImage();
+        setScrollNext(false);
+    };
+
+    const handleClickPreviousImage = () => {
+        previousImage();
+        setScrollNext(false);
+    };
+
+    useEffect(() => {
+        if (scrollNext) {
+            const interval = setInterval(() => {
+                nextImage();
+            }, 3000); // Change image every 3 seconds
+
+            return () => clearInterval(interval); // Cleanup the interval on component unmount
+        }
+    }, [scrollNext]);
+
     return (
         <m.div
             initial={{ opacity: 0 }}
@@ -20,15 +61,38 @@ export default function GoInfo() {
 
             <div className="Robot_Info_Media_Container">
                 <div className="Robot_Info_Image_Container">
-                    <img src={Go} className="Robot_Info_Main_Image"></img>
+                    {images.map((image, index) => (
+                        <m.img
+                            key={index}
+                            src={image}
+                            className="Robot_Info_Main_Image"
+                            alt={`Image ${index}`}
+                            initial="hidden"
+                            animate={index === currentImage ? "visible" : "hidden"}
+                            transition={{ duration: 0.5 }}
+                            variants={variants}
+                        />
+                    ))}
                     <img src={GoBg} className="Robot_Info_Background_Image"></img>
+                    <div className="Robot_Media_Button_Container">
+                        <button className="Robot_Media_Button" onClick={handleClickPreviousImage}>
+                            <span className="material-icons backIcon">arrow_forward_ios</span>
+                        </button>
+                        <button className="Robot_Media_Button" onClick={handleClickNextImage}>
+                            <span className="material-icons">arrow_forward_ios</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <div className="Robot_Info_Specs_Container">
                 <div className="Specs_Title_Container">
                     <h1 className="Route_Title Specs_Title">RobiOS GO</h1>
-                    <h2 className="Specs_SubTitle">Especificações</h2>
+                    <div className="Specs_SubTitle_Container">
+                        <div className="Line"></div>
+                        <h2 className="Specs_SubTitle">Especificações</h2>
+                        <div className="Line"></div>
+                    </div>
                 </div>
 
                 <p className="Specs_Description">
