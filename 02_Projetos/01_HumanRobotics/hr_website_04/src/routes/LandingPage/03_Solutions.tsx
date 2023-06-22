@@ -1,5 +1,6 @@
 import { motion as m, useInView } from "framer-motion";
 import { useState, useEffect, useRef, forwardRef } from "react";
+import { useSelector } from "react-redux";
 
 import videoAtendimento from "../../assets/videos/Robios_Evento.mp4";
 import videoPublicidade from "../../assets/videos/02_Robios_Varejo_Desktop_QuickCuts_720p.mp4";
@@ -56,8 +57,9 @@ interface Solution {
 
 const Solutions = forwardRef(function Solutions(props, ref: any) {
     const isInView = useInView(ref, { once: true });
+    const section3Active = useSelector((state: any) => state.section3Active);
 
-    const [solutions, setSolutions] = useState<Solution[]>([]);
+    const [solutions, setSolutions] = useState<Solution[]>(baseSolutions);
     const [activeSolution, setActiveSolution] = useState({ ...baseSolutions[0] });
     const [activeSolutionIndex, setActiveSolutionIndex] = useState(0);
     const [isAutoScrolling, setIsAutoScrolling] = useState(true);
@@ -84,7 +86,7 @@ const Solutions = forwardRef(function Solutions(props, ref: any) {
     console.log(solutions);
     console.log(activeSolution);
 
-    function handleActiveTitle(id: number) {
+    const handleActiveTitle = (id) => {
         console.log("Handling Active Title Nº " + id + " ...");
 
         titleRefs.forEach((ref, index) => {
@@ -101,9 +103,8 @@ const Solutions = forwardRef(function Solutions(props, ref: any) {
                 containerRefs[index].current?.classList.remove("container-active");
             }
         });
-    }
-
-    function changeActiveSolutionState(id: number) {
+    };
+    const changeActiveSolutionState = (id) => {
         const newSolutions = solutions.map((solution) => {
             if (solution.id === id) {
                 return { ...solution, solutionState: true };
@@ -111,22 +112,22 @@ const Solutions = forwardRef(function Solutions(props, ref: any) {
             return { ...solution, solutionState: false };
         });
         setSolutions(newSolutions);
-    }
+    };
 
     const disableAutoScroll = () => {
+        console.log("Disabling Auto Scroll...");
         if (isAutoScrolling) {
             setIsAutoScrolling(false);
+            console.log("Auto Scroll Disabled!");
         }
     };
 
     useEffect(() => {
-        setSolutions(baseSolutions);
-    }, []);
+        let intervalId; // Declare the interval variable
 
-    useEffect(() => {
         console.log(isAutoScrolling);
-        if (isAutoScrolling) {
-            const interval = setInterval(() => {
+        if (isAutoScrolling && section3Active) {
+            intervalId = setInterval(() => {
                 setActiveSolutionIndex((prev) => {
                     if (prev === solutions.length) {
                         return 0;
@@ -138,12 +139,12 @@ const Solutions = forwardRef(function Solutions(props, ref: any) {
                     return actualState;
                 });
             }, 2000);
-
-            return () => {
-                clearInterval(interval);
-            };
         }
-    }, [isAutoScrolling]);
+
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, [isAutoScrolling, section3Active]);
 
     return (
         <>
@@ -172,9 +173,9 @@ const Solutions = forwardRef(function Solutions(props, ref: any) {
                             href="#video-industria"
                             ref={titulo1ref}
                             onClick={() => {
+                                disableAutoScroll();
                                 changeActiveSolutionState(1);
                                 handleActiveTitle(1);
-                                disableAutoScroll();
                             }}
                         >
                             <svg className="Solution_Icon" width="123" height="124" viewBox="0 0 123 124" xmlns="http://www.w3.org/2000/svg">
