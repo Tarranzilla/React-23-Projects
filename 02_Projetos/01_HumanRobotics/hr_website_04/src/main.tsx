@@ -29,7 +29,7 @@ import LandingPage from "./routes/LandingPage.tsx";
 
 //import Home from "./routes/LandingPage/01_Home.tsx";
 import Robots from "./routes/LandingPage/02_Robots.tsx";
-import Services from "./routes/LandingPage/03_Services.tsx";
+import Solutions from "./routes/LandingPage/03_Solutions.tsx";
 import About from "./routes/LandingPage/04_About.tsx";
 import Contact from "./routes/LandingPage/05_Contact.tsx";
 import FAQ from "./routes/LandingPage/06_FAQ.tsx";
@@ -101,7 +101,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/servicos",
-                element: <Services />,
+                element: <Solutions />,
             },
             {
                 path: "/contato",

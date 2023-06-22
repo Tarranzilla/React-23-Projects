@@ -1,6 +1,6 @@
 import Home from "./LandingPage/01_Home.tsx";
 import Robots from "./LandingPage/02_Robots.tsx";
-import Services from "./LandingPage/03_Services.tsx";
+import Solutions from "./LandingPage/03_Solutions.tsx";
 import About from "./LandingPage/04_About.tsx";
 import Contact from "./LandingPage/05_Contact.tsx";
 import FAQ from "./LandingPage/06_FAQ.tsx";
@@ -306,7 +306,7 @@ export default function LandingPage() {
                 <Divider />
                 <Robots ref={section2Ref} />
                 <Divider />
-                <Services ref={section3Ref} />
+                <Solutions ref={section3Ref} />
                 <Divider />
                 <About ref={section4Ref} />
                 <Divider />
