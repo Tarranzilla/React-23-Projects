@@ -8,7 +8,7 @@ import { motion as m, AnimatePresence } from "framer-motion";
 // import { themeSettings } from "./theme.js";
 
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu, setMode } from "../context/main_context";
+import { toggleMenu, setMode, toggleSearch } from "../context/main_context";
 // import { dark } from "@mui/material/styles/createPalette";
 
 // import { useTheme, useMediaQuery } from "@mui/material";
@@ -29,7 +29,7 @@ function MainNavbar() {
     const section3Active = useSelector((state: any) => state.section3Active);
     const section4Active = useSelector((state: any) => state.section4Active);
     const section5Active = useSelector((state: any) => state.section5Active);
-    //const section6Active = useSelector((state: any) => state.section6Active);
+    const section6Active = useSelector((state: any) => state.section6Active);
 
     //    const isDesktop = useMediaQuery("(min-width: 1240px)");
     //    const isMobile = useMediaQuery("(max-width: 1000px)");
@@ -57,6 +57,11 @@ function MainNavbar() {
     const toggleModeHandler = () => {
         console.log("Modo alterado.");
         dispatch(setMode());
+    };
+
+    const searchOpenHandler = () => {
+        console.log("Search clicado.");
+        dispatch(toggleSearch());
     };
 
     const menuOpenHandler = () => {
@@ -160,16 +165,84 @@ function MainNavbar() {
                 </HashLink>
 
                 <div className="Nav_MainBlock">
-                    <AnimatePresence>
-                        <m.h1
-                            className="Nav_Route_Title Mobile_Only Secondary_Page_Only"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 20 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            {currentLocationParsed}
-                        </m.h1>
+                    <AnimatePresence mode="wait">
+                        {section1Active && (
+                            <m.h1
+                                className="Nav_Route_Title Mobile_Only"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 20 }}
+                                transition={{ duration: 0.5 }}
+                                key="section1_Nav_Title"
+                            >
+                                início
+                            </m.h1>
+                        )}
+
+                        {section2Active && (
+                            <m.h1
+                                className="Nav_Route_Title Mobile_Only"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 20 }}
+                                transition={{ duration: 0.5 }}
+                                key="section2_Nav_Title"
+                            >
+                                robôs
+                            </m.h1>
+                        )}
+
+                        {section3Active && (
+                            <m.h1
+                                className="Nav_Route_Title Mobile_Only"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 20 }}
+                                transition={{ duration: 0.5 }}
+                                key="section3_Nav_Title"
+                            >
+                                soluções
+                            </m.h1>
+                        )}
+
+                        {section4Active && (
+                            <m.h1
+                                className="Nav_Route_Title Mobile_Only"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 20 }}
+                                transition={{ duration: 0.5 }}
+                                key="section4_Nav_Title"
+                            >
+                                sobre nós
+                            </m.h1>
+                        )}
+
+                        {section5Active && (
+                            <m.h1
+                                className="Nav_Route_Title Mobile_Only"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 20 }}
+                                transition={{ duration: 0.5 }}
+                                key="section5_Nav_Title"
+                            >
+                                contato
+                            </m.h1>
+                        )}
+
+                        {section6Active && (
+                            <m.h1
+                                className="Nav_Route_Title Mobile_Only"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 20 }}
+                                transition={{ duration: 0.5 }}
+                                key="section6_Nav_Title"
+                            >
+                                FAQ
+                            </m.h1>
+                        )}
                     </AnimatePresence>
 
                     <div className="NavLinks_Container">
@@ -209,7 +282,7 @@ function MainNavbar() {
                 </div>
 
                 <div className="Nav_SideBlock Nav_SideBlock_2">
-                    <a href="#" className="Menu_Button_Container">
+                    <a href="#" className="Menu_Button_Container" onClick={searchOpenHandler}>
                         <span className="material-icons Menu_Button">search</span>
                     </a>
                     <a href="#" className="Menu_Button_Container Desktop_Only_Extended" onClick={toggleModeHandler}>

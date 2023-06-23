@@ -4,6 +4,7 @@ const initialState = {
     mode: "dark",
     username: "Guest User",
     menuIsOpen: false,
+    searchIsOpen: false,
     token: null,
     lgpdConsent: false,
     section1Active: true,
@@ -18,6 +19,10 @@ export const authSlice = createSlice({
     name: "auth",
     initialState,
     reducers: {
+        toggleSearch: (state) => {
+            state.searchIsOpen = !state.searchIsOpen;
+            console.log("Search is toggled :" + state.searchIsOpen ? "open" : "closed");
+        },
         setMode: (state) => {
             state.mode = state.mode === "light" ? "dark" : "light";
             console.log("Mode: " + state.mode);
@@ -64,6 +69,7 @@ export const authSlice = createSlice({
 });
 
 export const {
+    toggleSearch,
     setMode,
     setLogin,
     setLogout,

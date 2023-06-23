@@ -13,11 +13,14 @@ import ScrollToHashElement from "./utilities/ScrollToHashElement.js";
 console.log(themeSettings("dark"));
 
 import MainNavbar from "./components/MainNavbar";
+import SearchTab from "./components/SearchTab.tsx";
 
 function App() {
     const mode = useSelector((state: any) => state.mode);
     const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
     // const isAuth = Boolean(useSelector((state: any) => state.token));
+
+    const searchIsOpen = useSelector((state: any) => state.searchIsOpen);
 
     return (
         <>
@@ -26,14 +29,18 @@ function App() {
                 <MainNavbar />
                 <div className="StatusBar"></div>
                 <div className="Content_Viewer">
-                    <AnimatePresence mode="wait">
+                    <AnimatePresence>
+                        {searchIsOpen ? <SearchTab key="searchTab" /> : null}
                         <div id="lgpd-cont" className="lgpd" key="lgpd-cont">
                             <p key="lgpd-cont-p1">Este site utiliza cookies para melhorar sua experiência de navegação.</p>
                             <p key="lgpd-cont-p2">
                                 Ao continuar navegando, você concorda com a nossa
-                                <a href="#">Política de Privacidade</a>.
+                                <a href="#" key="Priv_Anchor">
+                                    Política de Privacidade
+                                </a>
+                                .
                             </p>
-                            <button id="lgpd-but" className="button-lgpd">
+                            <button id="lgpd-but" className="button-lgpd" key="btnLgpd">
                                 OK
                             </button>
                         </div>

@@ -6,7 +6,7 @@ interface AboutProps {
     children: ReactNode;
 }
 
-const About = forwardRef(function About(props: AboutProps, ref: any) {
+const About = forwardRef(function About(props, ref: any) {
     const isInView = useInView(ref, { once: true });
 
     return (
