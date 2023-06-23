@@ -1,5 +1,5 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
+import { HashLink, NavHashLink } from "react-router-hash-link";
 import { motion as m, AnimatePresence } from "framer-motion";
 // import { useState } from "react";
 

@@ -1,4 +1,4 @@
-import { useState, useEffect, forwardRef } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 import { motion as m, AnimatePresence, useInView } from "framer-motion";
 
 import Carrossel_Experiencias from "../../components/Carrossel_Experiencias";
@@ -25,12 +25,37 @@ const Home = forwardRef(function Home(props, ref: any) {
         setFinalWord(words[currentIndex]);
     }, [currentIndex, words]);
 
+    const containerVariants = {
+        visible: {
+            opacity: 1,
+            transition: {
+                duration: 0.5,
+                delay: 0.5,
+            },
+        },
+        hidden: {
+            opacity: 0,
+        },
+    };
+
+    const titleVariants = {
+        hidden: {
+            opacity: 0,
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                duration: 2,
+            },
+        },
+    };
+
     return (
         <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={containerVariants}
             className="Route_Container Home_Route"
             id="LP_Section_01"
             key="LP_Section_01"
@@ -42,15 +67,10 @@ const Home = forwardRef(function Home(props, ref: any) {
             }}
         >
             <Carrossel_Experiencias />
+
             <div className="Home_Title_Wrapper">
                 <div className="Home_Title_Group">
-                    <m.h1
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 2 }}
-                        exit={{ opacity: 0 }}
-                        className="Route_Title Home_Title"
-                    >
+                    <m.h1 initial="hidden" animate="visible" exit="hidden" variants={titleVariants} className="Route_Title Home_Title">
                         O Futuro da Robótica é
                     </m.h1>
 

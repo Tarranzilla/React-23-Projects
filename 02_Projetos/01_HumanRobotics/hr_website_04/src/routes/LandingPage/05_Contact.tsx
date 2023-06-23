@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import { motion as m, useInView } from "framer-motion";
 
 const Contact = forwardRef(function Contact(props, ref: any) {
@@ -36,6 +36,7 @@ const Contact = forwardRef(function Contact(props, ref: any) {
                         action="mailto:contato@humanrobotics.com"
                         method="post"
                         encType="text/plain"
+                        target="_blank"
                     >
                         <input type="text" placeholder="Nome" required className="first-input" />
                         <input type="email" placeholder="E-mail" required />
@@ -64,7 +65,7 @@ const Contact = forwardRef(function Contact(props, ref: any) {
                                 </p>
                             </a>
 
-                            <a href="https://mailchimp.com/pt-br/" target="_blank" rel="noopener" className="NewsLetter_Button">
+                            <a href="https://mailchimp.com/pt-br/" target="_blank" rel="noreferrer" className="NewsLetter_Button">
                                 <p>
                                     🤖 <strong>Assine a nossa Newsletter</strong>
                                 </p>

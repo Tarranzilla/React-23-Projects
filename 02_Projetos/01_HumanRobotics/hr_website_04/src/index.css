@@ -130,7 +130,6 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-
     background-color: transparent;
     outline-style: none;
     box-shadow: none;
@@ -160,18 +159,16 @@ body,
 #root {
     width: var(--full-width);
     height: var(--full-height);
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-
     padding: var(--root-padding);
-
     background-image: linear-gradient(to bottom, var(--secondary_clearBlue), var(--bg_darkBlue));
 }
 
-.Nav_SideBlock {
+.Nav_SideBlock,
+.Nav_SideBlock_2 {
     width: 20vw;
     display: flex;
     flex-direction: row;
@@ -195,7 +192,6 @@ body,
 .StatusBar {
     height: var(--statusbar_height);
     width: 100%;
-
     background: repeating-linear-gradient(
         -30deg,
         var(--bg_darkBlue),
@@ -204,12 +200,9 @@ body,
         transparent 10px,
         var(--bg_darkBlue) 11px
     );
-
     background-size: 200% 200%;
     animation: barberpole 120s linear infinite;
-
     margin-bottom: var(--statusbar_margin_bottom);
-
     border-radius: var(--small-gap);
 }
 
@@ -225,45 +218,30 @@ body,
 
 .Content_Viewer {
     width: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-
     margin-bottom: var(--sectionviewer_margin_bottom);
 }
 
-.Route_Container {
+.Route_Container,
+.Route_Container_Landing_Page {
     width: 100%;
     height: var(--sectionviewer-height);
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
-
     position: relative;
-
     scroll-snap-align: start;
 }
 
 .Route_Container_Landing_Page {
-    width: 100%;
-    height: var(--sectionviewer-height);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: start;
-
-    position: relative;
-
     overflow-y: auto;
     gap: var(--medium-gap);
-
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
 }
@@ -295,7 +273,6 @@ body,
 .Footer {
     height: var(--footer-height);
     width: 100%;
-
     background: repeating-linear-gradient(
         -30deg,
         var(--secondary_clearBlue),
@@ -304,10 +281,8 @@ body,
         transparent 10px,
         var(--secondary_clearBlue) 11px
     );
-
     background-size: 200% 200%;
     animation: barberpole 180s linear infinite reverse;
-
     border-radius: var(--small-gap);
 }
 
@@ -316,11 +291,9 @@ body,
 .Loading {
     width: 100vw;
     height: 100vh;
-
     position: absolute;
     top: 0;
     left: 0;
-
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -336,7 +309,6 @@ body,
 .lgpd_container.active {
     display: flex;
     flex-direction: column;
-
     place-items: center;
 }
 
@@ -348,12 +320,11 @@ a {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-
     text-decoration: none;
     list-style: none;
-
     white-space: nowrap;
 }
+
 a:hover {
     color: #535bf2;
 }
@@ -362,7 +333,6 @@ h1 {
     display: flex;
     flex-direction: column;
     place-items: center;
-
     font-family: ResearcherBold, sans-serif;
     font-size: 2.4rem;
     line-height: 2.4rem;
