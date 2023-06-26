@@ -51,16 +51,16 @@ export default function LandingPage() {
     }, []);
 
     return (
-        <div className="Landing_Page">
-            <Divider />
-            <LP_Section_01_Inicio ref={sectionRefs[0]} />
-            <Divider />
-            <LP_Section_02_Sobre ref={sectionRefs[1]} />
-            <Divider />
-            <LP_Section_03_Produtos ref={sectionRefs[2]} />
-            <Divider />
-            <LP_Section_04_Contato ref={sectionRefs[3]} />
-            <Divider />
+        <div className="Landing_Page" key={"Landing_Page"}>
+            <Divider key="Divider_1" />
+            <LP_Section_01_Inicio ref={sectionRefs[0]} key="Section_01" />
+            <Divider key="Divider_2" />
+            <LP_Section_02_Sobre ref={sectionRefs[1]} key={"Section_02"} />
+            <Divider key="Divider_3" />
+            <LP_Section_03_Produtos ref={sectionRefs[2]} key={"Section_03"} />
+            <Divider key="Divider_4" />
+            <LP_Section_04_Contato ref={sectionRefs[3]} key={"Section_04"} />
+            <Divider key="Divider_5" />
         </div>
     );
 }

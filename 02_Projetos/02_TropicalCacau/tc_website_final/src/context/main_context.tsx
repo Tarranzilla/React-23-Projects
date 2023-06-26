@@ -5,18 +5,28 @@ const initialState = {
     username: "Guest User",
     menuIsOpen: false,
     searchIsOpen: false,
+    cartIsOpen: false,
     token: null,
     lgpdConsent: false,
     activeSection: 1,
+    isLoading: false,
 };
 
 export const authSlice = createSlice({
     name: "auth",
     initialState,
     reducers: {
+        toggleMenu: (state) => {
+            state.menuIsOpen = !state.menuIsOpen;
+            console.log("Menu is toggled: " + (state.menuIsOpen ? "open" : "closed"));
+        },
+        toggleCart: (state) => {
+            state.cartIsOpen = !state.cartIsOpen;
+            console.log("Cart is toggled: " + (state.cartIsOpen ? "open" : "closed"));
+        },
         toggleSearch: (state) => {
             state.searchIsOpen = !state.searchIsOpen;
-            console.log("Search is toggled :" + state.searchIsOpen ? "open" : "closed");
+            console.log("Search is toggled :" + (state.searchIsOpen ? "open" : "closed"));
         },
         setMode: (state) => {
             state.mode = state.mode === "light" ? "dark" : "light";
@@ -30,17 +40,19 @@ export const authSlice = createSlice({
             state.username = "Guest User";
             state.token = null;
         },
-        toggleMenu: (state, action) => {
-            state.menuIsOpen = action.payload.menuState;
-        },
         setLgpdConsent: (state, action) => {
             state.lgpdConsent = action.payload.lgpdConsent;
         },
         setActiveSection: (state, action) => {
             state.activeSection = action.payload.activeSection;
         },
+        toggleLoading: (state) => {
+            state.isLoading = !state.isLoading;
+            console.log("Loading is toggled: " + (state.isLoading ? "on" : "off"));
+        },
     },
 });
 
-export const { toggleSearch, setMode, setLogin, setLogout, toggleMenu, setLgpdConsent, setActiveSection } = authSlice.actions;
+export const { toggleMenu, toggleCart, toggleSearch, setMode, setLogin, setLogout, setLgpdConsent, setActiveSection, toggleLoading } =
+    authSlice.actions;
 export default authSlice.reducer;

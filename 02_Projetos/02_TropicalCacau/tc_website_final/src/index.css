@@ -117,6 +117,8 @@ body {
     align-items: center;
 
     gap: var(--medium_gap);
+
+    z-index: 4;
 }
 
 .Navbar_Main {
@@ -136,6 +138,10 @@ body {
     text-transform: uppercase;
 
     transition: all 0.2s ease-in-out;
+}
+
+.Navbar_Main_Links.active {
+    color: hotpink;
 }
 
 .Navbar_Main_Links:focus,
@@ -254,19 +260,50 @@ body {
 /* MENU */
 
 .Menu {
-    display: none;
+    position: absolute;
+    top: var(--navbar_height);
+    left: 0;
+    width: 100%;
+    height: var(--section_viewer_height);
+    background-color: hotpink;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* SEARCH BAR */
 
 .SearchBar {
-    display: none;
+    position: absolute;
+    top: var(--navbar_height);
+    left: 0;
+    width: 100%;
+    height: var(--section_viewer_height);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* SHOPPING CART */
 
 .Shopping_Cart {
-    display: none;
+    position: absolute;
+    top: var(--navbar_height);
+    left: 0;
+    width: 20%;
+    height: var(--section_viewer_height);
+    background-color: orange;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* CONTENT VIEWER */
