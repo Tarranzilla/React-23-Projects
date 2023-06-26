@@ -5,6 +5,7 @@ import { toggleMenu, toggleCart, toggleSearch } from "../context/main_context";
 export default function Navbar() {
     const dispatch = useDispatch();
     const activeSection = useSelector((state: any) => state.activeSection);
+    const menuIsOpen = useSelector((state: any) => state.menuIsOpen);
 
     const toggleColorMode = () => {
         const body = document.body;
@@ -42,7 +43,9 @@ export default function Navbar() {
     return (
         <div className="Navbar" key={"Navbar"}>
             <div className="Navbar_Logo_Container">
-                <div className="Navbar_Logo"></div>
+                <div className="Navbar_Logo">
+                    <span className="material-icons">sunny</span>
+                </div>
                 <h1 className="Navbar_LogoType">Tropical Cacau</h1>
             </div>
 
@@ -60,6 +63,38 @@ export default function Navbar() {
                     Contato
                 </a>
             </div>
+
+            <div className="Navbar_Mobile">
+                {activeSection === 0 && !menuIsOpen && (
+                    <a href="#LP_Section_1" className={activeSection === 0 ? "Navbar_Main_Links active" : "Navbar_Main_Links"}>
+                        Início
+                    </a>
+                )}
+                {activeSection === 1 && !menuIsOpen && (
+                    <a href="#LP_Section_2" className={activeSection === 1 ? "Navbar_Main_Links active" : "Navbar_Main_Links"}>
+                        Sobre
+                    </a>
+                )}
+
+                {activeSection === 2 && !menuIsOpen && (
+                    <a href="#LP_Section_3" className={activeSection === 2 ? "Navbar_Main_Links active" : "Navbar_Main_Links"}>
+                        Produtos
+                    </a>
+                )}
+
+                {activeSection === 3 && !menuIsOpen && (
+                    <a href="#LP_Section_4" className={activeSection === 3 ? "Navbar_Main_Links active" : "Navbar_Main_Links"}>
+                        Contato
+                    </a>
+                )}
+
+                {menuIsOpen && (
+                    <a href="#Menu" className="Navbar_Main_Links active">
+                        Menu
+                    </a>
+                )}
+            </div>
+
             <div className="Navbar_Tools">
                 <a href="#" className="Navbar_Tool Navbar_Tools_Search" onClick={toggleSearchButton}>
                     <span className="material-icons">search</span>
