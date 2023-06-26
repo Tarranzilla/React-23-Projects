@@ -1,3 +1,7 @@
 export default function Footer() {
-    return <p>Footer</p>;
+    return (
+        <div className="Footer">
+            <p>Tropical Cacau 2023</p>
+        </div>
+    );
 }
