@@ -126,6 +126,22 @@ Icones obtidos através do Google Material Icons, e Importados via React, de uso
     --partners-card-ammount: 12;
 }
 
+.darkmode {
+    /* darkmode colors */
+    --bg_darkBlue: #000343;
+    --bg_darkBlue_Faded: #00034365;
+
+    --font_white: #ffffff;
+
+    --primary_mediumBlue: #4400ffe3;
+    --secondary_clearBlue: #00aaff;
+
+    --error_orange: #ff5520;
+    --warning_yellow: #ffae2d;
+    --info_purple: #ae00ff;
+    --success_turquoise: #00ffd5de;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
