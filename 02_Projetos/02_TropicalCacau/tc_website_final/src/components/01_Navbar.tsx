@@ -2,6 +2,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu, toggleCart, toggleSearch } from "../context/main_context";
 
+//Framer Motion Imports
+import { motion as m } from "framer-motion";
+
 export default function Navbar() {
     const dispatch = useDispatch();
     const activeSection = useSelector((state: any) => state.activeSection);
@@ -43,10 +46,13 @@ export default function Navbar() {
     return (
         <div className="Navbar" key={"Navbar"}>
             <div className="Navbar_Logo_Container">
-                <div className="Navbar_Logo">
+                <div className="Navbar_Logo" onClick={toggleColorMode}>
                     <span className="material-icons">sunny</span>
                 </div>
-                <h1 className="Navbar_LogoType">Tropical Cacau</h1>
+                <a href="#" className="Navbar_LogoType_Container">
+                    <h1 className="Navbar_LogoType">Tropical</h1>
+                    <h1 className="Navbar_LogoType">Cacau</h1>
+                </a>
             </div>
 
             <div className="Navbar_Main">
@@ -66,32 +72,60 @@ export default function Navbar() {
 
             <div className="Navbar_Mobile">
                 {activeSection === 0 && !menuIsOpen && (
-                    <a href="#LP_Section_1" className={activeSection === 0 ? "Navbar_Main_Links active" : "Navbar_Main_Links"}>
+                    <m.a
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        href="#LP_Section_1"
+                        className={activeSection === 0 ? "Navbar_Main_Links active" : "Navbar_Main_Links"}
+                        key={"Navbar_Mobile_Links_1"}
+                    >
                         Início
-                    </a>
+                    </m.a>
                 )}
                 {activeSection === 1 && !menuIsOpen && (
-                    <a href="#LP_Section_2" className={activeSection === 1 ? "Navbar_Main_Links active" : "Navbar_Main_Links"}>
+                    <m.a
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        href="#LP_Section_2"
+                        className={activeSection === 1 ? "Navbar_Main_Links active" : "Navbar_Main_Links"}
+                        key={"Navbar_Mobile_Links_2"}
+                    >
                         Sobre
-                    </a>
+                    </m.a>
                 )}
 
                 {activeSection === 2 && !menuIsOpen && (
-                    <a href="#LP_Section_3" className={activeSection === 2 ? "Navbar_Main_Links active" : "Navbar_Main_Links"}>
+                    <m.a
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        href="#LP_Section_3"
+                        className={activeSection === 2 ? "Navbar_Main_Links active" : "Navbar_Main_Links"}
+                        key={"Navbar_Mobile_Links_3"}
+                    >
                         Produtos
-                    </a>
+                    </m.a>
                 )}
 
                 {activeSection === 3 && !menuIsOpen && (
-                    <a href="#LP_Section_4" className={activeSection === 3 ? "Navbar_Main_Links active" : "Navbar_Main_Links"}>
+                    <m.a
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        href="#LP_Section_4"
+                        className={activeSection === 3 ? "Navbar_Main_Links active" : "Navbar_Main_Links"}
+                        key={"Navbar_Mobile_Links_4"}
+                    >
                         Contato
-                    </a>
+                    </m.a>
                 )}
 
                 {menuIsOpen && (
-                    <a href="#Menu" className="Navbar_Main_Links active">
+                    <m.a initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} href="#Menu" className="Navbar_Main_Links active">
                         Menu
-                    </a>
+                    </m.a>
                 )}
             </div>
 
@@ -105,12 +139,13 @@ export default function Navbar() {
                 <a href="#" className="Navbar_Tool Navbar_Tools_ToggleMode" onClick={toggleColorMode}>
                     <span className="material-icons">brightness_4</span>
                 </a>
+
+                <a href="#" className="Navbar_Menu_Button" onClick={toggleMenuButton}>
+                    <div className="Menu_Button_Line Line_1"></div>
+                    <div className="Menu_Button_Line Line_2"></div>
+                    <div className="Menu_Button_Line Line_3"></div>
+                </a>
             </div>
-            <a href="#" className="Navbar_Menu_Button" onClick={toggleMenuButton}>
-                <div className="Menu_Button_Line Line_1"></div>
-                <div className="Menu_Button_Line Line_2"></div>
-                <div className="Menu_Button_Line Line_3"></div>
-            </a>
         </div>
     );
 }
