@@ -263,6 +263,22 @@ body {
     color: hotpink;
 }
 
+.Navbar_Tools_Cart_Indicator {
+    text-decoration: none;
+    position: absolute;
+    top: -0.6rem;
+    right: -0.6rem;
+    font-size: 0.6rem;
+    background-color: var(--text_color);
+    color: var(--bg_color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+}
+
 .Navbar_Tools_ToggleMode.active {
     transform: rotateY(180deg);
 }
@@ -346,7 +362,7 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     border-radius: 0 var(--small_gap) var(--small_gap) 0;
 }
@@ -362,6 +378,102 @@ body {
     background-color: blue;
     transition: all 0.2s ease-in-out;
     outline: none;
+}
+
+.SearchBar_Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: var(--small_gap);
+}
+
+.Searchbar_Close_Btn {
+    width: 2rem;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--text_color);
+    color: var(--bg_color);
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.Searchbar_Close_Btn:focus,
+.Searchbar_Close_Btn:hover {
+    scale: 1.2;
+    background-color: var(--bg_color);
+    color: var(--text_color);
+}
+
+.SearchBar_Title {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+
+    font-weight: 800;
+    font-size: 1rem;
+    gap: 0.3rem;
+
+    text-transform: uppercase;
+    line-height: 1.2rem;
+
+    color: var(--text_color);
+}
+
+.SearchBar_Input_Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    padding: var(--small_gap);
+}
+
+.SearchBar_Input {
+    flex: 1;
+    height: 2rem;
+    padding: 0 var(--small_gap);
+    border: none;
+    border-radius: var(--small_gap) 0 0 var(--small_gap);
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text_color);
+    background-color: var(--bg_color);
+}
+
+.SearchBar_Button {
+    width: 2rem;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    background-color: var(--text_color);
+    color: var(--bg_color);
+
+    border: none;
+    border-radius: 0 var(--small_gap) var(--small_gap) 0;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 /* SHOPPING CART */
@@ -398,6 +510,68 @@ body {
     outline: none;
 }
 
+.Shopping_Cart_Header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Shopping_Cart_Close_Btn {
+    position: absolute;
+    top: 0;
+    right: left;
+    margin: var(--small_gap);
+    width: 2rem;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--text_color);
+    color: var(--bg_color);
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.Shopping_Cart_Close_Btn:focus,
+.Shopping_Cart_Close_Btn:hover {
+    scale: 1.1;
+    background-color: var(--bg_color);
+    color: var(--text_color);
+}
+
+.Shopping_Cart_Title {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 2rem;
+
+    margin-top: var(--small_gap);
+    margin-inline: var(--medium_gap);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+
+    font-weight: 800;
+    font-size: 1rem;
+    gap: 0.3rem;
+
+    text-transform: uppercase;
+    line-height: 1.2rem;
+
+    color: var(--text_color);
+}
+
 .Cart_List {
     display: flex;
     flex-direction: column;
@@ -406,6 +580,7 @@ body {
     overflow-y: auto;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
+    margin-top: 2rem;
     width: 100%;
 }
 
@@ -588,6 +763,15 @@ body {
     color: var(--bg_color);
     border-radius: var(--small_gap);
     border: 1px solid var(--bg_color);
+
+    transition: all 0.2s ease-in-out;
+}
+
+.Checkout_Help:focus,
+.Checkout_Help:hover {
+    scale: 1.1;
+    background-color: var(--bg_color);
+    color: var(--text_color);
 }
 
 /* CONTENT VIEWER */
@@ -636,6 +820,7 @@ body {
     padding-inline: var(--medium_gap);
 
     backdrop-filter: blur(30px);
+    border-radius: var(--small_gap);
 }
 
 .Help_Title {
@@ -644,6 +829,7 @@ body {
     left: 0;
 
     width: 50%;
+    height: 2rem;
 
     margin-top: var(--small_gap);
     margin-inline: var(--medium_gap);
@@ -681,6 +867,16 @@ body {
 
     border: none;
     border-radius: 50%;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.Help_Container_Close_Btn:focus,
+.Help_Container_Close_Btn:hover {
+    scale: 1.1;
+    background-color: var(--bg_color);
+    color: var(--text_color);
 }
 
 .Checkout_Help_Text {

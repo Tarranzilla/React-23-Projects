@@ -134,6 +134,7 @@ export default function Navbar() {
                     <span className="material-icons">search</span>
                 </a>
                 <a href="#" className="Navbar_Tool Navbar_Tools_Cart" onClick={toggleCartButton}>
+                    <div className="Navbar_Tools_Cart_Indicator">10+</div>
                     <span className="material-icons">shopping_cart</span>
                 </a>
                 <a href="#" className="Navbar_Tool Navbar_Tools_ToggleMode" onClick={toggleColorMode}>

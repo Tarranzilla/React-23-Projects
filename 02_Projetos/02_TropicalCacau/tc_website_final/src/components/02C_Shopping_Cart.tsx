@@ -6,7 +6,7 @@ import Cart_Item from "./Shop/Cart_Item";
 
 // Redux Imports
 import { useDispatch } from "react-redux";
-import { toggleCheckoutHelp } from "../context/main_context";
+import { toggleCheckoutHelp, toggleCart } from "../context/main_context";
 
 export default function Shopping_Cart() {
     const dispatch = useDispatch();
@@ -15,9 +15,19 @@ export default function Shopping_Cart() {
         dispatch(toggleCheckoutHelp());
     };
 
+    const toggleCartButton = () => {
+        dispatch(toggleCart());
+    };
+
     return (
         <m.div initial={{ x: 600 }} animate={{ x: 0 }} exit={{ x: 600 }} className="Shopping_Cart" key={"Shopping_Cart"}>
-            <p>Carrinho de Pedidos</p>
+            <div className="Shopping_Cart_Header">
+                <button className="Shopping_Cart_Close_Btn" onClick={toggleCartButton}>
+                    <span className="material-icons">close</span>
+                </button>
+                <p className="Shopping_Cart_Title">Carrinho de Pedidos</p>
+            </div>
+
             <div className="Cart_List">
                 <Cart_Item />
                 <Cart_Item />
