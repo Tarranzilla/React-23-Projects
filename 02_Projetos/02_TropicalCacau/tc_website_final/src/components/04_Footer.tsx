@@ -10,7 +10,18 @@ import Icon_Linkedin from "./Icons/Icon_Linkedin";
 export default function Footer() {
     return (
         <div className="Footer" key={"Footer"}>
-            <p>Tropical Cacau 2023</p>
+            <div className="Footer_Info_Links Desktop_Only">
+                <a href="#Privacidade" className="Footer_Info">
+                    Privacidade
+                </a>
+                <a href="#Termos" className="Footer_Info Middle_Info">
+                    Termos
+                </a>
+                <a href="#MapaSite" className="Footer_Info">
+                    Mapa do site
+                </a>
+            </div>
+            <p>© 2023 Tropical Cacau</p>
             <div className="Social_Media_Container">
                 <Icon_Whatsapp />
                 <Icon_Linkedin />
