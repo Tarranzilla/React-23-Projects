@@ -28,6 +28,13 @@ export default function SearchBar() {
                     <span className="material-icons">search</span>
                 </button>
             </div>
+
+            <div className="SearchBar_Result_Container">
+                <p className="SearchBar_Result_Title">Resultados:</p>
+                <div className="SearchBar_Result_List">
+                    <p>Nenhuma pesquisa foi feita.</p>
+                </div>
+            </div>
         </m.div>
     );
 }
