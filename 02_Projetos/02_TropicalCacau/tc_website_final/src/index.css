@@ -118,15 +118,18 @@ body {
     justify-content: center;
     align-items: center;
 
+    padding-inline: var(--medium_gap);
+
     gap: var(--medium_gap);
 
     z-index: 4;
 }
 
 .Navbar_Logo_Container {
+    flex: 1;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 
     gap: var(--small_gap);
@@ -215,9 +218,10 @@ body {
 }
 
 .Navbar_Tools {
+    flex: 1;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 
     gap: var(--small_gap);
@@ -465,9 +469,10 @@ body {
 }
 
 .Footer_Info_Links {
+    flex: 1;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 
     gap: var(--small_gap);
@@ -511,9 +516,10 @@ body {
 }
 
 .Social_Media_Container {
+    flex: 1;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 
     gap: 0.5rem;
