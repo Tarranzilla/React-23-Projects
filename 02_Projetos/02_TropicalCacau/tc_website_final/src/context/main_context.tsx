@@ -6,6 +6,7 @@ const initialState = {
     menuIsOpen: false,
     searchIsOpen: false,
     cartIsOpen: false,
+    checkoutHelpIsOpen: false,
     token: null,
     lgpdConsent: false,
     activeSection: 1,
@@ -23,6 +24,10 @@ export const authSlice = createSlice({
         toggleCart: (state) => {
             state.cartIsOpen = !state.cartIsOpen;
             console.log("Cart is toggled: " + (state.cartIsOpen ? "open" : "closed"));
+        },
+        toggleCheckoutHelp: (state) => {
+            state.checkoutHelpIsOpen = !state.checkoutHelpIsOpen;
+            console.log("Checkout Help is toggled: " + (state.checkoutHelpIsOpen ? "open" : "closed"));
         },
         toggleSearch: (state) => {
             state.searchIsOpen = !state.searchIsOpen;
@@ -53,6 +58,16 @@ export const authSlice = createSlice({
     },
 });
 
-export const { toggleMenu, toggleCart, toggleSearch, setMode, setLogin, setLogout, setLgpdConsent, setActiveSection, toggleLoading } =
-    authSlice.actions;
+export const {
+    toggleMenu,
+    toggleCart,
+    toggleCheckoutHelp,
+    toggleSearch,
+    setMode,
+    setLogin,
+    setLogout,
+    setLgpdConsent,
+    setActiveSection,
+    toggleLoading,
+} = authSlice.actions;
 export default authSlice.reducer;
