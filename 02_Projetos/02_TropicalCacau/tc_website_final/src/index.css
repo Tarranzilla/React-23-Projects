@@ -379,6 +379,9 @@ body {
     justify-content: center;
     align-items: center;
 
+    gap: var(--small_gap);
+    padding: var(--small_gap);
+
     border-radius: var(--small_gap) 0 0 var(--small_gap);
 }
 
@@ -393,6 +396,78 @@ body {
     background-color: orange;
     transition: all 0.2s ease-in-out;
     outline: none;
+}
+
+.Cart_List {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: var(--small_gap);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    width: 100%;
+}
+
+.Cart_Item_Image {
+    height: 100%;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+    border-radius: var(--small_gap);
+}
+
+.Cart_Item {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+    flex-shrink: 0;
+
+    padding: var(--small_gap);
+
+    scroll-snap-align: start;
+
+    border-bottom: 1px solid var(--text_color);
+}
+
+.Cart_Item_Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.3rem;
+}
+
+.Cart_Item_Buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 0.3rem;
+
+    margin-top: var(--small_gap);
+}
+
+.Cart_Item_Button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-block: 0.5rem;
+    padding-inline: var(--small_gap);
+    background-color: var(--bg_color);
+    color: var(--text_color);
+    border-radius: var(--small_gap);
+
+    border: none;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    overflow: hidden;
 }
 
 /* CONTENT VIEWER */
@@ -513,6 +588,11 @@ body {
     padding-inline: var(--small_gap);
     border-left: 1px solid var(--text_color);
     border-right: 1px solid var(--text_color);
+}
+
+.Middle_Info::after {
+    left: var(--small_gap);
+    width: calc(100% - var(--small_gap) * 2);
 }
 
 .Social_Media_Container {
