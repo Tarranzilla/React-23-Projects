@@ -20,24 +20,16 @@ export default function Shopping_Cart() {
     };
 
     return (
-        <m.div initial={{ x: 600 }} animate={{ x: 0 }} exit={{ x: 600 }} className="Shopping_Cart" key={"Shopping_Cart"}>
+        <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: 1000 }} className="Shopping_Cart" key={"Shopping_Cart"}>
             <div className="Shopping_Cart_Header">
                 <button className="Shopping_Cart_Close_Btn" onClick={toggleCartButton}>
                     <span className="material-icons">close</span>
                 </button>
                 <p className="Shopping_Cart_Title">Carrinho de Pedidos</p>
+                <span className="material-icons">shopping_cart</span>
             </div>
 
             <div className="Cart_List">
-                <Cart_Item />
-                <Cart_Item />
-                <Cart_Item />
-                <Cart_Item />
-                <Cart_Item />
-                <Cart_Item />
-                <Cart_Item />
-                <Cart_Item />
-                <Cart_Item />
                 <Cart_Item />
                 <Cart_Item />
                 <Cart_Item />

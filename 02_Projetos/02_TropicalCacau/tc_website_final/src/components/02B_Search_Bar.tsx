@@ -13,11 +13,10 @@ export default function SearchBar() {
     };
 
     return (
-        <m.div initial={{ x: -400 }} animate={{ x: 0 }} exit={{ x: -600 }} className="SearchBar" key={"SearchBar"}>
+        <m.div initial={{ x: -1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="SearchBar" key={"SearchBar"}>
             <div className="SearchBar_Header">
-                <p className="SearchBar_Title">
-                    <span className="material-icons">search</span>Aba de Pesquisa
-                </p>
+                <span className="material-icons">search</span>
+                <p className="SearchBar_Title">Aba de Pesquisa</p>
                 <button className="Searchbar_Close_Btn" onClick={toggleSearchButton}>
                     <span className="material-icons">close</span>
                 </button>
