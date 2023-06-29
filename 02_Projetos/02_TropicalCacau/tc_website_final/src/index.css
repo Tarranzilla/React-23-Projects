@@ -339,14 +339,209 @@ body {
     position: absolute;
     top: var(--navbar_height);
     left: 0;
-    width: 100%;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: var(--small_gap);
     height: var(--section_viewer_height);
     background-color: hotpink;
 
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    padding: var(--small_gap);
+
+    overflow-y: auto;
+}
+
+.Menu_Header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--small_gap);
+}
+
+.Menu_Title {
+    color: var(--text_color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.Menu_List_Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: var(--small_gap);
+}
+.LP_Links_Container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+    border: 1px solid var(--text_color);
+    border-radius: var(--small_gap);
+    padding: var(--small_gap);
+}
+
+.LP_Links {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: var(--small_gap);
+    height: 100%;
+}
+
+.LP_Links_Header {
+    margin-bottom: 0.75rem;
+}
+
+.Menu_Link {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    gap: var(--small_gap);
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text_color);
+
+    transition: all 0.2s ease-in-out;
+}
+
+.Menu_Link_Secondary {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    gap: 0.25rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text_color);
+
+    transition: all 0.2s ease-in-out;
+}
+
+.Menu_Link:focus,
+.Menu_Link:hover,
+.Menu_Link_Secondary:focus,
+.Menu_Link_Secondary:hover {
+    scale: 1.1;
+}
+
+.LP_Links_Icon {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--text_color);
+}
+
+.LP_Links_Line_Container {
+    width: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.LP_Links_Line {
+    width: 3px;
+    height: 100%;
+    background-color: var(--text_color);
+}
+
+.LP_Links_Horizontal_Organizer {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: var(--small_gap);
+}
+
+.Product_Links_Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: var(--small_gap);
+}
+
+.Product_Links,
+.Configurations_Links {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+.Secondary_Links {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    padding: var(--small_gap);
+    gap: var(--small_gap);
+    border: 1px solid var(--text_color);
+    border-radius: var(--small_gap);
+}
+
+.Configurations {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+    padding: var(--small_gap);
+    border: 1px solid var(--text_color);
+    border-radius: var(--small_gap);
+}
+
+.Configurations_Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: var(--small_gap);
+    margin-bottom: 0.75rem;
+}
+
+.Config_Option {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--bg_color);
+    color: var(--text_color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.Config_Option.active {
+    background-color: orange;
 }
 
 /* SEARCH BAR */
@@ -1154,6 +1349,30 @@ body {
 
     .Navbar_LogoType {
         font-size: 1rem;
+    }
+
+    /* MENU */
+
+    .Menu {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .LP_Links_Container,
+    .Secondary_Links,
+    .Configurations {
+        flex-shrink: 0;
+        width: 100%;
+    }
+
+    .Menu_List_Container {
+        margin-top: var(--small_gap);
+        justify-content: start;
+    }
+
+    .Configurations {
+        margin-bottom: var(--small_gap);
     }
 
     /* SEARCH BAR */
