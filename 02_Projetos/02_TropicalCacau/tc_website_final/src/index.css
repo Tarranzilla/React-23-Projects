@@ -136,7 +136,7 @@ body {
 }
 
 .Navbar_Logo {
-    color: orange;
+    color: #f8ca00;
     animation: Rotate360 30s linear infinite;
     font-size: 36px;
     cursor: pointer;
@@ -164,7 +164,7 @@ body {
     gap: 0.4rem;
 
     text-decoration: none;
-    color: orange;
+    color: #f8ca00;
 }
 
 .Navbar_Main {
@@ -191,7 +191,7 @@ body {
 }
 
 .Navbar_Main_Links.active {
-    color: hotpink;
+    color: #f8ca00;
 }
 
 .Navbar_Main_Links:focus,
@@ -260,7 +260,7 @@ body {
 
 .Navbar_Tools_Cart.active,
 .Navbar_Tools_Search.active {
-    color: hotpink;
+    color: #f8ca00;
 }
 
 .Navbar_Tools_Cart_Indicator {
@@ -306,17 +306,17 @@ body {
 
 .Navbar_Menu_Button.active .Line_1 {
     transform: translateY(0.65rem) rotate(45deg);
-    background-color: hotpink;
+    background-color: #f8ca00;
 }
 
 .Navbar_Menu_Button.active .Line_2 {
     transform: translateX(-100%);
-    background-color: hotpink;
+    background-color: #f8ca00;
 }
 
 .Navbar_Menu_Button.active .Line_3 {
     transform: translateY(-0.65rem) rotate(-45deg);
-    background-color: hotpink;
+    background-color: #f8ca00;
 }
 
 .Menu_Button_Line {
@@ -336,6 +336,7 @@ body {
 /* MENU */
 
 .Menu {
+    z-index: 10;
     position: absolute;
     top: var(--navbar_height);
     left: 0;
@@ -344,7 +345,7 @@ body {
     margin-right: 20%;
     border-radius: var(--small_gap);
     height: var(--section_viewer_height);
-    background-color: hotpink;
+    background-color: #f8ca00;
 
     display: flex;
     flex-direction: column;
@@ -541,7 +542,7 @@ body {
 }
 
 .Config_Option.active {
-    background-color: orange;
+    background-color: #f8ca00;
 }
 
 /* SEARCH BAR */
@@ -553,7 +554,7 @@ body {
     width: 20%;
     height: var(--section_viewer_height);
     background-color: gray;
-    z-index: 2;
+    z-index: 9;
 
     display: flex;
     flex-direction: column;
@@ -727,12 +728,13 @@ body {
 /* SHOPPING CART */
 
 .Shopping_Cart {
+    z-index: 8;
     position: absolute;
     top: var(--navbar_height);
     right: 0;
     width: 20%;
     height: var(--section_viewer_height);
-    background-color: orange;
+    background-color: #f8ca00;
 
     display: flex;
     flex-direction: column;
@@ -753,7 +755,7 @@ body {
     left: 50%;
     width: 100%;
     height: 100%;
-    background-color: orange;
+    background-color: #f8ca00;
     transition: all 0.2s ease-in-out;
     outline: none;
 }
@@ -1033,6 +1035,8 @@ body {
     margin: 3rem;
 }
 
+/* HELP CONTAINERS */
+
 .Help_Container {
     position: absolute;
     top: var(--navbar_height);
@@ -1163,7 +1167,7 @@ body {
     flex-shrink: 0;
     height: 300px;
     width: 100%;
-    background: repeating-linear-gradient(90deg, orange, orange 1px, transparent 2px, transparent 10px, orange 11px);
+    background: repeating-linear-gradient(90deg, #f8ca00, #f8ca00 1px, transparent 2px, transparent 10px, #f8ca00 11px);
     margin-block: var(--small_gap);
     scroll-snap-align: none;
 }
@@ -1177,6 +1181,8 @@ body {
     justify-content: center;
     align-items: center;
 
+    gap: var(--small_gap);
+
     flex-shrink: 0;
 
     scroll-snap-align: start;
@@ -1184,19 +1190,156 @@ body {
     outline: 1px solid var(--text_color);
     outline-offset: -2px;
     border-radius: var(--small_gap);
+
+    position: relative;
 }
+
+.Section_01_Background,
+.Section_02_Background,
+.Section_03_Background,
+.Section_04_Background {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--small_gap);
+    filter: opacity(0.3);
+}
+
+/* SEÇÃO 1 - INICIO */
 
 .LP_Section_01_Inicio {
+    overflow: hidden;
 }
+
+.Brand_Logo {
+    position: absolute;
+    bottom: -200px;
+    right: -200px;
+    height: 75%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    animation: Rotate360 30s linear infinite;
+}
+
+.Brand_Declaration {
+    left: var(--small_gap);
+    position: absolute;
+    color: #f8ca00;
+    font-size: clamp(3rem, 10vw, 7rem);
+    z-index: 3;
+}
+
+.Website_Introduction {
+    color: var(--bg_color);
+    max-width: 700px;
+}
+
+/* SEÇÃO 2 - SOBRE O CACAU E SOBRE A EMPRESA */
 
 .LP_Section_02_Sobre {
+    align-items: start;
+    justify-content: start;
+
+    padding: var(--small_gap);
+    text-align: center;
 }
 
-.LP_Section_03_Produtos {
+.Tropical_Description {
+    font-size: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--small_gap);
+    font-weight: 600;
+    color: #f8ca00;
 }
+
+.Link_Leticia {
+    color: #f8ca00;
+    text-underline-offset: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.Link_Leticia:hover,
+.Link_Leticia:focus {
+    color: #f8ca00;
+    text-underline-offset: 1rem;
+}
+
+.Kakaw_Header {
+    font-size: 1.4rem;
+    color: #f8ca00;
+}
+
+.Kakaw_Description {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+    gap: var(--small_gap);
+    font-size: 1rem;
+
+    overflow-y: auto;
+}
+
+/* SEÇÃO 3 - PRODUTOS */
+
+.LP_Section_03_Produtos {
+    flex-direction: column;
+    padding: var(--small_gap);
+}
+
+.Type_Viewer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--small_gap);
+}
+
+.Product_Type_Container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: var(--small_gap);
+}
+
+.Product_Type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: var(--small_gap);
+    border: none;
+    height: 100%;
+    border-radius: var(--small_gap);
+    background-color: var(--text_color);
+    color: var(--bg_color);
+    cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.Product_Type:focus,
+.Product_Type:hover {
+    background-color: var(--bg_color);
+    color: var(--text_color);
+    scale: 1.05;
+}
+
+/* SEÇÃO 4 - CONTATO */
 
 .LP_Section_04_Contato {
 }
+
+/* SEÇÕES ADICIONAIS - PÁGINAS SECUNDÁRIAS */
 
 .Secondary_Page {
 }
