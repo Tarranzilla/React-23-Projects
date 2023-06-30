@@ -38,8 +38,8 @@
     --text_color_faded_1: #6f2f11b9;
     --text_color_faded_2: #6f2f115d;
 
-    --anchor_color: #333;
-    --anchor_hover_color: #333;
+    --anchor_color: #6f2f11;
+    --anchor_hover_color: #ffd800;
 
     --primary_color: #6f2f11;
     --primary_color_faded_1: #6f2f11b9;
@@ -53,12 +53,13 @@
     --info_color_faded_1: #333;
     --info_color_faded_2: #333;
 
-    --success_color: #49fa49;
-    --warning_color: #d9ec08;
-    --danger_color: #e34545;
+    --success_color: #67b22f;
+    --warning_color: #ffd800;
+    --danger_color: #e32528;
 
     --shopping_cart_color: #b3b3b3;
     --searchbar_color: #b3b3b3;
+    --menu_color: #b3b3b3;
 }
 
 .darkmode {
@@ -71,12 +72,12 @@
     --text_color_faded_1: #fcf0beb9;
     --text_color_faded_2: #f5f5f55d;
 
-    --anchor_color: #f5f5f5;
-    --anchor_hover_color: #f5f5f5;
+    --anchor_color: #fcf0be;
+    --anchor_hover_color: #ffd800;
 
-    --primary_color: #d9ec08;
-    --primary_color_faded_1: #d9ec08b9;
-    --primary_color_faded_2: #d9ec085d;
+    --primary_color: #ffd800;
+    --primary_color_faded_1: #ffd800b9;
+    --primary_color_faded_2: #ffd8005d;
 
     --secondary_color: #333;
     --secondary_color_faded_1: #333;
@@ -86,12 +87,13 @@
     --info_color_faded_1: #333;
     --info_color_faded_2: #333;
 
-    --success_color: #2cdb1c;
-    --warning_color: #ecbe08;
+    --success_color: #67b22f;
+    --warning_color: #ffd800;
     --danger_color: #e34545;
 
     --shopping_cart_color: gray;
     --searchbar_color: gray;
+    --menu_color: #b3b3b3;
 }
 
 * {
@@ -198,7 +200,7 @@ body {
 
 .Navbar_Main_Links {
     position: relative;
-    color: var(--text_color);
+    color: var(--anchor_color);
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
@@ -207,7 +209,7 @@ body {
 }
 
 .Navbar_Main_Links.active {
-    color: var(--primary_color);
+    color: var(--anchor_hover_color);
 }
 
 .Navbar_Main_Links:focus,
@@ -222,7 +224,7 @@ body {
     left: 0;
     width: 100%;
     height: 3px;
-    background-color: var(--text_color);
+    background-color: var(--anchor_color);
     transform: scaleX(0);
     transform-origin: left;
     transition: all 0.2s ease-in-out;
@@ -231,6 +233,7 @@ body {
 .Navbar_Main_Links:focus::after,
 .Navbar_Main_Links:hover::after {
     transform: scaleX(1);
+    background-color: var(--anchor_hover_color);
 }
 
 .Navbar_Tools {
@@ -257,7 +260,7 @@ body {
     left: 0;
     width: 100%;
     height: 3px;
-    background-color: var(--text_color);
+    background-color: var(--anchor_color);
     transform: scaleX(0);
     transform-origin: left;
     transition: all 0.2s ease-in-out;
@@ -267,6 +270,7 @@ body {
 .Navbar_Tool:focus::after,
 .Navbar_Tool:hover::after {
     transform: scaleX(1);
+    background-color: var(--anchor_hover_color);
 }
 
 .Navbar_Tool:focus,
@@ -276,7 +280,7 @@ body {
 
 .Navbar_Tools_Cart.active,
 .Navbar_Tools_Search.active {
-    color: var(--primary_color);
+    color: var(--anchor_hover_color);
 }
 
 .Navbar_Tools_Cart_Indicator {
@@ -285,7 +289,7 @@ body {
     top: -0.6rem;
     right: -0.6rem;
     font-size: 0.6rem;
-    background-color: var(--text_color);
+    background-color: var(--anchor_color);
     color: var(--bg_color);
     display: flex;
     justify-content: center;
@@ -361,7 +365,7 @@ body {
     margin-right: 20%;
     border-radius: var(--small_gap);
     height: var(--section_viewer_height);
-    background-color: var(--primary_color);
+    background-color: var(--menu_color);
 
     display: flex;
     flex-direction: column;
@@ -397,6 +401,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: var(--small_gap);
+    flex-shrink: 0;
 }
 .LP_Links_Container {
     width: 50%;
@@ -555,10 +560,11 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .Config_Option.active {
-    background-color: var(--primary_color);
+    background-color: var(--anchor_hover_color);
 }
 
 /* SEARCH BAR */
@@ -1237,6 +1243,7 @@ body {
 
 .LP_Section_01_Inicio {
     overflow: hidden;
+    padding: var(--medium_gap);
 }
 
 .Brand_Logo {
@@ -1315,15 +1322,29 @@ body {
 .LP_Section_03_Produtos {
     flex-direction: column;
     padding: var(--small_gap);
+    gap: 0;
+}
+
+.Type_Header {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--small_gap);
+    background-color: var(--text_color);
+    border-radius: var(--small_gap);
+    color: var(--bg_color);
 }
 
 .Type_Viewer {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     gap: var(--small_gap);
 }
 
@@ -1366,16 +1387,135 @@ body {
     font-weight: 600;
 }
 
+.No_Product_Selected_Title {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.Product_Container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    height: 100%;
+    gap: var(--small_gap);
+    padding: 0.5rem;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    overflow-x: auto;
+}
+
+.Product_Card {
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--small_gap);
+    padding: var(--small_gap);
+    height: 100%;
+    outline: 1px solid var(--text_color);
+    border-radius: var(--small_gap);
+    flex: 1;
+    min-width: 300px;
+}
+
+.Product_Card_Header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.Card_Product_Name {
+    font-size: clamp(2rem, 2vw, 3rem);
+    font-weight: 600;
+    color: var(--primary_color);
+    text-align: center;
+}
+
+.Card_Product_Type {
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    font-weight: 400;
+    color: var(--primary_color);
+    position: relative;
+}
+
+.Card_Product_Type::before,
+.Card_Product_Type::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    bottom: calc(50% - 2px);
+    border-radius: 50%;
+    background-color: var(--primary_color);
+}
+
+.Card_Product_Type::before {
+    left: -60px;
+}
+
+.Card_Product_Type::after {
+    right: -60px;
+}
+
+.Product_Card_Body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--small_gap);
+    width: 100%;
+    flex: 1;
+}
+
+.Product_Card_Footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.Card_Product_Detail_Button,
+.Card_AddToCart_Button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--small_gap);
+    padding: var(--small_gap);
+    border: none;
+    border-radius: var(--small_gap);
+    background-color: var(--text_color);
+    color: var(--bg_color);
+    cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+}
+
 /* SEÇÃO 4 - CONTATO */
 
 .LP_Section_04_Contato {
-    padding: var(--small_gap);
-    align-items: start;
+    padding: var(--medium_gap);
+    align-items: center;
     overflow-y: auto;
 }
 
 .Chamada_Contato {
-    font-size: clamp(1.4rem, 2vw, 2.4rem);
+    font-size: clamp(1.4rem, 5vw, 2.4rem);
     display: flex;
     flex-direction: column;
     gap: var(--small_gap);
@@ -1386,6 +1526,8 @@ body {
 .Info_Contato {
     display: flex;
     flex-direction: column;
+    max-width: 400px;
+    width: 100%;
 }
 
 .Info_Contato_Item {
@@ -1398,6 +1540,7 @@ body {
 }
 
 .Acoes_Contato {
+    max-width: 400px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1420,6 +1563,7 @@ body {
     transition: all 0.2s ease-in-out;
     background-color: var(--text_color);
     color: var(--bg_color);
+    cursor: pointer;
 }
 
 .Acao_Contato:hover,
@@ -1604,6 +1748,10 @@ body {
         justify-content: start;
     }
 
+    .Secondary_Links {
+        flex-direction: column;
+    }
+
     .Configurations {
         margin-bottom: var(--small_gap);
     }
@@ -1661,5 +1809,10 @@ body {
     .LP_Section_01_Inicio {
         padding: var(--small_gap);
         justify-content: start;
+    }
+
+    .LP_Section_04_Contato {
+        padding: var(--small_gap);
+        justify-content: center;
     }
 }
