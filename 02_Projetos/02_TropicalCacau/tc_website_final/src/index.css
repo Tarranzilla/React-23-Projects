@@ -20,21 +20,30 @@
     font-size: 16px;
     font-family: sans-serif;
 
-    /* Main Light Mode Colors */
-    --bg_color: #f5f5f5;
-    --bg_color_faded_1: #f5f5f5;
-    --bg_color_faded_2: #f5f5f5;
+    /* Main Brand Colors */
+    --cinza_escuro: #333;
+    --cinza_neutro: #b3b3b3;
+    --fundo_claro: #fcf0be;
+    --amarelo_primario: #ffd800;
+    --marrom_primario: #6f2f11;
+    --vermelho_primario: #e32528;
+    --verde_primario: #67b22f;
 
-    --text_color: #3e2711;
-    --text_color_faded_1: #333;
-    --text_color_faded_2: #333;
+    /* Main Light Mode Colors */
+    --bg_color: #fcf0be;
+    --bg_color_faded_1: #fcf0beb9;
+    --bg_color_faded_2: #fcf0be5d;
+
+    --text_color: #6f2f11;
+    --text_color_faded_1: #6f2f11b9;
+    --text_color_faded_2: #6f2f115d;
 
     --anchor_color: #333;
     --anchor_hover_color: #333;
 
-    --primary_color: #3e2711;
-    --primary_color_faded_1: #333;
-    --primary_color_faded_2: #333;
+    --primary_color: #6f2f11;
+    --primary_color_faded_1: #6f2f11b9;
+    --primary_color_faded_2: #6f2f115d;
 
     --secondary_color: #333;
     --secondary_color_faded_1: #333;
@@ -48,26 +57,26 @@
     --warning_color: #d9ec08;
     --danger_color: #e34545;
 
-    --shopping_cart_color: rgb(179, 179, 179);
-    --searchbar_color: gray;
+    --shopping_cart_color: #b3b3b3;
+    --searchbar_color: #b3b3b3;
 }
 
 .darkmode {
     /* Main Dark Mode Colors */
-    --bg_color: #3e2711;
-    --bg_color_faded_1: #1f1f1f;
-    --bg_color_faded_2: #1f1f1f;
+    --bg_color: #6f2f11;
+    --bg_color_faded_1: #6f2f11b9;
+    --bg_color_faded_2: #6f2f115d;
 
-    --text_color: #f5f5f5;
-    --text_color_faded_1: #f5f5f5;
-    --text_color_faded_2: #f5f5f5;
+    --text_color: #fcf0be;
+    --text_color_faded_1: #fcf0beb9;
+    --text_color_faded_2: #f5f5f55d;
 
     --anchor_color: #f5f5f5;
     --anchor_hover_color: #f5f5f5;
 
-    --primary_color: #f8ca00;
-    --primary_color_faded_1: #333;
-    --primary_color_faded_2: #333;
+    --primary_color: #d9ec08;
+    --primary_color_faded_1: #d9ec08b9;
+    --primary_color_faded_2: #d9ec085d;
 
     --secondary_color: #333;
     --secondary_color_faded_1: #333;
@@ -81,7 +90,7 @@
     --warning_color: #ecbe08;
     --danger_color: #e34545;
 
-    --shopping_cart_color: #3e2711;
+    --shopping_cart_color: gray;
     --searchbar_color: gray;
 }
 
@@ -580,7 +589,7 @@ body {
     left: -50%;
     width: 100%;
     height: 100%;
-    background-color: gray;
+    background-color: var(--searchbar_color);
     transition: all 0.2s ease-in-out;
     outline: none;
 }
