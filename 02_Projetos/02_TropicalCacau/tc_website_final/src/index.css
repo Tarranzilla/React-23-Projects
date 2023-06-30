@@ -25,14 +25,14 @@
     --bg_color_faded_1: #f5f5f5;
     --bg_color_faded_2: #f5f5f5;
 
-    --text_color: #333;
+    --text_color: #3e2711;
     --text_color_faded_1: #333;
     --text_color_faded_2: #333;
 
     --anchor_color: #333;
     --anchor_hover_color: #333;
 
-    --primary_color: #333;
+    --primary_color: #3e2711;
     --primary_color_faded_1: #333;
     --primary_color_faded_2: #333;
 
@@ -47,11 +47,14 @@
     --success_color: #49fa49;
     --warning_color: #d9ec08;
     --danger_color: #e34545;
+
+    --shopping_cart_color: rgb(179, 179, 179);
+    --searchbar_color: gray;
 }
 
 .darkmode {
     /* Main Dark Mode Colors */
-    --bg_color: #1f1f1f;
+    --bg_color: #3e2711;
     --bg_color_faded_1: #1f1f1f;
     --bg_color_faded_2: #1f1f1f;
 
@@ -62,7 +65,7 @@
     --anchor_color: #f5f5f5;
     --anchor_hover_color: #f5f5f5;
 
-    --primary_color: #333;
+    --primary_color: #f8ca00;
     --primary_color_faded_1: #333;
     --primary_color_faded_2: #333;
 
@@ -77,6 +80,9 @@
     --success_color: #2cdb1c;
     --warning_color: #ecbe08;
     --danger_color: #e34545;
+
+    --shopping_cart_color: #3e2711;
+    --searchbar_color: gray;
 }
 
 * {
@@ -99,6 +105,7 @@
 }
 
 html {
+    overflow: hidden;
 }
 
 body {
@@ -136,7 +143,7 @@ body {
 }
 
 .Navbar_Logo {
-    color: #f8ca00;
+    color: var(--primary_color);
     animation: Rotate360 30s linear infinite;
     font-size: 36px;
     cursor: pointer;
@@ -164,7 +171,7 @@ body {
     gap: 0.4rem;
 
     text-decoration: none;
-    color: #f8ca00;
+    color: var(--primary_color);
 }
 
 .Navbar_Main {
@@ -191,7 +198,7 @@ body {
 }
 
 .Navbar_Main_Links.active {
-    color: #f8ca00;
+    color: var(--primary_color);
 }
 
 .Navbar_Main_Links:focus,
@@ -260,7 +267,7 @@ body {
 
 .Navbar_Tools_Cart.active,
 .Navbar_Tools_Search.active {
-    color: #f8ca00;
+    color: var(--primary_color);
 }
 
 .Navbar_Tools_Cart_Indicator {
@@ -306,17 +313,17 @@ body {
 
 .Navbar_Menu_Button.active .Line_1 {
     transform: translateY(0.65rem) rotate(45deg);
-    background-color: #f8ca00;
+    background-color: var(--primary_color);
 }
 
 .Navbar_Menu_Button.active .Line_2 {
     transform: translateX(-100%);
-    background-color: #f8ca00;
+    background-color: var(--primary_color);
 }
 
 .Navbar_Menu_Button.active .Line_3 {
     transform: translateY(-0.65rem) rotate(-45deg);
-    background-color: #f8ca00;
+    background-color: var(--primary_color);
 }
 
 .Menu_Button_Line {
@@ -345,7 +352,7 @@ body {
     margin-right: 20%;
     border-radius: var(--small_gap);
     height: var(--section_viewer_height);
-    background-color: #f8ca00;
+    background-color: var(--primary_color);
 
     display: flex;
     flex-direction: column;
@@ -542,7 +549,7 @@ body {
 }
 
 .Config_Option.active {
-    background-color: #f8ca00;
+    background-color: var(--primary_color);
 }
 
 /* SEARCH BAR */
@@ -553,7 +560,7 @@ body {
     left: 0;
     width: 20%;
     height: var(--section_viewer_height);
-    background-color: gray;
+    background-color: var(--searchbar_color);
     z-index: 9;
 
     display: flex;
@@ -734,7 +741,7 @@ body {
     right: 0;
     width: 20%;
     height: var(--section_viewer_height);
-    background-color: #f8ca00;
+    background-color: var(--shopping_cart_color);
 
     display: flex;
     flex-direction: column;
@@ -745,6 +752,7 @@ body {
     padding: var(--small_gap);
 
     border-radius: var(--small_gap) 0 0 var(--small_gap);
+    transition: background-color 0.2s ease-in-out;
 }
 
 .Shopping_Cart::before {
@@ -755,8 +763,8 @@ body {
     left: 50%;
     width: 100%;
     height: 100%;
-    background-color: #f8ca00;
-    transition: all 0.2s ease-in-out;
+    background-color: var(--shopping_cart_color);
+    transition: background-color 0.2s ease-in-out;
     outline: none;
 }
 
@@ -1038,6 +1046,7 @@ body {
 /* HELP CONTAINERS */
 
 .Help_Container {
+    z-index: 8;
     position: absolute;
     top: var(--navbar_height);
     left: 0;
@@ -1051,7 +1060,6 @@ body {
     justify-content: start;
     align-items: center;
     gap: var(--small_gap);
-    z-index: 2;
 
     padding-block: var(--small_gap);
     padding-inline: var(--small_gap);
@@ -1167,7 +1175,14 @@ body {
     flex-shrink: 0;
     height: 300px;
     width: 100%;
-    background: repeating-linear-gradient(90deg, #f8ca00, #f8ca00 1px, transparent 2px, transparent 10px, #f8ca00 11px);
+    background: repeating-linear-gradient(
+        90deg,
+        var(--primary_color),
+        var(--primary_color) 1px,
+        transparent 2px,
+        transparent 10px,
+        var(--primary_color) 11px
+    );
     margin-block: var(--small_gap);
     scroll-snap-align: none;
 }
@@ -1228,7 +1243,7 @@ body {
 .Brand_Declaration {
     left: var(--small_gap);
     position: absolute;
-    color: #f8ca00;
+    color: var(--primary_color);
     font-size: clamp(3rem, 10vw, 7rem);
     z-index: 3;
 }
@@ -1254,24 +1269,24 @@ body {
     flex-direction: column;
     gap: var(--small_gap);
     font-weight: 600;
-    color: #f8ca00;
+    color: var(--primary_color);
 }
 
 .Link_Leticia {
-    color: #f8ca00;
+    color: var(--primary_color);
     text-underline-offset: 0.5rem;
     transition: all 0.2s ease-in-out;
 }
 
 .Link_Leticia:hover,
 .Link_Leticia:focus {
-    color: #f8ca00;
+    color: var(--primary_color);
     text-underline-offset: 1rem;
 }
 
 .Kakaw_Header {
     font-size: clamp(1.2rem, 2vw, 1.4rem);
-    color: #f8ca00;
+    color: var(--primary_color);
 }
 
 .Kakaw_Description {
@@ -1345,6 +1360,64 @@ body {
 /* SEÇÃO 4 - CONTATO */
 
 .LP_Section_04_Contato {
+    padding: var(--small_gap);
+    align-items: start;
+    overflow-y: auto;
+}
+
+.Chamada_Contato {
+    font-size: clamp(1.4rem, 2vw, 2.4rem);
+    display: flex;
+    flex-direction: column;
+    gap: var(--small_gap);
+    font-weight: 600;
+    color: var(--primary_color);
+}
+
+.Info_Contato {
+    display: flex;
+    flex-direction: column;
+}
+
+.Info_Contato_Item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.3rem;
+
+    border-bottom: 2px solid var(--text_color);
+}
+
+.Acoes_Contato {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+.Acao_Contato {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: var(--small_gap);
+    border-radius: var(--small_gap);
+    border: none;
+
+    transition: all 0.2s ease-in-out;
+    background-color: var(--text_color);
+    color: var(--bg_color);
+}
+
+.Acao_Contato:hover,
+.Acao_Contato:focus {
+    background-color: var(--bg_color);
+    color: var(--text_color);
+    scale: 1.05;
 }
 
 /* SEÇÕES ADICIONAIS - PÁGINAS SECUNDÁRIAS */
