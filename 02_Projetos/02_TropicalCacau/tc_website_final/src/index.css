@@ -2,9 +2,12 @@
     /* Main Viewport Sizes */
     --viewport_width: 100vw;
     --viewport_height: 100vh;
+    --viewport_height: 100svh;
 
     --navbar_height: 10vh;
+    --navbar_height: 10svh;
     --footer_height: 10vh;
+    --footer_height: 10svh;
 
     --section_viewer_margin_top: 0vh;
     --section_viewer_margin_bottom: 0vh;
