@@ -1,6 +1,14 @@
+// Vanilla React Imports
 import { forwardRef, useState } from "react";
 
+// Images Imports
 import backgroundImg from "../../assets/cacau_textures/dalle5.png";
+import ChocolateImg1 from "../../assets/chocolates/ChocolateClaro1.avif";
+import ChocolateImg2 from "../../assets/chocolates/ChocolateCafé1.avif";
+import ChocolateImg3 from "../../assets/chocolates/ChocolateEscuro1.avif";
+import ChocolateImg4 from "../../assets/chocolates/ChocolateEscuro2.avif";
+import ChocolateImg5 from "../../assets/chocolates/ChocolateBranco1.avif";
+import ChocolateImg6 from "../../assets/chocolates/ChocolateComNozes.avif";
 
 const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props, ref: any) {
     const [activeType, setActiveType] = useState(0);
@@ -48,6 +56,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
+                                <img className="Card_Product_Image" src={ChocolateImg1}></img>
                                 <p className="Card_Product_Description">Chocolate 33% Cacau com sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">
@@ -63,6 +72,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
+                                <img className="Card_Product_Image" src={ChocolateImg2}></img>
                                 <p className="Card_Product_Description">Chocolate 60% Cacau com sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">
@@ -78,6 +88,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
+                                <img className="Card_Product_Image" src={ChocolateImg3}></img>
                                 <p className="Card_Product_Description">Chocolate 80% Cacau com sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">
@@ -97,6 +108,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
+                                <img className="Card_Product_Image" src={ChocolateImg4}></img>
                                 <p className="Card_Product_Description">Chocolate Branco 30% Cacau com Leite. Um sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">
@@ -112,6 +124,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
+                                <img className="Card_Product_Image" src={ChocolateImg5}></img>
                                 <p className="Card_Product_Description">Chocolate 60% Cacau com Leite e Frutas. Um sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">
@@ -127,6 +140,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
+                                <img className="Card_Product_Image" src={ChocolateImg6}></img>
                                 <p className="Card_Product_Description">Chocolate Branco 60% Cacau com Leite e Nozes. Um sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">

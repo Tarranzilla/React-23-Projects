@@ -1483,6 +1483,10 @@ body {
     flex: 1;
 }
 
+.Card_Product_Image {
+    display: none;
+}
+
 .Product_Card_Footer {
     display: flex;
     flex-direction: column;
