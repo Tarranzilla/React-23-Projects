@@ -60,7 +60,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
-                                <p className="Card_Product_Description">Chocolate 33% Cacau com sabor inigualável!</p>
+                                <p className="Card_Product_Description">Chocolate 35% Cacau com sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">
                                 <button className="Card_Product_Detail_Button">Detalhes</button>

@@ -1,4 +1,9 @@
+// Redux Imports
 import { createSlice } from "@reduxjs/toolkit";
+
+// Data Imports
+import ChocolateType from "../types/Chocolate"; // Import the Chocolate interface
+import TodosOsChocolates from "../data/TodosOsChocolates";
 
 const initialState = {
     mode: "light",
@@ -11,6 +16,8 @@ const initialState = {
     lgpdConsent: false,
     activeSection: 1,
     isLoading: false,
+    availableChocolates: TodosOsChocolates,
+    cartItems: [] as ChocolateType[],
 };
 
 export const authSlice = createSlice({
@@ -55,6 +62,35 @@ export const authSlice = createSlice({
             state.isLoading = !state.isLoading;
             console.log("Loading is toggled: " + (state.isLoading ? "on" : "off"));
         },
+        addToCart: (state, action) => {
+            const { id, quantity } = action.payload;
+            const item = state.availableChocolates.find((item) => item.id === id);
+            if (item && id !== undefined) {
+                const inCartIndex = state.cartItems.findIndex((item) => item.id === id);
+
+                if (inCartIndex !== -1) {
+                    state.cartItems[inCartIndex].cartQuantity += quantity;
+                } else {
+                    state.cartItems.push({ ...item, cartQuantity: quantity, id });
+                }
+            }
+        },
+        decrementCartItem: (state, action) => {
+            const { id } = action.payload;
+            const item = state.cartItems.find((item) => item.id === id);
+
+            if (item && item.cartQuantity > 1) {
+                item.cartQuantity -= 1;
+            }
+        },
+        removeFromCart: (state, action) => {
+            const { id } = action.payload;
+            const itemIndex = state.cartItems.findIndex((item) => item.id === id);
+
+            if (itemIndex !== -1) {
+                state.cartItems.splice(itemIndex, 1);
+            }
+        },
     },
 });
 
@@ -69,5 +105,8 @@ export const {
     setLgpdConsent,
     setActiveSection,
     toggleLoading,
+    addToCart,
+    decrementCartItem,
+    removeFromCart,
 } = authSlice.actions;
 export default authSlice.reducer;

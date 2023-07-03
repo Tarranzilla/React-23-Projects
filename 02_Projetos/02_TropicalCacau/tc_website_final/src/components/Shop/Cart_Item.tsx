@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function Cart_Item({ imgSrc }) {
-    const [quantity, setQuantity] = useState(1);
+export default function Cart_Item({ imgSrc, name, type, price, cartQuantity }) {
+    const [quantity, setQuantity] = useState(cartQuantity);
 
     const addToQuantity = () => {
         setQuantity(quantity + 1);
@@ -13,19 +13,23 @@ export default function Cart_Item({ imgSrc }) {
         }
     };
 
+    const removeProduct = () => {
+        setQuantity(0);
+    };
+
     return (
         <div className="Cart_Item">
             <div className="Cart_Item_Image_Container">
                 <img className="Cart_Item_Image" src={imgSrc} alt="" />
             </div>
             <div className="Cart_Item_Info">
-                <p className="Cart_Item_Name">Tropical Intenso 70%</p>
-                <p className="Cart_Item_Type">Barra de Chocolate 100g</p>
-                <p className="Cart_Item_Price">R$ 50,00</p>
+                <p className="Cart_Item_Name">{name}</p>
+                <p className="Cart_Item_Type">{type}</p>
+                <p className="Cart_Item_Price">R$ {price},00</p>
                 <p className="Cart_Item_Quantity">Quantidade: {quantity}</p>
 
                 <div className="Cart_Item_Buttons">
-                    <button className="Cart_Item_Button Remove" onClick={removeFromQuantity}>
+                    <button className="Cart_Item_Button Remove" onClick={removeProduct}>
                         Remover
                     </button>
                     <button className="Cart_Item_Rounded_Button Add" onClick={removeFromQuantity}>

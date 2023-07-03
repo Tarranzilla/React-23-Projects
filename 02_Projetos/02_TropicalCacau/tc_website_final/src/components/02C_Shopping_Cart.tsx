@@ -5,8 +5,11 @@ import { motion as m } from "framer-motion";
 import Cart_Item from "./Shop/Cart_Item";
 
 // Redux Imports
-import { useDispatch } from "react-redux";
-import { toggleCheckoutHelp, toggleCart } from "../context/main_context";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleCheckoutHelp, toggleCart, addToCart, decrementCartItem, removeFromCart } from "../context/main_context";
+
+// Data Imports
+import TodosOsChocolates from "../data/TodosOsChocolates";
 
 // Images Imports
 import ChocolateImg1 from "../assets/chocolates/ChocolateClaro1.avif";
@@ -38,12 +41,18 @@ export default function Shopping_Cart() {
             </div>
 
             <div className="Cart_List">
-                <Cart_Item imgSrc={ChocolateImg1} />
-                <Cart_Item imgSrc={ChocolateImg2} />
-                <Cart_Item imgSrc={ChocolateImg3} />
-                <Cart_Item imgSrc={ChocolateImg4} />
-                <Cart_Item imgSrc={ChocolateImg5} />
-                <Cart_Item imgSrc={ChocolateImg6} />
+                {TodosOsChocolates.map((chocolate) => {
+                    return (
+                        <Cart_Item
+                            imgSrc={chocolate.imgSrc}
+                            name={chocolate.name}
+                            type={chocolate.type}
+                            price={chocolate.price}
+                            cartQuantity={chocolate.cartQuantity}
+                            key={chocolate.name}
+                        />
+                    );
+                })}
             </div>
             <div className="Checkout">
                 <div className="Checkout_Main">

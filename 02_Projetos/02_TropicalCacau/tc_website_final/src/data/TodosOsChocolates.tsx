@@ -1,0 +1,66 @@
+import ChocolateType from "../types/Chocolate"; // Import the Chocolate interface
+
+const TodosOsChocolates: ChocolateType[] = [
+    {
+        id: 0,
+        name: "Tropical 35%",
+        type: "Barra de Chocolate 100g",
+        chocoClass: "classico",
+        description: "Chocolate 35% Cacau com sabor inigualável!",
+        price: 0,
+        imgSrc: "/imgs/chocolates/ChocolateClaro1.avif",
+        cartQuantity: 0,
+    },
+    {
+        id: 1,
+        name: "Tropical 60%",
+        type: "Barra de Chocolate 100g",
+        chocoClass: "classico",
+        description: "Chocolate 60% Cacau com sabor inigualável!",
+        price: 0,
+        imgSrc: "/imgs/chocolates/ChocolateCafé1.avif",
+        cartQuantity: 0,
+    },
+    {
+        id: 2,
+        name: "Tropical 80%",
+        type: "Barra de Chocolate 100g",
+        chocoClass: "classico",
+        description: "Chocolate 80% Cacau com sabor inigualável!",
+        price: 0,
+        imgSrc: "/imgs/chocolates/ChocolateEscuro1.avif",
+        cartQuantity: 0,
+    },
+    {
+        id: 3,
+        name: "Tropical Branco",
+        type: "Barra de Chocolate 100g",
+        chocoClass: "especial",
+        description: "Chocolate Branco 30% Cacau com Leite. Um sabor inigualável!",
+        price: 0,
+        imgSrc: "/imgs/chocolates/ChocolateEscuro2.avif",
+        cartQuantity: 0,
+    },
+    {
+        id: 4,
+        name: "Tropical Frutas do Inverno",
+        type: "Barra de Chocolate 100g",
+        chocoClass: "especial",
+        description: "Chocolate 60% Cacau com Leite e Frutas Vermelhas. Um sabor inigualável!",
+        price: 0,
+        imgSrc: "/imgs/chocolates/ChocolateBranco1.avif",
+        cartQuantity: 0,
+    },
+    {
+        id: 5,
+        name: "Tropical Nozes",
+        type: "",
+        chocoClass: "Barra de Chocolate 100g",
+        description: "Chocolate Branco 60% Cacau com Leite e Nozes. Um sabor inigualável!",
+        price: 0,
+        imgSrc: "/imgs/chocolates/ChocolateComNozes.avif",
+        cartQuantity: 0,
+    },
+];
+
+export default TodosOsChocolates;
