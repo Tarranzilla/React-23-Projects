@@ -8,6 +8,14 @@ import Cart_Item from "./Shop/Cart_Item";
 import { useDispatch } from "react-redux";
 import { toggleCheckoutHelp, toggleCart } from "../context/main_context";
 
+// Images Imports
+import ChocolateImg1 from "../assets/chocolates/ChocolateClaro1.avif";
+import ChocolateImg2 from "../assets/chocolates/ChocolateCafé1.avif";
+import ChocolateImg3 from "../assets/chocolates/ChocolateEscuro1.avif";
+import ChocolateImg4 from "../assets/chocolates/ChocolateEscuro2.avif";
+import ChocolateImg5 from "../assets/chocolates/ChocolateBranco1.avif";
+import ChocolateImg6 from "../assets/chocolates/ChocolateComNozes.avif";
+
 export default function Shopping_Cart() {
     const dispatch = useDispatch();
 
@@ -30,12 +38,12 @@ export default function Shopping_Cart() {
             </div>
 
             <div className="Cart_List">
-                <Cart_Item />
-                <Cart_Item />
-                <Cart_Item />
-                <Cart_Item />
-                <Cart_Item />
-                <Cart_Item />
+                <Cart_Item imgSrc={ChocolateImg1} />
+                <Cart_Item imgSrc={ChocolateImg2} />
+                <Cart_Item imgSrc={ChocolateImg3} />
+                <Cart_Item imgSrc={ChocolateImg4} />
+                <Cart_Item imgSrc={ChocolateImg5} />
+                <Cart_Item imgSrc={ChocolateImg6} />
             </div>
             <div className="Checkout">
                 <div className="Checkout_Main">

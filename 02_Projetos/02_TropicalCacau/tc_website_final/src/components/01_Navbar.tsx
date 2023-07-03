@@ -1,6 +1,9 @@
+// Vanilla React Imports
+import { useEffect } from "react";
+
 // React Redux Imports
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu, toggleCart, toggleSearch } from "../context/main_context";
+import { toggleMenu, toggleCart, toggleSearch, setMode } from "../context/main_context";
 
 //Framer Motion Imports
 import { motion as m } from "framer-motion";
@@ -9,20 +12,21 @@ export default function Navbar() {
     const dispatch = useDispatch();
     const activeSection = useSelector((state: any) => state.activeSection);
     const menuIsOpen = useSelector((state: any) => state.menuIsOpen);
+    const cartIsOpen = useSelector((state: any) => state.cartIsOpen);
+    const searchIsOpen = useSelector((state: any) => state.searchIsOpen);
+    const colorMode = useSelector((state: any) => state.mode);
 
     const toggleColorMode = () => {
         const body = document.body;
-        const toggleIcon = document.querySelector(".Navbar_Tools_ToggleMode");
         if (body) {
             body.classList.toggle("darkmode");
-            toggleIcon?.classList.toggle("active");
+            dispatch(setMode());
         }
     };
 
     const toggleMenuButton = () => {
         const menuButton = document.querySelector(".Navbar_Menu_Button");
         if (menuButton) {
-            menuButton.classList.toggle("active");
             dispatch(toggleMenu());
         }
     };
@@ -30,7 +34,6 @@ export default function Navbar() {
     const toggleCartButton = () => {
         const cartButton = document.querySelector(".Navbar_Tools_Cart");
         if (cartButton) {
-            cartButton.classList.toggle("active");
             dispatch(toggleCart());
         }
     };
@@ -38,10 +41,20 @@ export default function Navbar() {
     const toggleSearchButton = () => {
         const searchButton = document.querySelector(".Navbar_Tools_Search");
         if (searchButton) {
-            searchButton.classList.toggle("active");
             dispatch(toggleSearch());
         }
     };
+
+    useEffect(() => {
+        const body = document.body;
+        if (body) {
+            if (colorMode === "dark") {
+                body.classList.add("darkmode");
+            } else {
+                body.classList.remove("darkmode");
+            }
+        }
+    }, []);
 
     return (
         <div className="Navbar" key={"Navbar"}>
@@ -130,18 +143,30 @@ export default function Navbar() {
             </div>
 
             <div className="Navbar_Tools">
-                <a href="#" className="Navbar_Tool Navbar_Tools_Search" onClick={toggleSearchButton}>
+                <a
+                    href="#"
+                    className={searchIsOpen ? "Navbar_Tool Navbar_Tools_Search active" : "Navbar_Tool Navbar_Tools_Search"}
+                    onClick={toggleSearchButton}
+                >
                     <span className="material-icons">search</span>
                 </a>
-                <a href="#" className="Navbar_Tool Navbar_Tools_Cart" onClick={toggleCartButton}>
+                <a
+                    href="#"
+                    className={cartIsOpen ? "Navbar_Tool Navbar_Tools_Cart active" : "Navbar_Tool Navbar_Tools_Cart"}
+                    onClick={toggleCartButton}
+                >
                     <div className="Navbar_Tools_Cart_Indicator">10+</div>
                     <span className="material-icons">shopping_cart</span>
                 </a>
-                <a href="#" className="Navbar_Tool Navbar_Tools_ToggleMode" onClick={toggleColorMode}>
+                <a
+                    href="#"
+                    className={colorMode === "dark" ? "Navbar_Tool Navbar_Tools_ToggleMode active" : "Navbar_Tool Navbar_Tools_ToggleMode"}
+                    onClick={toggleColorMode}
+                >
                     <span className="material-icons">brightness_4</span>
                 </a>
 
-                <a href="#" className="Navbar_Menu_Button" onClick={toggleMenuButton}>
+                <a href="#" className={menuIsOpen ? "Navbar_Menu_Button active" : "Navbar_Menu_Button"} onClick={toggleMenuButton}>
                     <div className="Menu_Button_Line Line_1"></div>
                     <div className="Menu_Button_Line Line_2"></div>
                     <div className="Menu_Button_Line Line_3"></div>

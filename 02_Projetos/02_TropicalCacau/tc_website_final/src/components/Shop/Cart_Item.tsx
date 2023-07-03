@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Cart_Item() {
+export default function Cart_Item({ imgSrc }) {
     const [quantity, setQuantity] = useState(1);
 
     const addToQuantity = () => {
@@ -15,7 +15,9 @@ export default function Cart_Item() {
 
     return (
         <div className="Cart_Item">
-            <div className="Cart_Item_Image"></div>
+            <div className="Cart_Item_Image_Container">
+                <img className="Cart_Item_Image" src={imgSrc} alt="" />
+            </div>
             <div className="Cart_Item_Info">
                 <p className="Cart_Item_Name">Tropical Intenso 70%</p>
                 <p className="Cart_Item_Type">Barra de Chocolate 100g</p>

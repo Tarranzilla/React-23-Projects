@@ -1,6 +1,9 @@
 // Vanilla React Imports
 import { forwardRef, useState } from "react";
 
+//Framer Motion Imports
+import { motion as m, AnimatePresence } from "framer-motion";
+
 // Images Imports
 import backgroundImg from "../../assets/cacau_textures/dalle5.png";
 import ChocolateImg1 from "../../assets/chocolates/ChocolateClaro1.avif";
@@ -45,18 +48,18 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
             <div className="Type_Viewer">
                 {activeType === 0 && (
                     <div className="Product_Container">
-                        <h3 className="No_Product_Selected_Title">Nenhum Produto Selecionado</h3>
+                        <h3 className="No_Product_Selected_Title">Nenhuma Categoria de Produto Selecionada</h3>
                     </div>
                 )}
                 {activeType === 1 && (
-                    <div className="Product_Container">
+                    <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Product_Container" key={"Clássicos"}>
                         <div className="Product_Card">
+                            <img className="Card_Product_Image" src={ChocolateImg1}></img>
                             <div className="Product_Card_Header">
                                 <h3 className="Card_Product_Name">Tropical 35%</h3>
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
-                                <img className="Card_Product_Image" src={ChocolateImg1}></img>
                                 <p className="Card_Product_Description">Chocolate 33% Cacau com sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">
@@ -67,12 +70,12 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                             </div>
                         </div>
                         <div className="Product_Card">
+                            <img className="Card_Product_Image" src={ChocolateImg2}></img>
                             <div className="Product_Card_Header">
                                 <h3 className="Card_Product_Name">Tropical 60%</h3>
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
-                                <img className="Card_Product_Image" src={ChocolateImg2}></img>
                                 <p className="Card_Product_Description">Chocolate 60% Cacau com sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">
@@ -83,12 +86,12 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                             </div>
                         </div>
                         <div className="Product_Card">
+                            <img className="Card_Product_Image" src={ChocolateImg3}></img>
                             <div className="Product_Card_Header">
                                 <h3 className="Card_Product_Name">Tropical 80%</h3>
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
-                                <img className="Card_Product_Image" src={ChocolateImg3}></img>
                                 <p className="Card_Product_Description">Chocolate 80% Cacau com sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">
@@ -98,17 +101,17 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </m.div>
                 )}
                 {activeType === 2 && (
-                    <div className="Product_Container">
+                    <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Product_Container" key={"Especiais"}>
                         <div className="Product_Card">
+                            <img className="Card_Product_Image" src={ChocolateImg4}></img>
                             <div className="Product_Card_Header">
                                 <h3 className="Card_Product_Name">Tropical Branco</h3>
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
-                                <img className="Card_Product_Image" src={ChocolateImg4}></img>
                                 <p className="Card_Product_Description">Chocolate Branco 30% Cacau com Leite. Um sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">
@@ -119,12 +122,12 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                             </div>
                         </div>
                         <div className="Product_Card">
+                            <img className="Card_Product_Image" src={ChocolateImg5}></img>
                             <div className="Product_Card_Header">
                                 <h3 className="Card_Product_Name">Tropical Frutas do Inverno</h3>
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
-                                <img className="Card_Product_Image" src={ChocolateImg5}></img>
                                 <p className="Card_Product_Description">Chocolate 60% Cacau com Leite e Frutas. Um sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">
@@ -135,12 +138,12 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                             </div>
                         </div>
                         <div className="Product_Card">
+                            <img className="Card_Product_Image" src={ChocolateImg6}></img>
                             <div className="Product_Card_Header">
                                 <h3 className="Card_Product_Name">Tropical Nozes</h3>
                                 <h3 className="Card_Product_Type">Barra de Chocolate</h3>
                             </div>
                             <div className="Product_Card_Body">
-                                <img className="Card_Product_Image" src={ChocolateImg6}></img>
                                 <p className="Card_Product_Description">Chocolate Branco 60% Cacau com Leite e Nozes. Um sabor inigualável!</p>
                             </div>
                             <div className="Product_Card_Footer">
@@ -150,30 +153,29 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </m.div>
                 )}
                 {activeType === 3 && (
-                    <div className="Product_Container">
+                    <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Product_Container" key={"Kits"}>
                         <div className="Product_Card">
-                            <h3>Produto 5</h3>
+                            <h3>Kit de Todos os Chocolates</h3>
                         </div>
                         <div className="Product_Card">
-                            <h3>Produto 6</h3>
+                            <h3>Kit de Chocolates Experimentais</h3>
                         </div>
-                    </div>
+                    </m.div>
                 )}
-
                 {activeType === 4 && (
-                    <div className="Product_Container">
+                    <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Product_Container" key={"Assinaturas"}>
                         <div className="Product_Card">
-                            <h3>Produto 7</h3>
+                            <h3>Assinaturas</h3>
                         </div>
-                    </div>
-                )}
+                    </m.div>
+                )}{" "}
             </div>
             <div className="Product_Type_Container">
                 <button
-                    className="Product_Type"
+                    className={activeType === 1 ? "Product_Type active" : "Product_Type"}
                     onClick={() => {
                         setActiveType(1);
                     }}
@@ -181,7 +183,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                     <h3 className="Product_Type_Title">Clássicos</h3>
                 </button>
                 <button
-                    className="Product_Type"
+                    className={activeType === 2 ? "Product_Type active" : "Product_Type"}
                     onClick={() => {
                         setActiveType(2);
                     }}
@@ -189,7 +191,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                     <h3 className="Product_Type_Title">Especiais</h3>
                 </button>
                 <button
-                    className="Product_Type"
+                    className={activeType === 3 ? "Product_Type active" : "Product_Type"}
                     onClick={() => {
                         setActiveType(3);
                     }}
@@ -197,7 +199,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                     <h3 className="Product_Type_Title">Combinações</h3>
                 </button>
                 <button
-                    className="Product_Type"
+                    className={activeType === 4 ? "Product_Type active" : "Product_Type"}
                     onClick={() => {
                         setActiveType(4);
                     }}

@@ -63,6 +63,7 @@
     --shopping_cart_color: #b3b3b3;
     --searchbar_color: #b3b3b3;
     --menu_color: #b3b3b3;
+    --cardText_color: #ffd800;
 }
 
 .darkmode {
@@ -97,6 +98,8 @@
     --shopping_cart_color: gray;
     --searchbar_color: gray;
     --menu_color: #b3b3b3;
+
+    --cardText_color: #ffd800;
 }
 
 * {
@@ -862,12 +865,20 @@ body {
     border-bottom: 1px solid var(--text_color);
 }
 
-.Cart_Item_Image {
+.Cart_Item_Image_Container {
     height: 100%;
     aspect-ratio: 1/1;
     border-radius: var(--small_gap);
 
     background-color: var(--bg_color);
+    overflow: hidden;
+}
+
+.Cart_Item_Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .Cart_Item_Info {
@@ -1231,7 +1242,7 @@ body {
 .Section_02_Background,
 .Section_03_Background,
 .Section_04_Background {
-    z-index: -1;
+    z-index: -2;
     position: absolute;
     top: 0;
     left: 0;
@@ -1326,6 +1337,7 @@ body {
     flex-direction: column;
     padding: var(--small_gap);
     gap: 0;
+    overflow: hidden;
 }
 
 .Type_Header {
@@ -1378,10 +1390,11 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
+.Product_Type.active,
 .Product_Type:focus,
 .Product_Type:hover {
-    background-color: var(--bg_color);
-    color: var(--text_color);
+    background-color: var(--amarelo_primario);
+    color: var(--marrom_primario);
     scale: 1.05;
 }
 
@@ -1429,6 +1442,20 @@ body {
     border-radius: var(--small_gap);
     flex: 1;
     min-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.Product_Card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 12rem;
+    background-image: linear-gradient(to bottom, var(--marrom_primario), transparent);
+    opacity: 0.5;
+    z-index: -1;
+    top: 0;
+    left: 0;
 }
 
 .Product_Card_Header {
@@ -1443,14 +1470,14 @@ body {
 .Card_Product_Name {
     font-size: clamp(2rem, 2vw, 3rem);
     font-weight: 600;
-    color: var(--primary_color);
+    color: var(--cardText_color);
     text-align: center;
 }
 
 .Card_Product_Type {
     font-size: clamp(1.2rem, 2vw, 1.4rem);
     font-weight: 400;
-    color: var(--primary_color);
+    color: var(--cardText_color);
     position: relative;
 }
 
@@ -1462,7 +1489,7 @@ body {
     height: 2px;
     bottom: calc(50% - 2px);
     border-radius: 50%;
-    background-color: var(--primary_color);
+    background-color: var(--cardText_color);
 }
 
 .Card_Product_Type::before {
@@ -1481,10 +1508,23 @@ body {
     gap: var(--small_gap);
     width: 100%;
     flex: 1;
+    text-align: center;
+    font-weight: 600;
 }
 
 .Card_Product_Image {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    filter: opacity(0.5);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Card_Product_Description {
+    color: var(--fundo_claro);
 }
 
 .Product_Card_Footer {
@@ -1511,6 +1551,18 @@ body {
     cursor: pointer;
 
     transition: all 0.2s ease-in-out;
+}
+
+.Card_Product_Detail_Button:focus,
+.Card_Product_Detail_Button:hover {
+    background-color: var(--bg_color);
+    color: var(--text_color);
+}
+
+.Card_AddToCart_Button:focus,
+.Card_AddToCart_Button:hover {
+    background-color: var(--amarelo_primario);
+    color: var(--marrom_primario);
 }
 
 /* SEÇÃO 4 - CONTATO */
