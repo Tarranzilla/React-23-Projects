@@ -16,6 +16,9 @@ export default function Navbar() {
     const searchIsOpen = useSelector((state: any) => state.searchIsOpen);
     const colorMode = useSelector((state: any) => state.mode);
 
+    const cartItems = useSelector((state: any) => state.cartItems);
+    const cartItemsCount = cartItems.length;
+
     const toggleColorMode = () => {
         const body = document.body;
         if (body) {
@@ -155,7 +158,12 @@ export default function Navbar() {
                     className={cartIsOpen ? "Navbar_Tool Navbar_Tools_Cart active" : "Navbar_Tool Navbar_Tools_Cart"}
                     onClick={toggleCartButton}
                 >
-                    <div className="Navbar_Tools_Cart_Indicator">10+</div>
+                    {cartItemsCount > 0 && (
+                        <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Navbar_Tools_Cart_Indicator">
+                            {cartItemsCount < 10 ? cartItemsCount : "10 +"}
+                        </m.div>
+                    )}
+
                     <span className="material-icons">shopping_cart</span>
                 </a>
                 <a

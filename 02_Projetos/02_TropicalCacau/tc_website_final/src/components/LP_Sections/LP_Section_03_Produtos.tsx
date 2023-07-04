@@ -63,7 +63,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                     <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Product_Container" key={"Clássicos"}>
                         {availableProducts.map((product: any) => {
                             if (product.chocoClass === "classico") {
-                                return <Product_Card product={product} />;
+                                return <Product_Card product={product} key={product.id} />;
                             }
                         })}
                     </m.div>
@@ -72,7 +72,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                     <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Product_Container" key={"Especiais"}>
                         {availableProducts.map((product: any) => {
                             if (product.chocoClass === "especial") {
-                                return <Product_Card product={product} />;
+                                return <Product_Card product={product} key={product.id} />;
                             }
                         })}
                     </m.div>
@@ -97,6 +97,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
             </div>
             <div className="Product_Type_Container">
                 <button
+                    key="ChocoClass_1"
                     className={activeType === 1 ? "Product_Type active" : "Product_Type"}
                     onClick={() => {
                         setActiveType(1);
@@ -105,6 +106,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                     <h3 className="Product_Type_Title">Clássicos</h3>
                 </button>
                 <button
+                    key="ChocoClass_2"
                     className={activeType === 2 ? "Product_Type active" : "Product_Type"}
                     onClick={() => {
                         setActiveType(2);
@@ -113,6 +115,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                     <h3 className="Product_Type_Title">Especiais</h3>
                 </button>
                 <button
+                    key="ChocoClass_3"
                     className={activeType === 3 ? "Product_Type active" : "Product_Type"}
                     onClick={() => {
                         setActiveType(3);
@@ -121,6 +124,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                     <h3 className="Product_Type_Title">Combinações</h3>
                 </button>
                 <button
+                    key="ChocoClass_4"
                     className={activeType === 4 ? "Product_Type active" : "Product_Type"}
                     onClick={() => {
                         setActiveType(4);
