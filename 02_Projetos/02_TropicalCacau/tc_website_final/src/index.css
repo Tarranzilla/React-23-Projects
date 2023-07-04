@@ -1992,6 +1992,11 @@ h1 {
         justify-content: start;
     }
 
+    .Card_Product_Detail_Button,
+    .Card_AddToCart_Button {
+        padding-inline: 0.5rem;
+    }
+
     .LP_Section_04_Contato {
         padding: var(--small_gap);
         justify-content: center;
