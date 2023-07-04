@@ -7,4 +7,8 @@ export default interface ChocolateType {
     price: number;
     imgSrc: string;
     cartQuantity: number;
+    chocoOriginCoordinates: string;
+    chocoOriginName: string;
+    chocoProducerName: string;
+    ingredients: string;
 }

@@ -10,6 +10,10 @@ const TodosOsChocolates: ChocolateType[] = [
         price: 25,
         imgSrc: "/imgs/chocolates/ChocolateClaro1.avif",
         cartQuantity: 0,
+        chocoOriginCoordinates: "Latitude: -25.4284, Longitude: -49.2733",
+        chocoOriginName: "Curitiba, Paraná, Brasil",
+        chocoProducerName: "Tropical Cacau Produções",
+        ingredients: "Açúcar, Manteiga de Cacau, Leite em Pó, Cacau, Lecitina de Soja e Aroma Natural de Baunilha",
     },
     {
         id: 1,
@@ -20,6 +24,10 @@ const TodosOsChocolates: ChocolateType[] = [
         price: 35,
         imgSrc: "/imgs/chocolates/ChocolateCafé1.avif",
         cartQuantity: 0,
+        chocoOriginCoordinates: "Latitude: -25.4284, Longitude: -49.2733",
+        chocoOriginName: "Curitiba, Paraná, Brasil",
+        chocoProducerName: "Tropical Cacau Produções",
+        ingredients: "Açúcar, Manteiga de Cacau, Leite em Pó, Cacau, Lecitina de Soja e Aroma Natural de Baunilha",
     },
     {
         id: 2,
@@ -30,6 +38,10 @@ const TodosOsChocolates: ChocolateType[] = [
         price: 50,
         imgSrc: "/imgs/chocolates/ChocolateEscuro1.avif",
         cartQuantity: 0,
+        chocoOriginCoordinates: "Latitude: -25.4284, Longitude: -49.2733",
+        chocoOriginName: "Curitiba, Paraná, Brasil",
+        chocoProducerName: "Tropical Cacau Produções",
+        ingredients: "Açúcar, Manteiga de Cacau, Leite em Pó, Cacau, Lecitina de Soja e Aroma Natural de Baunilha",
     },
     {
         id: 3,
@@ -40,6 +52,10 @@ const TodosOsChocolates: ChocolateType[] = [
         price: 25,
         imgSrc: "/imgs/chocolates/ChocolateEscuro2.avif",
         cartQuantity: 0,
+        chocoOriginCoordinates: "Latitude: -25.4284, Longitude: -49.2733",
+        chocoOriginName: "Curitiba, Paraná, Brasil",
+        chocoProducerName: "Tropical Cacau Produções",
+        ingredients: "Açúcar, Manteiga de Cacau, Leite em Pó, Cacau, Lecitina de Soja e Aroma Natural de Baunilha",
     },
     {
         id: 4,
@@ -50,6 +66,10 @@ const TodosOsChocolates: ChocolateType[] = [
         price: 35,
         imgSrc: "/imgs/chocolates/ChocolateBranco1.avif",
         cartQuantity: 0,
+        chocoOriginCoordinates: "Latitude: -25.4284, Longitude: -49.2733",
+        chocoOriginName: "Curitiba, Paraná, Brasil",
+        chocoProducerName: "Tropical Cacau Produções",
+        ingredients: "Açúcar, Manteiga de Cacau, Leite em Pó, Cacau, Lecitina de Soja e Aroma Natural de Baunilha",
     },
     {
         id: 5,
@@ -60,6 +80,10 @@ const TodosOsChocolates: ChocolateType[] = [
         price: 35,
         imgSrc: "/imgs/chocolates/ChocolateComNozes.avif",
         cartQuantity: 0,
+        chocoOriginCoordinates: "Latitude: -25.4284, Longitude: -49.2733",
+        chocoOriginName: "Curitiba, Paraná, Brasil",
+        chocoProducerName: "Tropical Cacau Produções",
+        ingredients: "Açúcar, Manteiga de Cacau, Leite em Pó, Cacau, Lecitina de Soja e Aroma Natural de Baunilha",
     },
 ];
 

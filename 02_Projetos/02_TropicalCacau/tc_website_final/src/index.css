@@ -1267,6 +1267,39 @@ h1 {
     color: var(--text_color);
 }
 
+.Product_Detail_Content {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: var(--small_gap);
+    overflow-y: auto;
+}
+
+.Product_Detail_Image_Container {
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: var(--small_gap);
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+.Product_Detail_Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* HELP CONTAINERS */
 
 .Help_Container {
