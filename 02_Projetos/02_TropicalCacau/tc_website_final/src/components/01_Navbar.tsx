@@ -66,8 +66,8 @@ export default function Navbar() {
                     <span className="material-icons">sunny</span>
                 </div>
                 <a href="#" className="Navbar_LogoType_Container">
-                    <h1 className="Navbar_LogoType">Tropical</h1>
-                    <h1 className="Navbar_LogoType">Cacau</h1>
+                    <h1 className="Navbar_LogoType">tropical</h1>
+                    <h1 className="Navbar_LogoType">cacau</h1>
                 </a>
             </div>
 

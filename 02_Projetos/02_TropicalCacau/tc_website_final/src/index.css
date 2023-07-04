@@ -1,3 +1,75 @@
+@font-face {
+    font-family: "Cooper_TrueType";
+    src: url("./assets/fonts/CooperBold_TrueType.ttf") format("truetype");
+    /* Add additional src lines for different font file formats if necessary */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Cooper_TrueType";
+    src: url("./assets/fonts/CooperBlack_TrueType.ttf") format("truetype");
+    /* Add additional src lines for different font file formats if necessary */
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProfilePro_WOFF2";
+    src: url("./assets/fonts/ProfilePro_Thin_WOFF2.woff2") format("woff2");
+    /* Add additional src lines for different font file formats if necessary */
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProfilePro_WOFF2";
+    src: url("./assets/fonts/ProfilePro_ExtraLight_WOFF2.woff2") format("woff2");
+    /* Add additional src lines for different font file formats if necessary */
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProfilePro_WOFF2";
+    src: url("./assets/fonts/ProfilePro_Light_WOFF2.woff2") format("woff2");
+    /* Add additional src lines for different font file formats if necessary */
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProfilePro_WOFF2";
+    src: url("./assets/fonts/ProfilePro_Regular_WOFF2.woff2") format("woff2");
+    /* Add additional src lines for different font file formats if necessary */
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProfilePro_WOFF2";
+    src: url("./assets/fonts/ProfilePro_Medium_WOFF2.woff2") format("woff2");
+    /* Add additional src lines for different font file formats if necessary */
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProfilePro_WOFF2";
+    src: url("./assets/fonts/ProfilePro_Bold_WOFF2.woff2") format("woff2");
+    /* Add additional src lines for different font file formats if necessary */
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProfilePro_WOFF2";
+    src: url("./assets/fonts/ProfilePro_Black_WOFF2.woff2") format("woff2");
+    /* Add additional src lines for different font file formats if necessary */
+    font-weight: 900;
+    font-style: normal;
+}
+
 :root {
     /* Main Viewport Sizes */
     --viewport_width: 100vw;
@@ -20,8 +92,8 @@
     --large_gap: 5rem;
     --larger_gap: 10rem;
 
-    font-size: 16px;
-    font-family: sans-serif;
+    font-size: 18px;
+    font-family: "ProfilePro_WOFF2", sans-serif;
 
     /* Main Brand Colors */
     --cinza_escuro: #333;
@@ -132,6 +204,10 @@ body {
     overflow-x: hidden;
 }
 
+h1 {
+    font-weight: normal;
+}
+
 /* NAVBAR */
 
 .Navbar {
@@ -189,6 +265,8 @@ body {
 
     text-decoration: none;
     color: var(--primary_color);
+    font-family: "Cooper_TrueType";
+    font-weight: normal !important;
 }
 
 .Navbar_Main {
@@ -1276,6 +1354,7 @@ body {
     color: var(--primary_color);
     font-size: clamp(3rem, 10vw, 7rem);
     z-index: 3;
+    filter: drop-shadow(0 0 3px var(--marrom_primario));
 }
 
 .Website_Introduction {
