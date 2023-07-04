@@ -4,6 +4,13 @@ import { forwardRef, useState } from "react";
 //Framer Motion Imports
 import { motion as m, AnimatePresence } from "framer-motion";
 
+// Redux Imports
+import { useDispatch, useSelector } from "react-redux";
+import { toggleCart, addToCart, decrementCartItem, removeFromCart } from "../../context/main_context";
+
+// Product Card Import
+import Product_Card from "../../components/Shop/Product_Card";
+
 // Images Imports
 import backgroundImg from "../../assets/cacau_textures/dalle5.png";
 import ChocolateImg1 from "../../assets/chocolates/ChocolateClaro1.avif";
@@ -15,6 +22,7 @@ import ChocolateImg6 from "../../assets/chocolates/ChocolateComNozes.avif";
 
 const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props, ref: any) {
     const [activeType, setActiveType] = useState(0);
+    const availableProducts = useSelector((state: any) => state.availableChocolates);
 
     const handleActiveType = (type: number) => {
         setActiveType(type);
@@ -53,106 +61,20 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                 )}
                 {activeType === 1 && (
                     <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Product_Container" key={"Clássicos"}>
-                        <div className="Product_Card">
-                            <img className="Card_Product_Image" src={ChocolateImg1}></img>
-                            <div className="Product_Card_Header">
-                                <h3 className="Card_Product_Name">Tropical 35%</h3>
-                                <h3 className="Card_Product_Type">Barra de Chocolate</h3>
-                            </div>
-                            <div className="Product_Card_Body">
-                                <p className="Card_Product_Description">Chocolate 35% Cacau com sabor inigualável!</p>
-                            </div>
-                            <div className="Product_Card_Footer">
-                                <button className="Card_Product_Detail_Button">Detalhes</button>
-                                <button className="Card_AddToCart_Button">
-                                    <h3 className="Card_Product_Price">R$ 20,00</h3>Adicionar ao Carrinho
-                                </button>
-                            </div>
-                        </div>
-                        <div className="Product_Card">
-                            <img className="Card_Product_Image" src={ChocolateImg2}></img>
-                            <div className="Product_Card_Header">
-                                <h3 className="Card_Product_Name">Tropical 60%</h3>
-                                <h3 className="Card_Product_Type">Barra de Chocolate</h3>
-                            </div>
-                            <div className="Product_Card_Body">
-                                <p className="Card_Product_Description">Chocolate 60% Cacau com sabor inigualável!</p>
-                            </div>
-                            <div className="Product_Card_Footer">
-                                <button className="Card_Product_Detail_Button">Detalhes</button>
-                                <button className="Card_AddToCart_Button">
-                                    <h3 className="Card_Product_Price">R$ 20,00</h3>Adicionar ao Carrinho
-                                </button>
-                            </div>
-                        </div>
-                        <div className="Product_Card">
-                            <img className="Card_Product_Image" src={ChocolateImg3}></img>
-                            <div className="Product_Card_Header">
-                                <h3 className="Card_Product_Name">Tropical 80%</h3>
-                                <h3 className="Card_Product_Type">Barra de Chocolate</h3>
-                            </div>
-                            <div className="Product_Card_Body">
-                                <p className="Card_Product_Description">Chocolate 80% Cacau com sabor inigualável!</p>
-                            </div>
-                            <div className="Product_Card_Footer">
-                                <button className="Card_Product_Detail_Button">Detalhes</button>
-                                <button className="Card_AddToCart_Button">
-                                    <h3 className="Card_Product_Price">R$ 20,00</h3>Adicionar ao Carrinho
-                                </button>
-                            </div>
-                        </div>
+                        {availableProducts.map((product: any) => {
+                            if (product.chocoClass === "classico") {
+                                return <Product_Card product={product} />;
+                            }
+                        })}
                     </m.div>
                 )}
                 {activeType === 2 && (
                     <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Product_Container" key={"Especiais"}>
-                        <div className="Product_Card">
-                            <img className="Card_Product_Image" src={ChocolateImg4}></img>
-                            <div className="Product_Card_Header">
-                                <h3 className="Card_Product_Name">Tropical Branco</h3>
-                                <h3 className="Card_Product_Type">Barra de Chocolate</h3>
-                            </div>
-                            <div className="Product_Card_Body">
-                                <p className="Card_Product_Description">Chocolate Branco 30% Cacau com Leite. Um sabor inigualável!</p>
-                            </div>
-                            <div className="Product_Card_Footer">
-                                <button className="Card_Product_Detail_Button">Detalhes</button>
-                                <button className="Card_AddToCart_Button">
-                                    <h3 className="Card_Product_Price">R$ 20,00</h3>Adicionar ao Carrinho
-                                </button>
-                            </div>
-                        </div>
-                        <div className="Product_Card">
-                            <img className="Card_Product_Image" src={ChocolateImg5}></img>
-                            <div className="Product_Card_Header">
-                                <h3 className="Card_Product_Name">Tropical Frutas do Inverno</h3>
-                                <h3 className="Card_Product_Type">Barra de Chocolate</h3>
-                            </div>
-                            <div className="Product_Card_Body">
-                                <p className="Card_Product_Description">Chocolate 60% Cacau com Leite e Frutas. Um sabor inigualável!</p>
-                            </div>
-                            <div className="Product_Card_Footer">
-                                <button className="Card_Product_Detail_Button">Detalhes</button>
-                                <button className="Card_AddToCart_Button">
-                                    <h3 className="Card_Product_Price">R$ 20,00</h3>Adicionar ao Carrinho
-                                </button>
-                            </div>
-                        </div>
-                        <div className="Product_Card">
-                            <img className="Card_Product_Image" src={ChocolateImg6}></img>
-                            <div className="Product_Card_Header">
-                                <h3 className="Card_Product_Name">Tropical Nozes</h3>
-                                <h3 className="Card_Product_Type">Barra de Chocolate</h3>
-                            </div>
-                            <div className="Product_Card_Body">
-                                <p className="Card_Product_Description">Chocolate Branco 60% Cacau com Leite e Nozes. Um sabor inigualável!</p>
-                            </div>
-                            <div className="Product_Card_Footer">
-                                <button className="Card_Product_Detail_Button">Detalhes</button>
-                                <button className="Card_AddToCart_Button">
-                                    <h3 className="Card_Product_Price">R$ 20,00</h3>Adicionar ao Carrinho
-                                </button>
-                            </div>
-                        </div>
+                        {availableProducts.map((product: any) => {
+                            if (product.chocoClass === "especial") {
+                                return <Product_Card product={product} />;
+                            }
+                        })}
                     </m.div>
                 )}
                 {activeType === 3 && (

@@ -8,6 +8,9 @@ import Cart_Item from "./Shop/Cart_Item";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCheckoutHelp, toggleCart, addToCart, decrementCartItem, removeFromCart } from "../context/main_context";
 
+// Chocolate Type Import
+import ChocolateType from "../types/Chocolate";
+
 // Data Imports
 import TodosOsChocolates from "../data/TodosOsChocolates";
 
@@ -21,6 +24,7 @@ import ChocolateImg6 from "../assets/chocolates/ChocolateComNozes.avif";
 
 export default function Shopping_Cart() {
     const dispatch = useDispatch();
+    const cartItems = useSelector((state: any) => state.cartItems);
 
     const toggleCheckoutHelpButton = () => {
         dispatch(toggleCheckoutHelp());
@@ -41,17 +45,10 @@ export default function Shopping_Cart() {
             </div>
 
             <div className="Cart_List">
-                {TodosOsChocolates.map((chocolate) => {
-                    return (
-                        <Cart_Item
-                            imgSrc={chocolate.imgSrc}
-                            name={chocolate.name}
-                            type={chocolate.type}
-                            price={chocolate.price}
-                            cartQuantity={chocolate.cartQuantity}
-                            key={chocolate.name}
-                        />
-                    );
+                {cartItems.map((item: ChocolateType) => {
+                    const { id, imgSrc, name, type, description, price } = item;
+
+                    return <Cart_Item imgSrc={imgSrc} name={name} type={type} price={price} id={id} />;
                 })}
             </div>
             <div className="Checkout">

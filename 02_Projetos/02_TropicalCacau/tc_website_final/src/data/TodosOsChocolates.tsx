@@ -54,8 +54,8 @@ const TodosOsChocolates: ChocolateType[] = [
     {
         id: 5,
         name: "Tropical Nozes",
-        type: "",
-        chocoClass: "Barra de Chocolate 100g",
+        type: "Barra de Chocolate 100g",
+        chocoClass: "especial",
         description: "Chocolate Branco 60% Cacau com Leite e Nozes. Um sabor inigualável!",
         price: 0,
         imgSrc: "/imgs/chocolates/ChocolateComNozes.avif",

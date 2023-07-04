@@ -84,7 +84,9 @@ export const authSlice = createSlice({
             }
         },
         removeFromCart: (state, action) => {
+            console.log("Removing from cart");
             const { id } = action.payload;
+            console.log("ID: " + id);
             const itemIndex = state.cartItems.findIndex((item) => item.id === id);
 
             if (itemIndex !== -1) {
