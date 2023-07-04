@@ -1681,7 +1681,7 @@ h1 {
 }
 
 .Chamada_Contato {
-    font-size: clamp(1.4rem, 5vw, 2.4rem);
+    font-size: clamp(1.2rem, 5vw, 2.4rem);
     display: flex;
     flex-direction: column;
     gap: var(--small_gap);
@@ -1995,5 +1995,14 @@ h1 {
     .LP_Section_04_Contato {
         padding: var(--small_gap);
         justify-content: center;
+    }
+
+    .Info_Contato_Item {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 0.3rem;
+
+        border-bottom: 2px solid var(--text_color);
     }
 }
