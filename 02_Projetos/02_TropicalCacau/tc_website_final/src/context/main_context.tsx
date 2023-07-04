@@ -19,6 +19,8 @@ const initialState = {
     availableChocolates: TodosOsChocolates,
     cartItems: [] as ChocolateType[],
     cartTotal: 0,
+    productDetailsIsOpen: false,
+    activeProduct: null as ChocolateType | null,
 };
 
 export const authSlice = createSlice({
@@ -58,6 +60,7 @@ export const authSlice = createSlice({
         },
         setActiveSection: (state, action) => {
             state.activeSection = action.payload.activeSection;
+            console.log("Active Section: " + state.activeSection);
         },
         toggleLoading: (state) => {
             state.isLoading = !state.isLoading;
@@ -99,6 +102,17 @@ export const authSlice = createSlice({
                 return acc + item.price * item.cartQuantity;
             }, 0);
         },
+        toggleProductDetails: (state) => {
+            state.productDetailsIsOpen = !state.productDetailsIsOpen;
+        },
+        setActiveProduct: (state, action) => {
+            const { id } = action.payload;
+            const item = state.availableChocolates.find((item) => item.id === id);
+            if (item && id !== undefined) {
+                state.activeProduct = item;
+            }
+            console.log("Active Product: " + state.activeProduct?.name);
+        },
     },
 });
 
@@ -117,5 +131,7 @@ export const {
     decrementCartItem,
     removeFromCart,
     getCartTotal,
+    toggleProductDetails,
+    setActiveProduct,
 } = authSlice.actions;
 export default authSlice.reducer;

@@ -3,10 +3,16 @@ import ChocolateType from "../../types/Chocolate";
 
 // Redux Imports
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCart, addToCart, decrementCartItem, removeFromCart } from "../../context/main_context";
+import { toggleCart, addToCart, toggleProductDetails, setActiveProduct } from "../../context/main_context";
 
 export default function Product_Card({ product: { id, imgSrc, name, type, description, price } }) {
     const dispatch = useDispatch();
+
+    const openDetailsButton = (id) => {
+        console.log("Opening details");
+        dispatch(toggleProductDetails());
+        dispatch(setActiveProduct({ id: id }));
+    };
 
     const addToCartButton = (id, quantity) => {
         console.log("Adding to cart");
@@ -40,7 +46,14 @@ export default function Product_Card({ product: { id, imgSrc, name, type, descri
                 <p className="Card_Product_Description">{description}</p>
             </div>
             <div className="Product_Card_Footer">
-                <button className="Card_Product_Detail_Button">Detalhes</button>
+                <button
+                    className="Card_Product_Detail_Button"
+                    onClick={() => {
+                        openDetailsButton(id);
+                    }}
+                >
+                    Detalhes
+                </button>
                 <button
                     className="Card_AddToCart_Button"
                     onClick={() => {
