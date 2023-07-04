@@ -23,7 +23,7 @@ const LP_Section_02_Sobre = forwardRef(function LP_Section_02_Sobre(props, ref: 
             <div className="Kakaw_Description">
                 <p className="Kakaw_Header">
                     <strong>O Cacau, chamado originalmente de Kakawa, é uma das culturas mais importantes e populares no mundo</strong>, tendo uma
-                    história antiga e fascinante que inclui lendas e mitos. Eis algumas das histórias e lendas sobre o cacau na América do Norte,
+                    história antiga e fascinante que inclui diversas lendas e mitos. Eis algumas das histórias sobre o cacau na América do Norte,
                     Central e do Sul ...
                 </p>
                 <p>

@@ -21,7 +21,10 @@ export default function Footer() {
                     Mapa do site
                 </a>
             </div>
-            <p className="Footer_Copyright">© 2023 Tropical Cacau</p>
+            <div className="Footer_Copyright">
+                <p>© 2023</p>
+                <p>Tropical Cacau</p>
+            </div>
             <div className="Social_Media_Container">
                 <Icon_Whatsapp />
                 <Icon_Linkedin />

@@ -8,6 +8,9 @@ import { toggleMenu, toggleCart, toggleSearch, setMode } from "../context/main_c
 //Framer Motion Imports
 import { motion as m } from "framer-motion";
 
+// Tropical Icon Component Import
+import TropicalIcon from "./Icons/Icon_TropicalCacau";
+
 export default function Navbar() {
     const dispatch = useDispatch();
     const activeSection = useSelector((state: any) => state.activeSection);
@@ -62,9 +65,7 @@ export default function Navbar() {
     return (
         <div className="Navbar" key={"Navbar"}>
             <div className="Navbar_Logo_Container">
-                <div className="Navbar_Logo" onClick={toggleColorMode}>
-                    <span className="material-icons">sunny</span>
-                </div>
+                <TropicalIcon />
                 <a href="#" className="Navbar_LogoType_Container">
                     <h1 className="Navbar_LogoType">tropical</h1>
                     <h1 className="Navbar_LogoType">cacau</h1>
