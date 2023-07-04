@@ -1211,7 +1211,7 @@ h1 {
     padding-block: var(--small_gap);
     padding-inline: var(--small_gap);
 
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(60px);
     border-radius: var(--small_gap);
 }
 
@@ -1284,20 +1284,30 @@ h1 {
     aspect-ratio: 1/1;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: start;
     align-items: center;
 
     border-radius: var(--small_gap);
-    overflow: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 0.5rem;
 
     flex-shrink: 0;
+    padding-bottom: var(--small_gap);
 }
 
 .Product_Detail_Image {
-    width: 100%;
+    scroll-snap-align: start;
     height: 100%;
+    aspect-ratio: 1/1;
     object-fit: cover;
+    border-radius: var(--small_gap);
+}
+
+.Product_Detail_Footer {
+    width: 100%;
 }
 
 /* HELP CONTAINERS */

@@ -51,17 +51,72 @@ export default function ProductDetail() {
             <div className="Product_Detail_Content">
                 <div className="Product_Detail_Image_Container">
                     <img className="Product_Detail_Image" src={activeProduct.imgSrc}></img>
+                    <img className="Product_Detail_Image" src={activeProduct.imgSrc}></img>
+                    <img className="Product_Detail_Image" src={activeProduct.imgSrc}></img>
                 </div>
                 <div className="Product_Detail_Text_Container">
-                    <p>Tipo do Produto: {activeProduct.type}</p>
-                    <p className="Product_Detail_Text">Descrição: {activeProduct.description}</p>
-                    <p>Coordenadas de Origem: {activeProduct.chocoOriginCoordinates}</p>
-                    <p>Origem do Cacau: {activeProduct.chocoOriginName}</p>
-                    <p>Produtor do Cacau: {activeProduct.chocoProducerName}</p>
-                    <p>Ingredientes: {activeProduct.ingredients}</p>
-                    <p className="Product_Detail_ChocoTags">
-                        ChocoTags: <span className="ChocoTag">{activeProduct.chocoClass}</span>
-                    </p>
+                    <div className="Product_Detail_Text_Item">
+                        <div className="Product_Detail_Text_Item_Header">
+                            <h3>Tipo do Produto:</h3>
+                        </div>
+                        <div className="Product_Detail_Text_Item_Content">
+                            <p>{activeProduct.type}</p>
+                        </div>
+                    </div>
+
+                    <div className="Product_Detail_Text_Item">
+                        <div className="Product_Detail_Text_Item_Header">
+                            <h3>Descrição:</h3>
+                        </div>
+                        <div className="Product_Detail_Text_Item_Content">
+                            <p>{activeProduct.description}</p>
+                        </div>
+                    </div>
+
+                    <div className="Product_Detail_Text_Item">
+                        <div className="Product_Detail_Text_Item_Header">
+                            <h3>Coordenadas de Origem:</h3>
+                        </div>
+                        <div className="Product_Detail_Text_Item_Content">
+                            <p>{activeProduct.chocoOriginCoordinates}</p>
+                        </div>
+                    </div>
+
+                    <div className="Product_Detail_Text_Item">
+                        <div className="Product_Detail_Text_Item_Header">
+                            <h3>Origem do Cacau:</h3>
+                        </div>
+                        <div className="Product_Detail_Text_Item_Content">
+                            <p>{activeProduct.chocoOriginName}</p>
+                        </div>
+                    </div>
+
+                    <div className="Product_Detail_Text_Item">
+                        <div className="Product_Detail_Text_Item_Header">
+                            <h3>Produtor do Cacau:</h3>
+                        </div>
+                        <div className="Product_Detail_Text_Item_Content">
+                            <p>{activeProduct.chocoProducerName}</p>
+                        </div>
+                    </div>
+
+                    <div className="Product_Detail_Text_Item">
+                        <div className="Product_Detail_Text_Item_Header">
+                            <h3>Ingredientes:</h3>
+                        </div>
+                        <div className="Product_Detail_Text_Item_Content">
+                            <p>{activeProduct.ingredients}</p>
+                        </div>
+                    </div>
+
+                    <div className="Product_Detail_Text_Item">
+                        <div className="Product_Detail_Text_Item_Header">
+                            <h3>ChocoTags:</h3>
+                        </div>
+                        <div className="Product_Detail_Text_Item_Content">
+                            <p>{activeProduct.chocoClass}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="Product_Detail_Footer">
