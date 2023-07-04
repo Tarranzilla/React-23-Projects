@@ -94,7 +94,7 @@ export default function Menu() {
                         <span className="material-icons LP_Links_Icon">settings</span>
                         <p className="Menu_Link">Configurações</p>
                     </div>
-                    <div className="LP_Links_Horizontal_Organizer">
+                    <div className="LP_Links_Horizontal_Organizer Config_Organizer">
                         <div className="LP_Links_Line_Container">
                             <div className="LP_Links_Line"></div>
                         </div>
@@ -103,10 +103,10 @@ export default function Menu() {
                                 Idioma: <span className="Config_Option active">Português Brasileiro</span>
                                 <span className="Config_Option">English</span>
                             </a>
-                            <a href="#Moeda" className="Menu_Link">
+                            <a href="#Moeda" className="Menu_Link Config_Link">
                                 Moeda: <span className="Config_Option active">Real (R$)</span> <span className="Config_Option">Dollar (USD)</span>
                             </a>
-                            <a href="#Cores" className="Menu_Link">
+                            <a href="#Cores" className="Menu_Link Config_Link">
                                 Esquema de Cores: <span className="Config_Option active">Escuro</span>
                                 <span className="Config_Option">Claro</span>
                             </a>
