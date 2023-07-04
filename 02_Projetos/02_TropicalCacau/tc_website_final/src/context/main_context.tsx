@@ -18,6 +18,7 @@ const initialState = {
     isLoading: false,
     availableChocolates: TodosOsChocolates,
     cartItems: [] as ChocolateType[],
+    cartTotal: 0,
 };
 
 export const authSlice = createSlice({
@@ -93,6 +94,11 @@ export const authSlice = createSlice({
                 state.cartItems.splice(itemIndex, 1);
             }
         },
+        getCartTotal: (state) => {
+            state.cartTotal = state.cartItems.reduce((acc, item) => {
+                return acc + item.price * item.cartQuantity;
+            }, 0);
+        },
     },
 });
 
@@ -110,5 +116,6 @@ export const {
     addToCart,
     decrementCartItem,
     removeFromCart,
+    getCartTotal,
 } = authSlice.actions;
 export default authSlice.reducer;

@@ -6,7 +6,7 @@ import Cart_Item from "./Shop/Cart_Item";
 
 // Redux Imports
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCheckoutHelp, toggleCart, addToCart, decrementCartItem, removeFromCart } from "../context/main_context";
+import { toggleCheckoutHelp, toggleCart, getCartTotal } from "../context/main_context";
 
 // Chocolate Type Import
 import ChocolateType from "../types/Chocolate";
@@ -22,6 +22,8 @@ import ChocolateImg4 from "../assets/chocolates/ChocolateEscuro2.avif";
 import ChocolateImg5 from "../assets/chocolates/ChocolateBranco1.avif";
 import ChocolateImg6 from "../assets/chocolates/ChocolateComNozes.avif";
 
+import { useEffect } from "react";
+
 export default function Shopping_Cart() {
     const dispatch = useDispatch();
     const cartItems = useSelector((state: any) => state.cartItems);
@@ -33,6 +35,12 @@ export default function Shopping_Cart() {
     const toggleCartButton = () => {
         dispatch(toggleCart());
     };
+
+    const totalCartPrice = useSelector((state: any) => state.cartTotal);
+
+    useEffect(() => {
+        dispatch(getCartTotal());
+    }, [cartItems]);
 
     return (
         <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: 1000 }} className="Shopping_Cart" key={"Shopping_Cart"}>
@@ -56,7 +64,7 @@ export default function Shopping_Cart() {
                     <div className="Cart_Total">
                         <p>Valor Total:</p>
                         <p>
-                            <strong>R$ 0,00</strong>
+                            <strong>R$ {totalCartPrice},00</strong>
                         </p>
                     </div>
                     <button className="Checkout_Button">Finalizar Compra</button>
