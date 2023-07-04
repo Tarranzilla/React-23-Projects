@@ -575,6 +575,7 @@ h1 {
 .Menu_Link_Secondary:focus,
 .Menu_Link_Secondary:hover {
     scale: 1.1;
+    color: var(--amarelo_primario);
 }
 
 .LP_Links_Icon {
