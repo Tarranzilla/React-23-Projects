@@ -30,8 +30,12 @@ const LP_Section_04_Contato = forwardRef(function LP_Section_04_Contato(props, r
                 </div>
             </div>
             <div className="Acoes_Contato">
-                <button className="Acao_Contato">Enviar Email</button>
-                <button className="Acao_Contato">Enviar uma mensagem por Whatsapp</button>
+                <a className="Acao_Contato" href="mailto:recipient@example.com">
+                    Enviar Email
+                </a>
+                <a className="Acao_Contato" href="https://api.whatsapp.com/send?phone=5541999977955&text=Ol%C3%A1" target="_blank">
+                    Enviar uma mensagem por Whatsapp
+                </a>
             </div>
         </div>
     );

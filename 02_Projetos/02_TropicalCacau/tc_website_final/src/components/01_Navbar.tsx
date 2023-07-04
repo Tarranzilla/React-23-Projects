@@ -66,7 +66,7 @@ export default function Navbar() {
         <div className="Navbar" key={"Navbar"}>
             <div className="Navbar_Logo_Container">
                 <TropicalIcon />
-                <a href="#" className="Navbar_LogoType_Container">
+                <a href="#LP_Section_1" className="Navbar_LogoType_Container">
                     <h1 className="Navbar_LogoType">tropical</h1>
                     <h1 className="Navbar_LogoType">cacau</h1>
                 </a>

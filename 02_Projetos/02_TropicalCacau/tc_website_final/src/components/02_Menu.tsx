@@ -24,8 +24,9 @@ export default function Menu() {
             <div className="Menu_List_Container">
                 <div className="LP_Links_Container">
                     <div className="LP_Links_Header">
-                        <a href="#" className="Menu_Link">
-                            <span className="material-icons LP_Links_Icon">flag_circle</span>Início
+                        <a href="#LP_Section_1" className="Menu_Link" onClick={toggleMenuButton}>
+                            <span className="material-icons LP_Links_Icon">flag_circle</span>
+                            Início
                         </a>
                     </div>
                     <div className="LP_Links_Horizontal_Organizer">
@@ -33,12 +34,12 @@ export default function Menu() {
                             <div className="LP_Links_Line"></div>
                         </div>
                         <div className="LP_Links">
-                            <a href="#" className="Menu_Link">
+                            <a href="#LP_Section_2" className="Menu_Link" onClick={toggleMenuButton}>
                                 Sobre
                             </a>
                             <div className="Product_Links_Container">
                                 <div className="Product_Links_Header">
-                                    <a href="#" className="Menu_Link">
+                                    <a href="#LP_Section_3" className="Menu_Link" onClick={toggleMenuButton}>
                                         Produtos
                                     </a>
                                 </div>
@@ -47,29 +48,29 @@ export default function Menu() {
                                         <div className="LP_Links_Line"></div>
                                     </div>
                                     <div className="Product_Links">
-                                        <a href="#" className="Menu_Link">
+                                        <a href="#LP_Section_3_P1" className="Menu_Link" onClick={toggleMenuButton}>
                                             Produto 1
                                         </a>
-                                        <a href="#" className="Menu_Link">
+                                        <a href="#LP_Section_3_P2" className="Menu_Link" onClick={toggleMenuButton}>
                                             Produto 2
                                         </a>
-                                        <a href="#" className="Menu_Link">
+                                        <a href="#LP_Section_3_P3" className="Menu_Link" onClick={toggleMenuButton}>
                                             Produto 3
                                         </a>
-                                        <a href="#" className="Menu_Link">
+                                        <a href="#LP_Section_3_P4" className="Menu_Link" onClick={toggleMenuButton}>
                                             Produto 4
                                         </a>
-                                        <a href="#" className="Menu_Link">
+                                        <a href="#LP_Section_3_P5" className="Menu_Link" onClick={toggleMenuButton}>
                                             Produto 5
                                         </a>
-                                        <a href="#" className="Menu_Link">
+                                        <a href="#LP_Section_3_P6" className="Menu_Link" onClick={toggleMenuButton}>
                                             Produto 6
                                         </a>
                                     </div>
                                 </div>
                             </div>
 
-                            <a href="#" className="Menu_Link">
+                            <a href="#LP_Section_4" className="Menu_Link" onClick={toggleMenuButton}>
                                 Contato
                             </a>
                         </div>
