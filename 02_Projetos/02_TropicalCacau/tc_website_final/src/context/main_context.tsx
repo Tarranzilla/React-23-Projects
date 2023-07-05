@@ -23,6 +23,8 @@ const initialState = {
     chocoClasses: ["classico", "especial", "kit", "assinatura"],
     activeChocoClass: "classico",
     activeProduct: null as ChocolateType | null,
+    privacyPolicyIsOpen: false,
+    termsIsOpen: false,
 };
 
 export const authSlice = createSlice({
@@ -119,6 +121,14 @@ export const authSlice = createSlice({
             state.activeChocoClass = action.payload;
             console.log("Active Choco Class: " + state.activeChocoClass);
         },
+        togglePrivacyPolicy: (state) => {
+            state.privacyPolicyIsOpen = !state.privacyPolicyIsOpen;
+            console.log("Privacy Policy is toggled: " + (state.privacyPolicyIsOpen ? "open" : "closed"));
+        },
+        toggleTerms: (state) => {
+            state.termsIsOpen = !state.termsIsOpen;
+            console.log("Terms is toggled: " + (state.termsIsOpen ? "open" : "closed"));
+        },
     },
 });
 
@@ -140,5 +150,7 @@ export const {
     toggleProductDetails,
     setActiveProduct,
     setActiveChocoClass,
+    togglePrivacyPolicy,
+    toggleTerms,
 } = authSlice.actions;
 export default authSlice.reducer;

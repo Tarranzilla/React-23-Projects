@@ -1431,6 +1431,104 @@ h1 {
     color: var(--bg_color);
 }
 
+/* PRIVACIDADE, TERMOS E SITEMAP CONTAINER */
+
+.Terms_Container,
+.Privacy_Container {
+    z-index: 8;
+    position: absolute;
+    top: var(--navbar_height);
+    left: 0;
+    width: 60%;
+    height: var(--section_viewer_height);
+    margin-left: 20%;
+    margin-right: 20%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: var(--small_gap);
+
+    padding-block: var(--small_gap);
+    padding-inline: var(--small_gap);
+
+    backdrop-filter: blur(30px);
+    border-radius: var(--small_gap);
+}
+
+.Terms_Header,
+.Privacy_Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Terms_Title,
+.Privacy_Title {
+    height: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 800;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    gap: 0.3rem;
+
+    text-transform: uppercase;
+    line-height: 1.2rem;
+
+    color: var(--text_color);
+}
+
+.Terms_Close_Btn,
+.Privacy_Close_Btn {
+    width: 2rem;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--text_color);
+    color: var(--bg_color);
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.Terms_Close_Btn:focus,
+.Terms_Close_Btn:hover,
+.Privacy_Close_Btn:focus,
+.Privacy_Close_Btn:hover {
+    scale: 1.1;
+    background-color: var(--bg_color);
+    color: var(--text_color);
+}
+
+.Terms_Body,
+.Privacy_Body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    text-align: center;
+    gap: var(--small_gap);
+    padding: var(--small_gap) var(--medium_gap);
+
+    overflow-y: auto;
+}
+
 /* LANDING PAGE */
 
 .Landing_Page {
@@ -2160,6 +2258,22 @@ h1 {
 
     .Help_Text_Container {
         width: 100%;
+    }
+
+    .Terms_Container,
+    .Privacy_Container {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+
+        align-items: start;
+    }
+
+    .Terms_Body,
+    .Privacy_Body {
+        width: 100%;
+        justify-content: start;
+        padding: 0.5rem;
     }
 
     /* LANDING PAGE */

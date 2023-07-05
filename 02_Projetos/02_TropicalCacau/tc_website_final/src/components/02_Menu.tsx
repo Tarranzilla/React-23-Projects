@@ -3,7 +3,7 @@ import { motion as m } from "framer-motion";
 
 // Redux Imports
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu, setActiveProduct, toggleProductDetails, setActiveChocoClass } from "../context/main_context";
+import { toggleMenu, setActiveProduct, toggleProductDetails, setActiveChocoClass, togglePrivacyPolicy, toggleTerms } from "../context/main_context";
 
 export default function Menu() {
     const dispatch = useDispatch();
@@ -20,6 +20,16 @@ export default function Menu() {
         if (!productDetailsIsOpen) {
             dispatch(toggleProductDetails());
         }
+    };
+
+    const togglePrivacyButton = () => {
+        dispatch(togglePrivacyPolicy());
+        dispatch(toggleMenu());
+    };
+
+    const toggleTermsButton = () => {
+        dispatch(toggleTerms());
+        dispatch(toggleMenu());
     };
 
     return (
@@ -124,10 +134,10 @@ export default function Menu() {
                 </div>
 
                 <div className="Secondary_Links">
-                    <a href="#Privacidade" className="Menu_Link_Secondary">
+                    <a href="#Privacidade" className="Menu_Link_Secondary" onClick={togglePrivacyButton}>
                         <span className="material-icons">privacy_tip</span>Privacidade
                     </a>
-                    <a href="#Termos" className="Menu_Link_Secondary">
+                    <a href="#Termos" className="Menu_Link_Secondary" onClick={toggleTermsButton}>
                         <span className="material-icons">assignment</span>
                         Termos
                     </a>
