@@ -17,6 +17,7 @@ import Product_Detail from "./components/02D_Product_Detail";
 import Checkout_Help from "./components/Shop/Checkout_Help";
 import Privacy from "./components/02E_Privacy";
 import Terms from "./components/02F_Terms";
+import SiteMap from "./components/02G_SiteMap";
 import Loading from "./components/03_Loading";
 import Footer from "./components/04_Footer";
 
@@ -28,11 +29,12 @@ function App() {
     const productDetailsIsOpen = useSelector((state: any) => state.productDetailsIsOpen);
     const privacyPolicyIsOpen = useSelector((state: any) => state.privacyPolicyIsOpen);
     const termsIsOpen = useSelector((state: any) => state.termsIsOpen);
+    const siteMapIsOpen = useSelector((state: any) => state.siteMapIsOpen);
     return (
         <>
             <AnimatePresence>
                 <Navbar key="Navbar_key" />
-
+                {siteMapIsOpen && <SiteMap key="SiteMap_Key" />}
                 {termsIsOpen && <Terms key="Terms_Key" />}
                 {privacyPolicyIsOpen && <Privacy key="Privacy_Key" />}
                 {menuIsOpen && <Menu key="Menu_key" />}

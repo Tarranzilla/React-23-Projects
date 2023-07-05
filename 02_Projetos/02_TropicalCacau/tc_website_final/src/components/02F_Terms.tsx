@@ -3,13 +3,23 @@ import { motion as m } from "framer-motion";
 
 // React Redux Imports
 import { useDispatch, useSelector } from "react-redux";
-import { toggleTerms } from "../context/main_context";
+import { toggleTerms, togglePrivacyPolicy, toggleSiteMap } from "../context/main_context";
 
 export default function Terms() {
     const dispatch = useDispatch();
+    const privacyPolicyIsOpen = useSelector((state: any) => state.privacyPolicyIsOpen);
+    const siteMapIsOpen = useSelector((state: any) => state.siteMapIsOpen);
 
     const toggleTermsButton = () => {
         dispatch(toggleTerms());
+
+        if (privacyPolicyIsOpen) {
+            dispatch(togglePrivacyPolicy());
+        }
+
+        if (siteMapIsOpen) {
+            dispatch(toggleSiteMap());
+        }
     };
 
     return (

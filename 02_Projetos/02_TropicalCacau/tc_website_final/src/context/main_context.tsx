@@ -25,6 +25,7 @@ const initialState = {
     activeProduct: null as ChocolateType | null,
     privacyPolicyIsOpen: false,
     termsIsOpen: false,
+    siteMapIsOpen: false,
 };
 
 export const authSlice = createSlice({
@@ -129,6 +130,10 @@ export const authSlice = createSlice({
             state.termsIsOpen = !state.termsIsOpen;
             console.log("Terms is toggled: " + (state.termsIsOpen ? "open" : "closed"));
         },
+        toggleSiteMap: (state) => {
+            state.siteMapIsOpen = !state.siteMapIsOpen;
+            console.log("Site Map is toggled: " + (state.siteMapIsOpen ? "open" : "closed"));
+        },
     },
 });
 
@@ -152,5 +157,6 @@ export const {
     setActiveChocoClass,
     togglePrivacyPolicy,
     toggleTerms,
+    toggleSiteMap,
 } = authSlice.actions;
 export default authSlice.reducer;

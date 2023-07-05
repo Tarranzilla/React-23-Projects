@@ -524,6 +524,19 @@ h1 {
     gap: var(--small_gap);
     flex-shrink: 0;
 }
+
+.SiteMap_LP_Links_Container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+    border: 1px solid var(--text_color);
+    border-radius: var(--small_gap);
+    padding: var(--small_gap);
+}
+
 .LP_Links_Container {
     width: 50%;
     display: flex;
@@ -638,6 +651,17 @@ h1 {
     justify-content: start;
     align-items: start;
     gap: 0.5rem;
+}
+
+.SiteMap_Secondary_Links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    padding: var(--small_gap);
+    gap: var(--small_gap);
+    border: 1px solid var(--text_color);
+    border-radius: var(--small_gap);
 }
 
 .Secondary_Links {
@@ -1433,6 +1457,7 @@ h1 {
 
 /* PRIVACIDADE, TERMOS E SITEMAP CONTAINER */
 
+.SiteMap_Container,
 .Terms_Container,
 .Privacy_Container {
     z-index: 8;
@@ -1457,6 +1482,7 @@ h1 {
     border-radius: var(--small_gap);
 }
 
+.SiteMap_Header,
 .Terms_Header,
 .Privacy_Header {
     display: flex;
@@ -1466,6 +1492,7 @@ h1 {
     width: 100%;
 }
 
+.SiteMap_Title,
 .Terms_Title,
 .Privacy_Title {
     height: 2rem;
@@ -1485,6 +1512,7 @@ h1 {
     color: var(--text_color);
 }
 
+.SiteMap_Close_Btn,
 .Terms_Close_Btn,
 .Privacy_Close_Btn {
     width: 2rem;
@@ -1505,6 +1533,8 @@ h1 {
     transition: all 0.2s ease-in-out;
 }
 
+.SiteMap_Close_Btn:focus,
+.SiteMap_Close_Btn:hover,
 .Terms_Close_Btn:focus,
 .Terms_Close_Btn:hover,
 .Privacy_Close_Btn:focus,
@@ -1514,6 +1544,7 @@ h1 {
     color: var(--text_color);
 }
 
+.SiteMap_Body,
 .Terms_Body,
 .Privacy_Body {
     height: 100%;
@@ -2260,6 +2291,7 @@ h1 {
         width: 100%;
     }
 
+    .SiteMap_Container,
     .Terms_Container,
     .Privacy_Container {
         width: 100%;
@@ -2269,6 +2301,7 @@ h1 {
         align-items: start;
     }
 
+    .SiteMap_Body,
     .Terms_Body,
     .Privacy_Body {
         width: 100%;

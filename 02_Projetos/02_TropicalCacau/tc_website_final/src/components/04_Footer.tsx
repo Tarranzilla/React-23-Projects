@@ -2,7 +2,7 @@
 
 // Redux Imports
 import { useDispatch } from "react-redux";
-import { togglePrivacyPolicy, toggleTerms } from "../context/main_context";
+import { togglePrivacyPolicy, toggleTerms, toggleSiteMap } from "../context/main_context";
 
 //Icon imports
 import Icon_Whatsapp from "./Icons/Icon_Whatsapp";
@@ -22,6 +22,10 @@ export default function Footer() {
         dispatch(toggleTerms());
     };
 
+    const toggleSiteMapButton = () => {
+        dispatch(toggleSiteMap());
+    };
+
     return (
         <div className="Footer" key={"Footer"}>
             <div className="Footer_Info_Links Desktop_Only">
@@ -31,7 +35,7 @@ export default function Footer() {
                 <a href="#Termos" className="Footer_Info Middle_Info" onClick={toggleTermsButton}>
                     Termos
                 </a>
-                <a href="#MapaSite" className="Footer_Info">
+                <a href="#MapaSite" className="Footer_Info" onClick={toggleSiteMapButton}>
                     Mapa do site
                 </a>
             </div>

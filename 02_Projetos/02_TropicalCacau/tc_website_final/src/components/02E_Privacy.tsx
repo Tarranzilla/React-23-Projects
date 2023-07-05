@@ -3,14 +3,22 @@ import { motion as m } from "framer-motion";
 
 // React Redux Imports
 import { useDispatch, useSelector } from "react-redux";
-import { togglePrivacyPolicy, toggleMenu } from "../context/main_context";
+import { togglePrivacyPolicy, toggleTerms, toggleSiteMap } from "../context/main_context";
 
 export default function Privacy() {
     const dispatch = useDispatch();
-    const menuIsOpen = useSelector((state: any) => state.menuIsOpen);
+    const termsIsOpen = useSelector((state: any) => state.termsIsOpen);
+    const siteMapIsOpen = useSelector((state: any) => state.siteMapIsOpen);
 
     const togglePrivacyPolicyButton = () => {
         dispatch(togglePrivacyPolicy());
+
+        if (termsIsOpen) {
+            dispatch(toggleTerms());
+        }
+        if (siteMapIsOpen) {
+            dispatch(toggleSiteMap());
+        }
     };
 
     return (

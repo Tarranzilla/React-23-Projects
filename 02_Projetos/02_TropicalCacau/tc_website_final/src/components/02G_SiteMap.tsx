@@ -1,24 +1,33 @@
 //Framer Motion Imports
 import { motion as m } from "framer-motion";
 
-// Redux Imports
+// React Redux Imports
 import { useDispatch, useSelector } from "react-redux";
 import {
+    toggleSiteMap,
+    toggleTerms,
+    togglePrivacyPolicy,
     toggleMenu,
+    setActiveChocoClass,
     setActiveProduct,
     toggleProductDetails,
-    setActiveChocoClass,
-    togglePrivacyPolicy,
-    toggleTerms,
-    toggleSiteMap,
 } from "../context/main_context";
 
-export default function Menu() {
+export default function SiteMap() {
     const dispatch = useDispatch();
+
     const productDetailsIsOpen = useSelector((state: any) => state.productDetailsIsOpen);
 
-    const toggleMenuButton = () => {
-        dispatch(toggleMenu());
+    const togglePrivacyButton = () => {
+        dispatch(togglePrivacyPolicy());
+    };
+
+    const toggleTermsButton = () => {
+        dispatch(toggleTerms());
+    };
+
+    const toggleSiteMapButton = () => {
+        dispatch(toggleSiteMap());
     };
 
     const toggleProductDetailsButton = (chocoClass, productId) => {
@@ -30,34 +39,21 @@ export default function Menu() {
         }
     };
 
-    const togglePrivacyButton = () => {
-        dispatch(togglePrivacyPolicy());
-        dispatch(toggleMenu());
-    };
-
-    const toggleTermsButton = () => {
-        dispatch(toggleTerms());
-        dispatch(toggleMenu());
-    };
-
-    const toggleSiteMapButton = () => {
-        dispatch(toggleSiteMap());
-        dispatch(toggleMenu());
-    };
-
     return (
-        <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Menu" key={"Menu"}>
-            <div className="Menu_Header">
-                <span className="material-icons">home</span>
-                <p className="Menu_Title">Menu</p>
-                <button className="Searchbar_Close_Btn" onClick={toggleMenuButton}>
-                    <span className="material-icons">close</span>
+        <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="SiteMap_Container">
+            <div className="SiteMap_Header">
+                <span className="material-icons SiteMap_Icon">flag_circle</span>
+                <h2 className="SiteMap_Title">Mapa do Site</h2>
+                <button className="SiteMap_Close_Btn">
+                    <span className="material-icons" onClick={toggleSiteMapButton}>
+                        close
+                    </span>
                 </button>
             </div>
-            <div className="Menu_List_Container">
-                <div className="LP_Links_Container">
+            <div className="SiteMap_Body">
+                <div className="SiteMap_LP_Links_Container">
                     <div className="LP_Links_Header">
-                        <a href="#LP_Section_1" className="Menu_Link" onClick={toggleMenuButton}>
+                        <a href="#LP_Section_1" className="Menu_Link" onClick={toggleSiteMapButton}>
                             <span className="material-icons LP_Links_Icon">flag_circle</span>
                             Início
                         </a>
@@ -67,12 +63,12 @@ export default function Menu() {
                             <div className="LP_Links_Line"></div>
                         </div>
                         <div className="LP_Links">
-                            <a href="#LP_Section_2" className="Menu_Link" onClick={toggleMenuButton}>
+                            <a href="#LP_Section_2" className="Menu_Link" onClick={toggleSiteMapButton}>
                                 Sobre
                             </a>
                             <div className="Product_Links_Container">
                                 <div className="Product_Links_Header">
-                                    <a href="#LP_Section_3" className="Menu_Link" onClick={toggleMenuButton}>
+                                    <a href="#LP_Section_3" className="Menu_Link" onClick={toggleSiteMapButton}>
                                         Produtos
                                     </a>
                                 </div>
@@ -139,14 +135,14 @@ export default function Menu() {
                                 </div>
                             </div>
 
-                            <a href="#LP_Section_4" className="Menu_Link" onClick={toggleMenuButton}>
+                            <a href="#LP_Section_4" className="Menu_Link" onClick={toggleSiteMapButton}>
                                 Contato
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div className="Secondary_Links">
+                <div className="SiteMap_Secondary_Links">
                     <a href="#Privacidade" className="Menu_Link_Secondary" onClick={togglePrivacyButton}>
                         <span className="material-icons">privacy_tip</span>Privacidade
                     </a>
@@ -157,31 +153,6 @@ export default function Menu() {
                     <a href="#Mapa do Site" className="Menu_Link_Secondary" onClick={toggleSiteMapButton}>
                         <span className="material-icons">map</span>Mapa do Site
                     </a>
-                </div>
-
-                <div className="Configurations">
-                    <div className="Configurations_Header">
-                        <span className="material-icons LP_Links_Icon">settings</span>
-                        <p className="Menu_Link">Configurações</p>
-                    </div>
-                    <div className="LP_Links_Horizontal_Organizer Config_Organizer">
-                        <div className="LP_Links_Line_Container">
-                            <div className="LP_Links_Line"></div>
-                        </div>
-                        <div className="Configurations_Links">
-                            <a href="#Idioma" className="Menu_Link Config_Link">
-                                Idioma: <span className="Config_Option active">Português Brasileiro</span>
-                                <span className="Config_Option">English</span>
-                            </a>
-                            <a href="#Moeda" className="Menu_Link Config_Link">
-                                Moeda: <span className="Config_Option active">Real (R$)</span> <span className="Config_Option">Dollar (USD)</span>
-                            </a>
-                            <a href="#Cores" className="Menu_Link Config_Link">
-                                Esquema de Cores: <span className="Config_Option active">Escuro</span>
-                                <span className="Config_Option">Claro</span>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </m.div>
