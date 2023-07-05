@@ -2,14 +2,24 @@
 import { motion as m } from "framer-motion";
 
 // Redux Imports
-import { useDispatch } from "react-redux";
-import { toggleMenu } from "../context/main_context";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleMenu, setActiveProduct, toggleProductDetails, setActiveChocoClass } from "../context/main_context";
 
 export default function Menu() {
     const dispatch = useDispatch();
+    const productDetailsIsOpen = useSelector((state: any) => state.productDetailsIsOpen);
 
     const toggleMenuButton = () => {
         dispatch(toggleMenu());
+    };
+
+    const toggleProductDetailsButton = (chocoClass, productId) => {
+        dispatch(toggleMenu());
+        dispatch(setActiveChocoClass(chocoClass));
+        dispatch(setActiveProduct({ id: productId }));
+        if (!productDetailsIsOpen) {
+            dispatch(toggleProductDetails());
+        }
     };
 
     return (
@@ -48,22 +58,58 @@ export default function Menu() {
                                         <div className="LP_Links_Line"></div>
                                     </div>
                                     <div className="Product_Links">
-                                        <a href="#LP_Section_3_P1" className="Menu_Link" onClick={toggleMenuButton}>
+                                        <a
+                                            href="#chocolate-00"
+                                            className="Menu_Link"
+                                            onClick={() => {
+                                                toggleProductDetailsButton("classico", 0);
+                                            }}
+                                        >
                                             Produto 1
                                         </a>
-                                        <a href="#LP_Section_3_P2" className="Menu_Link" onClick={toggleMenuButton}>
+                                        <a
+                                            href="#chocolate-01"
+                                            className="Menu_Link"
+                                            onClick={() => {
+                                                toggleProductDetailsButton("classico", 1);
+                                            }}
+                                        >
                                             Produto 2
                                         </a>
-                                        <a href="#LP_Section_3_P3" className="Menu_Link" onClick={toggleMenuButton}>
+                                        <a
+                                            href="#chocolate-02"
+                                            className="Menu_Link"
+                                            onClick={() => {
+                                                toggleProductDetailsButton("classico", 2);
+                                            }}
+                                        >
                                             Produto 3
                                         </a>
-                                        <a href="#LP_Section_3_P4" className="Menu_Link" onClick={toggleMenuButton}>
+                                        <a
+                                            href="#chocolate-03"
+                                            className="Menu_Link"
+                                            onClick={() => {
+                                                toggleProductDetailsButton("especial", 3);
+                                            }}
+                                        >
                                             Produto 4
                                         </a>
-                                        <a href="#LP_Section_3_P5" className="Menu_Link" onClick={toggleMenuButton}>
+                                        <a
+                                            href="#chocolate-04"
+                                            className="Menu_Link"
+                                            onClick={() => {
+                                                toggleProductDetailsButton("especial", 4);
+                                            }}
+                                        >
                                             Produto 5
                                         </a>
-                                        <a href="#LP_Section_3_P6" className="Menu_Link" onClick={toggleMenuButton}>
+                                        <a
+                                            href="#chocolate-05"
+                                            className="Menu_Link"
+                                            onClick={() => {
+                                                toggleProductDetailsButton("especial", 5);
+                                            }}
+                                        >
                                             Produto 6
                                         </a>
                                     </div>

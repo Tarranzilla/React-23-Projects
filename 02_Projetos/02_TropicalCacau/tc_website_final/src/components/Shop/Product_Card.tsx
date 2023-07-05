@@ -5,7 +5,7 @@ import ChocolateType from "../../types/Chocolate";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCart, addToCart, toggleProductDetails, setActiveProduct } from "../../context/main_context";
 
-export default function Product_Card({ product: { id, imgSrc, name, type, description, price } }) {
+export default function Product_Card({ product: { id, imgSrc, name, type, description, price, domId } }) {
     const dispatch = useDispatch();
 
     const openDetailsButton = (id) => {
@@ -36,7 +36,7 @@ export default function Product_Card({ product: { id, imgSrc, name, type, descri
     const itemTotalQuantity = getItemTotalQuantity(cartItems, itemId);
 
     return (
-        <div className="Product_Card">
+        <div className="Product_Card" id={domId}>
             <img className="Card_Product_Image" src={imgSrc}></img>
             <div className="Product_Card_Header">
                 <h3 className="Card_Product_Name">{name}</h3>

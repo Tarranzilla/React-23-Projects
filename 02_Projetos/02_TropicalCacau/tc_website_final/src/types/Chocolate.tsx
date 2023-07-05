@@ -11,4 +11,5 @@ export default interface ChocolateType {
     chocoOriginName: string;
     chocoProducerName: string;
     ingredients: string;
+    domId: string;
 }

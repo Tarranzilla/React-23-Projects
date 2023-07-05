@@ -14,6 +14,7 @@ const TodosOsChocolates: ChocolateType[] = [
         chocoOriginName: "Curitiba, Paraná, Brasil",
         chocoProducerName: "Tropical Cacau Produções",
         ingredients: "Açúcar, Manteiga de Cacau, Leite em Pó, Cacau, Lecitina de Soja e Aroma Natural de Baunilha",
+        domId: "chocolate-00",
     },
     {
         id: 1,
@@ -28,6 +29,7 @@ const TodosOsChocolates: ChocolateType[] = [
         chocoOriginName: "Curitiba, Paraná, Brasil",
         chocoProducerName: "Tropical Cacau Produções",
         ingredients: "Açúcar, Manteiga de Cacau, Leite em Pó, Cacau, Lecitina de Soja e Aroma Natural de Baunilha",
+        domId: "chocolate-01",
     },
     {
         id: 2,
@@ -42,6 +44,7 @@ const TodosOsChocolates: ChocolateType[] = [
         chocoOriginName: "Curitiba, Paraná, Brasil",
         chocoProducerName: "Tropical Cacau Produções",
         ingredients: "Açúcar, Manteiga de Cacau, Leite em Pó, Cacau, Lecitina de Soja e Aroma Natural de Baunilha",
+        domId: "chocolate-02",
     },
     {
         id: 3,
@@ -56,6 +59,7 @@ const TodosOsChocolates: ChocolateType[] = [
         chocoOriginName: "Curitiba, Paraná, Brasil",
         chocoProducerName: "Tropical Cacau Produções",
         ingredients: "Açúcar, Manteiga de Cacau, Leite em Pó, Cacau, Lecitina de Soja e Aroma Natural de Baunilha",
+        domId: "chocolate-03",
     },
     {
         id: 4,
@@ -70,6 +74,7 @@ const TodosOsChocolates: ChocolateType[] = [
         chocoOriginName: "Curitiba, Paraná, Brasil",
         chocoProducerName: "Tropical Cacau Produções",
         ingredients: "Açúcar, Manteiga de Cacau, Leite em Pó, Cacau, Lecitina de Soja e Aroma Natural de Baunilha",
+        domId: "chocolate-04",
     },
     {
         id: 5,
@@ -84,6 +89,7 @@ const TodosOsChocolates: ChocolateType[] = [
         chocoOriginName: "Curitiba, Paraná, Brasil",
         chocoProducerName: "Tropical Cacau Produções",
         ingredients: "Açúcar, Manteiga de Cacau, Leite em Pó, Cacau, Lecitina de Soja e Aroma Natural de Baunilha",
+        domId: "chocolate-05",
     },
 ];
 

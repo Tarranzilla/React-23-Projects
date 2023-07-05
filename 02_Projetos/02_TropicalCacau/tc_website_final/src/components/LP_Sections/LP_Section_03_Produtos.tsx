@@ -6,7 +6,7 @@ import { motion as m, AnimatePresence } from "framer-motion";
 
 // Redux Imports
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCart, addToCart, decrementCartItem, removeFromCart } from "../../context/main_context";
+import { setActiveChocoClass } from "../../context/main_context";
 
 // Product Card Import
 import Product_Card from "../../components/Shop/Product_Card";
@@ -21,45 +21,32 @@ import ChocolateImg5 from "../../assets/chocolates/ChocolateBranco1.avif";
 import ChocolateImg6 from "../../assets/chocolates/ChocolateComNozes.avif";
 
 const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props, ref: any) {
-    const [activeType, setActiveType] = useState(0);
-    const availableProducts = useSelector((state: any) => state.availableChocolates);
+    const dispatch = useDispatch();
+    const activeChocoClass = useSelector((state: any) => state.activeChocoClass);
 
-    const handleActiveType = (type: number) => {
-        setActiveType(type);
-        if (type === 0) {
-            console.log("Nenhum Selecionado");
-        }
-        if (type === 1) {
-            console.log("Clássicos");
-        }
-        if (type === 2) {
-            console.log("Especiais");
-        }
-        if (type === 3) {
-            console.log("Combinações");
-        }
-        if (type === 4) {
-            console.log("Assinaturas");
-        }
+    const handleSetActiveChocoClass = (activeChocoClass) => {
+        dispatch(setActiveChocoClass(activeChocoClass));
     };
+
+    const availableProducts = useSelector((state: any) => state.availableChocolates);
 
     return (
         <div className="LP_Section LP_Section_03_Produtos" id="LP_Section_3" ref={ref} key={"LP_Section_3"}>
             <img src={backgroundImg} alt="background" className="Section_03_Background" />
             <div className="Type_Header">
-                {activeType === 0 && <h3 className="Type_Viewer_Title">Nenhum Produto Selecionado</h3>}
-                {activeType === 1 && <h3 className="Type_Viewer_Title">Clássicos</h3>}
-                {activeType === 2 && <h3 className="Type_Viewer_Title">Especiais</h3>}
-                {activeType === 3 && <h3 className="Type_Viewer_Title">Combinações</h3>}
-                {activeType === 4 && <h3 className="Type_Viewer_Title">Assinaturas</h3>}
+                {activeChocoClass === null && <h3 className="Type_Viewer_Title">Nenhum Produto Selecionado</h3>}
+                {activeChocoClass === "classico" && <h3 className="Type_Viewer_Title">Clássicos</h3>}
+                {activeChocoClass === "especial" && <h3 className="Type_Viewer_Title">Especiais</h3>}
+                {activeChocoClass === "kit" && <h3 className="Type_Viewer_Title">Combinações</h3>}
+                {activeChocoClass === "assinatura" && <h3 className="Type_Viewer_Title">Assinaturas</h3>}
             </div>
             <div className="Type_Viewer">
-                {activeType === 0 && (
+                {activeChocoClass === 0 && (
                     <div className="Product_Container">
                         <h3 className="No_Product_Selected_Title">Nenhuma Categoria de Produto Selecionada</h3>
                     </div>
                 )}
-                {activeType === 1 && (
+                {activeChocoClass === "classico" && (
                     <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Product_Container" key={"Clássicos"}>
                         {availableProducts.map((product: any) => {
                             if (product.chocoClass === "classico") {
@@ -68,7 +55,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                         })}
                     </m.div>
                 )}
-                {activeType === 2 && (
+                {activeChocoClass === "especial" && (
                     <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Product_Container" key={"Especiais"}>
                         {availableProducts.map((product: any) => {
                             if (product.chocoClass === "especial") {
@@ -77,7 +64,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                         })}
                     </m.div>
                 )}
-                {activeType === 3 && (
+                {activeChocoClass === "kit" && (
                     <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Product_Container" key={"Kits"}>
                         <div className="Product_Card">
                             <h3>Kit de Todos os Chocolates</h3>
@@ -87,7 +74,7 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
                         </div>
                     </m.div>
                 )}
-                {activeType === 4 && (
+                {activeChocoClass === "assinatura" && (
                     <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Product_Container" key={"Assinaturas"}>
                         <div className="Product_Card">
                             <h3>Assinaturas</h3>
@@ -98,37 +85,29 @@ const LP_Section_03_Produtos = forwardRef(function LP_Section_03_Produtos(props,
             <div className="Product_Type_Container">
                 <button
                     key="ChocoClass_1"
-                    className={activeType === 1 ? "Product_Type active" : "Product_Type"}
-                    onClick={() => {
-                        setActiveType(1);
-                    }}
+                    className={activeChocoClass === "classico" ? "Product_Type active" : "Product_Type"}
+                    onClick={() => handleSetActiveChocoClass("classico")}
                 >
                     <h3 className="Product_Type_Title">Clássicos</h3>
                 </button>
                 <button
                     key="ChocoClass_2"
-                    className={activeType === 2 ? "Product_Type active" : "Product_Type"}
-                    onClick={() => {
-                        setActiveType(2);
-                    }}
+                    className={activeChocoClass === "especial" ? "Product_Type active" : "Product_Type"}
+                    onClick={() => handleSetActiveChocoClass("especial")}
                 >
                     <h3 className="Product_Type_Title">Especiais</h3>
                 </button>
                 <button
                     key="ChocoClass_3"
-                    className={activeType === 3 ? "Product_Type active" : "Product_Type"}
-                    onClick={() => {
-                        setActiveType(3);
-                    }}
+                    className={activeChocoClass === "kit" ? "Product_Type active" : "Product_Type"}
+                    onClick={() => handleSetActiveChocoClass("kit")}
                 >
                     <h3 className="Product_Type_Title">Combinações</h3>
                 </button>
                 <button
                     key="ChocoClass_4"
-                    className={activeType === 4 ? "Product_Type active" : "Product_Type"}
-                    onClick={() => {
-                        setActiveType(4);
-                    }}
+                    className={activeChocoClass === "assinatura" ? "Product_Type active" : "Product_Type"}
+                    onClick={() => handleSetActiveChocoClass("assinatura")}
                 >
                     <h3 className="Product_Type_Title">Assinaturas</h3>
                 </button>

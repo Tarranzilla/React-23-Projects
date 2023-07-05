@@ -308,6 +308,15 @@ h1 {
     display: none;
 }
 
+.Mobile_Navbar_Title {
+    font-family: "Cooper_TrueType";
+    font-weight: normal !important;
+    color: var(--primary_color);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.2rem;
+}
+
 .Navbar_Main_Links {
     position: relative;
     color: var(--anchor_color);
@@ -1272,7 +1281,7 @@ h1 {
     height: 100%;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: start;
     align-items: center;
     gap: var(--small_gap);
@@ -1280,7 +1289,7 @@ h1 {
 }
 
 .Product_Detail_Image_Container {
-    width: 100%;
+    height: 100%;
     aspect-ratio: 1/1;
 
     display: flex;
@@ -2095,6 +2104,50 @@ h1 {
         margin-right: 0;
 
         align-items: start;
+    }
+
+    .Product_Detail_Content {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: var(--small_gap);
+        overflow-y: auto;
+    }
+
+    .Product_Detail_Image_Container {
+        height: auto;
+        width: 100%;
+        aspect-ratio: 1/1;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+
+        border-radius: var(--small_gap);
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        gap: 0.5rem;
+
+        flex-shrink: 0;
+        padding-bottom: var(--small_gap);
+    }
+
+    .Product_Detail_Image {
+        scroll-snap-align: start;
+        height: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: var(--small_gap);
+    }
+
+    .Product_Detail_Footer {
+        width: 100%;
     }
 
     .Help_Container {

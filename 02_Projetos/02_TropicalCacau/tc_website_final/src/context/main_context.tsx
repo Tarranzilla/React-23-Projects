@@ -20,6 +20,8 @@ const initialState = {
     cartItems: [] as ChocolateType[],
     cartTotal: 0,
     productDetailsIsOpen: false,
+    chocoClasses: ["classico", "especial", "kit", "assinatura"],
+    activeChocoClass: "classico",
     activeProduct: null as ChocolateType | null,
 };
 
@@ -113,6 +115,10 @@ export const authSlice = createSlice({
             }
             console.log("Active Product: " + state.activeProduct?.name);
         },
+        setActiveChocoClass: (state, action) => {
+            state.activeChocoClass = action.payload;
+            console.log("Active Choco Class: " + state.activeChocoClass);
+        },
     },
 });
 
@@ -133,5 +139,6 @@ export const {
     getCartTotal,
     toggleProductDetails,
     setActiveProduct,
+    setActiveChocoClass,
 } = authSlice.actions;
 export default authSlice.reducer;
