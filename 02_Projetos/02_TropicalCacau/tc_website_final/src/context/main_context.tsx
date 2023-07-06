@@ -8,6 +8,8 @@ import TodosOsChocolates from "../data/TodosOsChocolates";
 const initialState = {
     mode: "light",
     username: "Guest User",
+    currencyType: "BRL",
+    language: "pt-br",
     menuIsOpen: false,
     searchIsOpen: false,
     cartIsOpen: false,
@@ -134,6 +136,14 @@ export const authSlice = createSlice({
             state.siteMapIsOpen = !state.siteMapIsOpen;
             console.log("Site Map is toggled: " + (state.siteMapIsOpen ? "open" : "closed"));
         },
+        toggleCurrency: (state) => {
+            state.currencyType = state.currencyType === "BRL" ? "USD" : "BRL";
+            console.log("Currency: " + state.currencyType);
+        },
+        toggleLanguage: (state) => {
+            state.language = state.language === "pt-br" ? "en" : "pt-br";
+            console.log("Language: " + state.language);
+        },
     },
 });
 
@@ -158,5 +168,7 @@ export const {
     togglePrivacyPolicy,
     toggleTerms,
     toggleSiteMap,
+    toggleCurrency,
+    toggleLanguage,
 } = authSlice.actions;
 export default authSlice.reducer;

@@ -11,14 +11,25 @@ import {
     togglePrivacyPolicy,
     toggleTerms,
     toggleSiteMap,
+    setMode,
+    toggleCurrency,
+    toggleLanguage,
 } from "../context/main_context";
 
 export default function Menu() {
     const dispatch = useDispatch();
     const productDetailsIsOpen = useSelector((state: any) => state.productDetailsIsOpen);
+    const mode = useSelector((state: any) => state.mode);
+    const currencyType = useSelector((state: any) => state.currencyType);
+    const language = useSelector((state: any) => state.language);
 
     const toggleMenuButton = () => {
         dispatch(toggleMenu());
+    };
+
+    const toggleColorModeButton = () => {
+        dispatch(setMode());
+        // "light" || "dark"
     };
 
     const toggleProductDetailsButton = (chocoClass, productId) => {
@@ -43,6 +54,14 @@ export default function Menu() {
     const toggleSiteMapButton = () => {
         dispatch(toggleSiteMap());
         dispatch(toggleMenu());
+    };
+
+    const toggleCurrencyButton = () => {
+        dispatch(toggleCurrency());
+    };
+
+    const toggleLanguageButton = () => {
+        dispatch(toggleLanguage());
     };
 
     return (
@@ -170,16 +189,17 @@ export default function Menu() {
                             <div className="LP_Links_Line"></div>
                         </div>
                         <div className="Configurations_Links">
-                            <a href="#Idioma" className="Menu_Link Config_Link">
-                                Idioma: <span className="Config_Option active">Português Brasileiro</span>
-                                <span className="Config_Option">English</span>
+                            <a href="#Idioma" className="Menu_Link Config_Link" onClick={toggleLanguageButton}>
+                                Idioma: <span className={language === "pt-br" ? "Config_Option active" : "Config_Option"}>Português Brasileiro</span>
+                                <span className={language === "en" ? "Config_Option active" : "Config_Option"}>English</span>
                             </a>
-                            <a href="#Moeda" className="Menu_Link Config_Link">
-                                Moeda: <span className="Config_Option active">Real (R$)</span> <span className="Config_Option">Dollar (USD)</span>
+                            <a href="#Moeda" className="Menu_Link Config_Link" onClick={toggleCurrencyButton}>
+                                Moeda: <span className={currencyType === "BRL" ? "Config_Option active" : "Config_Option"}>Real (R$)</span>{" "}
+                                <span className={currencyType === "USD" ? "Config_Option active" : "Config_Option"}>Dollar (USD)</span>
                             </a>
-                            <a href="#Cores" className="Menu_Link Config_Link">
-                                Esquema de Cores: <span className="Config_Option active">Escuro</span>
-                                <span className="Config_Option">Claro</span>
+                            <a href="#Cores" className="Menu_Link Config_Link" onClick={toggleColorModeButton}>
+                                Esquema de Cores: <span className={mode === "dark" ? "Config_Option active" : "Config_Option"}>Escuro</span>
+                                <span className={mode === "light" ? "Config_Option active" : "Config_Option"}>Claro</span>
                             </a>
                         </div>
                     </div>

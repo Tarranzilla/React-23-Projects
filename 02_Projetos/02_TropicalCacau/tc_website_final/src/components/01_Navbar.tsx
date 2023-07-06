@@ -67,7 +67,7 @@ export default function Navbar() {
                 body.classList.remove("darkmode");
             }
         }
-    }, []);
+    }, [colorMode]);
 
     return (
         <div className="Navbar" key={"Navbar"}>
