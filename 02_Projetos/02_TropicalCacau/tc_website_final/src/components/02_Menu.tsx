@@ -93,7 +93,7 @@ export default function Menu() {
                             <div className="Product_Links_Container">
                                 <div className="Product_Links_Header">
                                     <a href="#LP_Section_3" className="Menu_Link" onClick={toggleMenuButton}>
-                                        Produtos
+                                        Chocolates
                                     </a>
                                 </div>
                                 <div className="LP_Links_Horizontal_Organizer">
@@ -108,7 +108,7 @@ export default function Menu() {
                                                 toggleProductDetailsButton("classico", 0);
                                             }}
                                         >
-                                            Produto 1
+                                            Tropical 35%
                                         </a>
                                         <a
                                             href="#chocolate-01"
@@ -117,7 +117,7 @@ export default function Menu() {
                                                 toggleProductDetailsButton("classico", 1);
                                             }}
                                         >
-                                            Produto 2
+                                            Tropical 60%
                                         </a>
                                         <a
                                             href="#chocolate-02"
@@ -126,7 +126,7 @@ export default function Menu() {
                                                 toggleProductDetailsButton("classico", 2);
                                             }}
                                         >
-                                            Produto 3
+                                            Tropical 80%
                                         </a>
                                         <a
                                             href="#chocolate-03"
@@ -135,7 +135,7 @@ export default function Menu() {
                                                 toggleProductDetailsButton("especial", 3);
                                             }}
                                         >
-                                            Produto 4
+                                            Tropical Branco
                                         </a>
                                         <a
                                             href="#chocolate-04"
@@ -144,7 +144,7 @@ export default function Menu() {
                                                 toggleProductDetailsButton("especial", 4);
                                             }}
                                         >
-                                            Produto 5
+                                            Tropical Frutas
                                         </a>
                                         <a
                                             href="#chocolate-05"
@@ -153,7 +153,7 @@ export default function Menu() {
                                                 toggleProductDetailsButton("especial", 5);
                                             }}
                                         >
-                                            Produto 6
+                                            Tropical Nozes
                                         </a>
                                     </div>
                                 </div>
