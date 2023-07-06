@@ -208,6 +208,10 @@ h1 {
     font-weight: normal;
 }
 
+.Mobile_Only {
+    display: none;
+}
+
 /* NAVBAR */
 
 .Navbar {
@@ -486,7 +490,7 @@ h1 {
     margin-right: 20%;
     border-radius: var(--small_gap);
     height: var(--section_viewer_height);
-    background-color: var(--menu_color);
+    backdrop-filter: blur(60px);
 
     display: flex;
     flex-direction: column;
@@ -494,8 +498,6 @@ h1 {
     align-items: center;
 
     padding: var(--small_gap);
-
-    overflow-y: auto;
 }
 
 .Menu_Header {
@@ -516,13 +518,14 @@ h1 {
 
 .Menu_List_Container {
     width: 100%;
-    height: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: var(--small_gap);
     flex-shrink: 0;
+    overflow-y: auto;
 }
 
 .SiteMap_LP_Links_Container {
@@ -554,7 +557,7 @@ h1 {
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap: var(--small_gap);
+    gap: 0.5rem;
     height: 100%;
 }
 
@@ -2140,6 +2143,10 @@ h1 {
         display: none;
     }
 
+    .Mobile_Only {
+        display: block;
+    }
+
     /* NAVBAR */
     .Navbar {
         justify-content: space-between;
@@ -2178,7 +2185,6 @@ h1 {
 
     .Menu {
         height: var(--section_viewer_height);
-        overflow-y: auto;
         width: 100%;
         margin-left: 0;
         margin-right: 0;
@@ -2187,7 +2193,9 @@ h1 {
     }
 
     .Menu_List_Container {
-        height: auto;
+        flex: 1;
+        overflow-y: auto;
+        padding-inline: var(--small_gap);
     }
 
     .LP_Links_Container,

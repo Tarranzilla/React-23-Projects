@@ -50,9 +50,10 @@ export default function Menu() {
             <div className="Menu_Header">
                 <span className="material-icons">home</span>
                 <p className="Menu_Title">Menu</p>
-                <button className="Searchbar_Close_Btn" onClick={toggleMenuButton}>
+                <button className="Searchbar_Close_Btn Desktop_Only" onClick={toggleMenuButton}>
                     <span className="material-icons">close</span>
                 </button>
+                <span className="material-icons Mobile_Only">home</span>
             </div>
             <div className="Menu_List_Container">
                 <div className="LP_Links_Container">
