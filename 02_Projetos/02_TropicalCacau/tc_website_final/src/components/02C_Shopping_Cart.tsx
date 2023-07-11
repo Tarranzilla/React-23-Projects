@@ -14,6 +14,9 @@ import ChocolateType from "../types/Chocolate";
 // Data Imports
 import TodosOsChocolates from "../data/TodosOsChocolates";
 
+// Query String Import
+import queryString from "query-string";
+
 // Images Imports
 import ChocolateImg1 from "../assets/chocolates/ChocolateClaro1.avif";
 import ChocolateImg2 from "../assets/chocolates/ChocolateCafé1.avif";
@@ -27,6 +30,34 @@ import { useEffect } from "react";
 export default function Shopping_Cart() {
     const dispatch = useDispatch();
     const cartItems = useSelector((state: any) => state.cartItems);
+
+    const generateWhatsAppMessage = () => {
+        const cartItems = useSelector((state: any) => state.cartItems);
+
+        // Calculate the total cart price
+        const totalCartPrice = cartItems.reduce((total, item) => {
+            return total + item.price * item.cartQuantity;
+        }, 0);
+
+        // Create an array of strings representing each item and its amount
+        const itemsStringArray = cartItems.map((item) => `${item.name}: ${item.cartQuantity}`);
+
+        // Join the strings with a line break
+        const itemsString = itemsStringArray.join("\n");
+
+        // Create the message
+        const message = `Olá, eu gostaria de fazer um pedido:\n${itemsString}\n\nTotal: R$ ${totalCartPrice.toFixed(2)}`;
+
+        return message;
+    };
+
+    const phoneNumber = "+5541999977955"; // Replace with your desired WhatsApp number
+    const message = generateWhatsAppMessage();
+
+    const toggleFinishOrderButton = () => {
+        const whatsappUrl = `https://wa.me/${phoneNumber}/?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, "_blank");
+    };
 
     const toggleCheckoutHelpButton = () => {
         dispatch(toggleCheckoutHelp());
@@ -67,7 +98,9 @@ export default function Shopping_Cart() {
                             <strong>R$ {totalCartPrice},00</strong>
                         </p>
                     </div>
-                    <button className="Checkout_Button">Finalizar Compra</button>
+                    <button className="Checkout_Button" onClick={toggleFinishOrderButton}>
+                        Finalizar Compra
+                    </button>
                 </div>
 
                 <a href="#processo_de_compra" className="Checkout_Help" onClick={toggleCheckoutHelpButton}>
